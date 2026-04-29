@@ -1,0 +1,1162 @@
+{
+  "metadata": {
+    "title": "Final Comprehensive Exam",
+    "description": "100-question certification exam for USA Flat Roof Roof Systems Field Guide",
+    "passing_score_percent": 80,
+    "total_questions": 100,
+    "section_count": 7,
+    "retake_cooldown_hours": 24,
+    "edition": "April 2026"
+  },
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "System Identification and Recognition",
+      "question_count": 20,
+      "questions": [
+        {
+          "question_number": 1,
+          "question_text": "A flat commercial roof with characteristic orange-peel surface texture is most likely:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "TPO", "is_correct": false, "explanation": "TPO has factory-uniform smooth finish, not orange-peel texture."},
+            {"letter": "B", "text": "PVC", "is_correct": false, "explanation": "PVC has factory-uniform smooth finish similar to TPO."},
+            {"letter": "C", "text": "Silicone coating only", "is_correct": false, "explanation": "Silicone-only coatings have brush/spray texture but not the characteristic orange-peel of foam."},
+            {"letter": "D", "text": "SPF", "is_correct": true, "explanation": "Orange-peel texture is the SPF distinguisher. Reference: Chapter 10, Chapter 17."}
+          ]
+        },
+        {
+          "question_number": 2,
+          "question_text": "A black single-ply commercial roof with glued or taped seams is most likely:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "TPO", "is_correct": false, "explanation": "TPO is almost always white with welded seams."},
+            {"letter": "B", "text": "PVC", "is_correct": false, "explanation": "PVC is almost always white with welded seams."},
+            {"letter": "C", "text": "EPDM", "is_correct": true, "explanation": "Black color and non-welded seams are EPDM signatures. Reference: Chapter 17."},
+            {"letter": "D", "text": "Modified bitumen", "is_correct": false, "explanation": "Modified bitumen has asphalt-bonded seams, not glued or taped."}
+          ]
+        },
+        {
+          "question_number": 3,
+          "question_text": "The most reliable single indicator that a residential roof is composition shingle is:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Color of the shingles", "is_correct": false, "explanation": "Color varies widely and is not reliable."},
+            {"letter": "B", "text": "Granular surface texture", "is_correct": true, "explanation": "None of the look-alikes have this; it's the composition shingle hallmark. Reference: Chapter 18."},
+            {"letter": "C", "text": "Pitch of the roof", "is_correct": false, "explanation": "Pitch varies on composition shingle homes."},
+            {"letter": "D", "text": "Age of the home", "is_correct": false, "explanation": "Age suggests but doesn't confirm system."}
+          ]
+        },
+        {
+          "question_number": 4,
+          "question_text": "A commercial flat roof with embedded gravel surface and visible multi-ply construction at edges is most likely:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "TPO", "is_correct": false, "explanation": "TPO is single-ply, no gravel."},
+            {"letter": "B", "text": "PVC", "is_correct": false, "explanation": "PVC is single-ply, no gravel."},
+            {"letter": "C", "text": "EPDM", "is_correct": false, "explanation": "EPDM is single-ply, no gravel."},
+            {"letter": "D", "text": "BUR", "is_correct": true, "explanation": "Gravel surface with multi-ply construction is the defining BUR feature. Reference: Chapter 9."}
+          ]
+        },
+        {
+          "question_number": 5,
+          "question_text": "What does 'TPO' stand for?",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Total polymer overlay", "is_correct": false, "explanation": "Not a real term."},
+            {"letter": "B", "text": "Thermoplastic polyolefin", "is_correct": true, "explanation": "Standard chemistry name. Reference: Chapter 2."},
+            {"letter": "C", "text": "Treated polyester oxide", "is_correct": false, "explanation": "Not a real term."},
+            {"letter": "D", "text": "Thermo-protected oxide", "is_correct": false, "explanation": "Not a real term."}
+          ]
+        },
+        {
+          "question_number": 6,
+          "question_text": "What does 'PVC' stand for in roofing?",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Plasticized vinyl coating", "is_correct": false, "explanation": "Not the chemistry name."},
+            {"letter": "B", "text": "Polyvinyl chloride", "is_correct": true, "explanation": "Standard chemistry name. Reference: Chapter 5."},
+            {"letter": "C", "text": "Polymer vapor compound", "is_correct": false, "explanation": "Not a real term."},
+            {"letter": "D", "text": "Polyethylene vinyl coating", "is_correct": false, "explanation": "Not the chemistry name."}
+          ]
+        },
+        {
+          "question_number": 7,
+          "question_text": "'60-mil' in TPO membrane specifications refers to:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "The width of a TPO roll", "is_correct": false, "explanation": "Roll width is measured in feet."},
+            {"letter": "B", "text": "The thickness of the membrane", "is_correct": true, "explanation": "A mil is one-thousandth of an inch. Reference: Chapter 2."},
+            {"letter": "C", "text": "The fastener spacing", "is_correct": false, "explanation": "Fastener spacing is measured in inches."},
+            {"letter": "D", "text": "The warranty length", "is_correct": false, "explanation": "Warranty is measured in years."}
+          ]
+        },
+        {
+          "question_number": 8,
+          "question_text": "A composition shingle with two layers bonded together creating a shadowed, textured appearance is:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Three-tab shingle", "is_correct": false, "explanation": "Three-tab is single-layer with cutout pattern."},
+            {"letter": "B", "text": "Architectural (dimensional, laminated) shingle", "is_correct": true, "explanation": "Standard description. Reference: Chapter 1."},
+            {"letter": "C", "text": "Designer shingle", "is_correct": false, "explanation": "Designer is heavier, multi-layer mimicking premium materials."},
+            {"letter": "D", "text": "Wood shake", "is_correct": false, "explanation": "Wood shake has visible grain, not shadowed dimensional appearance."}
+          ]
+        },
+        {
+          "question_number": 9,
+          "question_text": "The primary distinguishing visual feature between TPO and PVC is:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Color (TPO is white, PVC is gray)", "is_correct": false, "explanation": "Both are typically white."},
+            {"letter": "B", "text": "Subtle differences in surface feel and weld bead — neither can be reliably certified by appearance alone", "is_correct": true, "explanation": "Visual confirmation is unreliable; documentation is the answer. Reference: Chapters 2, 5, 17."},
+            {"letter": "C", "text": "Seam type (TPO is welded, PVC is glued)", "is_correct": false, "explanation": "Both are welded."},
+            {"letter": "D", "text": "Thickness", "is_correct": false, "explanation": "Both come in similar thickness ranges."}
+          ]
+        },
+        {
+          "question_number": 10,
+          "question_text": "Concrete tile and clay tile differ most reliably in:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Profile shape only", "is_correct": false, "explanation": "Profile is shared between both."},
+            {"letter": "B", "text": "Tap sound — concrete has a dull thud; clay has a higher-pitched ring", "is_correct": true, "explanation": "Tap test is the most reliable distinguisher. Reference: Chapter 8, Chapter 18."},
+            {"letter": "C", "text": "Color always", "is_correct": false, "explanation": "Color is unreliable since concrete can be coated to mimic clay."},
+            {"letter": "D", "text": "There is no reliable difference", "is_correct": false, "explanation": "Reliable differences exist."}
+          ]
+        },
+        {
+          "question_number": 11,
+          "question_text": "The first step in the four-step decision tree for commercial flat-roof identification is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Identifying the warranty terms", "is_correct": false, "explanation": "Warranty doesn't establish system identification."},
+            {"letter": "B", "text": "Looking at surface color (white/light, dark, or gravel)", "is_correct": true, "explanation": "First step of the four-step decision tree. Reference: Chapter 17."},
+            {"letter": "C", "text": "Checking the building age", "is_correct": false, "explanation": "Building age is part of the building-use lens, used before climbing the ladder."},
+            {"letter": "D", "text": "Asking the customer", "is_correct": false, "explanation": "Customer report is one input, not the first step in physical identification."}
+          ]
+        },
+        {
+          "question_number": 12,
+          "question_text": "A 1968 commercial building has a white-coated flat roof. What inspection priorities does the building age create?",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "None — building age doesn't affect inspection", "is_correct": false, "explanation": "Pre-1980s creates real considerations."},
+            {"letter": "B", "text": "Asbestos potential, layer count assessment, and substrate identification", "is_correct": true, "explanation": "All three are critical for pre-1980s buildings. Reference: Chapter 9."},
+            {"letter": "C", "text": "Confirming the warranty is current", "is_correct": false, "explanation": "Warranty isn't the building-age inspection priority."},
+            {"letter": "D", "text": "Requiring drone inspection only", "is_correct": false, "explanation": "Method choice depends on safety and access, not age alone."}
+          ]
+        },
+        {
+          "question_number": 13,
+          "question_text": "A restaurant building with significant kitchen exhaust shows a white welded-seam membrane that has held up well around grease vents. The system is most likely:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "TPO", "is_correct": false, "explanation": "TPO has less grease resistance than PVC."},
+            {"letter": "B", "text": "PVC", "is_correct": true, "explanation": "Restaurant + grease + held up well = PVC's chemical/grease resistance is the technical reason. Reference: Chapter 5."},
+            {"letter": "C", "text": "EPDM", "is_correct": false, "explanation": "EPDM is typically black with non-welded seams."},
+            {"letter": "D", "text": "Modified bitumen", "is_correct": false, "explanation": "Mod-bit doesn't have welded seams."}
+          ]
+        },
+        {
+          "question_number": 14,
+          "question_text": "A heavily coated commercial roof requires what additional inspection priority beyond surface evaluation?",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Confirming coating chemistry only", "is_correct": false, "explanation": "Chemistry matters but substrate matters more."},
+            {"letter": "B", "text": "Identifying the substrate underneath the coating", "is_correct": true, "explanation": "Substrate determines future scope options. Reference: Chapter 17."},
+            {"letter": "C", "text": "Checking the manufacturer logo", "is_correct": false, "explanation": "Logos are rarely visible on coatings."},
+            {"letter": "D", "text": "Measuring slope only", "is_correct": false, "explanation": "Slope matters but substrate identification is the priority."}
+          ]
+        },
+        {
+          "question_number": 15,
+          "question_text": "A 1995 NorCal tract home has a red barrel-profile roof. The most likely system is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Real clay tile", "is_correct": false, "explanation": "Less common on tract homes; concrete with clay-mimic coating is more common."},
+            {"letter": "B", "text": "Concrete tile (pigmented or surface-coated to mimic clay)", "is_correct": true, "explanation": "Matches the era and tract-home pattern in NorCal. Reference: Chapter 18."},
+            {"letter": "C", "text": "Stone-coated metal", "is_correct": false, "explanation": "Less common; would have metallic tap sound."},
+            {"letter": "D", "text": "Composition shingle", "is_correct": false, "explanation": "Composition shingle has flat profile, not barrel."}
+          ]
+        },
+        {
+          "question_number": 16,
+          "question_text": "A homeowner says they have 'wood shake.' The pieces look like wood but tap with a plastic pop. The most likely system is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Real wood shake", "is_correct": false, "explanation": "Real wood has a soft thunk, not plastic pop."},
+            {"letter": "B", "text": "Synthetic / composite shake", "is_correct": true, "explanation": "Plastic-pop tap is the give-away. Reference: Chapter 18."},
+            {"letter": "C", "text": "Composition shake-look shingle", "is_correct": false, "explanation": "Composition wouldn't be described as 'wood shake' by a homeowner."},
+            {"letter": "D", "text": "Stone-coated metal", "is_correct": false, "explanation": "Metal would have metallic sound."}
+          ]
+        },
+        {
+          "question_number": 17,
+          "question_text": "A commercial flat roof has a continuous painted-looking surface with visible brush texture and no visible welded seams or fastener rows. The most likely system is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "TPO with original installation", "is_correct": false, "explanation": "TPO has welded seams visible."},
+            {"letter": "B", "text": "New EPDM", "is_correct": false, "explanation": "EPDM has glued/taped seams."},
+            {"letter": "C", "text": "A coated roof — silicone or acrylic over an existing substrate", "is_correct": true, "explanation": "Continuous painted-looking surface with brush texture and no welded seams indicates coating. Reference: Chapter 17."},
+            {"letter": "D", "text": "SPF only", "is_correct": false, "explanation": "SPF has orange-peel texture distinct from brush texture."}
+          ]
+        },
+        {
+          "question_number": 18,
+          "question_text": "A rep is asked to confirm whether a roof is TPO or PVC. There is no documentation. The most appropriate response is:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Confirm TPO based on the white color", "is_correct": false, "explanation": "Color is shared between TPO and PVC."},
+            {"letter": "B", "text": "Confirm PVC because the surface feels slick", "is_correct": false, "explanation": "Surface feel is unreliable for certification."},
+            {"letter": "C", "text": "Document the visual indicators and note that product type cannot be certified without documentation", "is_correct": true, "explanation": "Visual confirmation is unreliable. Reference: Chapter 17."},
+            {"letter": "D", "text": "Defer to the customer's belief", "is_correct": false, "explanation": "Customer belief without verification isn't certification."}
+          ]
+        },
+        {
+          "question_number": 19,
+          "question_text": "A roof has pitched composition shingle on the main roof and a flat-roof section over a rear addition. The flat section requires:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "The same inspection approach as the composition shingle", "is_correct": false, "explanation": "Different system requires different approach."},
+            {"letter": "B", "text": "The commercial-system identification approach (Chapter 17)", "is_correct": true, "explanation": "Flat sections require commercial-system identification."},
+            {"letter": "C", "text": "No inspection — flat sections don't matter on residential", "is_correct": false, "explanation": "Flat sections are part of the home."},
+            {"letter": "D", "text": "Drone-only inspection", "is_correct": false, "explanation": "Method depends on access and safety."}
+          ]
+        },
+        {
+          "question_number": 20,
+          "question_text": "A homeowner says they have 'real slate.' On inspection, the pieces are uniform manufactured color, light weight, and tap with a plastic pop. The most appropriate response is:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Confirm the homeowner is correct", "is_correct": false, "explanation": "Observation suggests synthetic, not real slate."},
+            {"letter": "B", "text": "Document what was observed (synthetic / composite slate appearance), explain the indicators that suggest it's not real slate, and ask if they have product documentation", "is_correct": true, "explanation": "Honest framework. Reference: Chapter 18."},
+            {"letter": "C", "text": "Tell the homeowner they're wrong", "is_correct": false, "explanation": "Unprofessional; explain the observations."},
+            {"letter": "D", "text": "Quote work as real slate based on the homeowner's report", "is_correct": false, "explanation": "Quoting on unverified information creates problems."}
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Inspection Skills",
+      "question_count": 15,
+      "questions": [
+        {
+          "question_number": 21,
+          "question_text": "The four-point Inspection Severity Scale used throughout this book is:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Good / Fair / Poor / Failed", "is_correct": false, "explanation": "Not the standard used in this book."},
+            {"letter": "B", "text": "Monitor / Maintenance Needed / Repair Recommended / Urgent or Escalate", "is_correct": true, "explanation": "Standard scale. Reference: Chapter 12, all system chapters."},
+            {"letter": "C", "text": "Pass / Fail / Conditional / Re-inspect", "is_correct": false, "explanation": "Not the standard used in this book."},
+            {"letter": "D", "text": "Green / Yellow / Red / Black", "is_correct": false, "explanation": "Color codes aren't the standard rating system."}
+          ]
+        },
+        {
+          "question_number": 22,
+          "question_text": "The three audiences for inspection documentation are:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Customer, company, and warranty system", "is_correct": true, "explanation": "Three audiences for documentation. Reference: Chapter 12."},
+            {"letter": "B", "text": "Sales, production, and accounting", "is_correct": false, "explanation": "These are internal departments, not the documented audiences."},
+            {"letter": "C", "text": "Customer, insurance, and IRS", "is_correct": false, "explanation": "Not the standard framing."},
+            {"letter": "D", "text": "Rep, customer, and HOA", "is_correct": false, "explanation": "Not the standard framing."}
+          ]
+        },
+        {
+          "question_number": 23,
+          "question_text": "A reference scale in a damage photo is:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Optional decoration", "is_correct": false, "explanation": "Reference scale is required for size-relevant shots."},
+            {"letter": "B", "text": "An object included to indicate size — like a business card, tape measure, or chalk mark", "is_correct": true, "explanation": "Standard photo standard. Reference: Chapter 12, Module 7."},
+            {"letter": "C", "text": "Required only on commercial roofs", "is_correct": false, "explanation": "Required across roof types when size matters."},
+            {"letter": "D", "text": "A scale model of the building", "is_correct": false, "explanation": "Not the meaning."}
+          ]
+        },
+        {
+          "question_number": 24,
+          "question_text": "When a customer reports an interior leak, the inspection should:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Focus only on the area above the visible damage", "is_correct": false, "explanation": "Water travels; entry point is rarely directly above interior damage."},
+            {"letter": "B", "text": "Include a full roof inspection, not just the leak area", "is_correct": true, "explanation": "Leak-source rule. Reference: Chapter 11, Module 2."},
+            {"letter": "C", "text": "Skip the inspection and quote a patch", "is_correct": false, "explanation": "Skipping inspection causes the wrong-location patch problem."},
+            {"letter": "D", "text": "Wait for the customer to identify the source", "is_correct": false, "explanation": "Customers don't typically identify sources; that's the rep's job."}
+          ]
+        },
+        {
+          "question_number": 25,
+          "question_text": "Drone inspection is most valuable for:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Replacing all hands-on inspection", "is_correct": false, "explanation": "Drones supplement, not replace, hands-on inspection."},
+            {"letter": "B", "text": "Multi-story buildings, tile roofs, and complex geometries where walking is risky", "is_correct": true, "explanation": "Drone supplements but does not replace hands-on inspection. Reference: Chapter 12, Module 7."},
+            {"letter": "C", "text": "Single-family residential only", "is_correct": false, "explanation": "Drones are valuable across building types."},
+            {"letter": "D", "text": "Inspecting attics", "is_correct": false, "explanation": "Drones don't access attics."}
+          ]
+        },
+        {
+          "question_number": 26,
+          "question_text": "Documenting ponding evidence on a dry-day inspection requires:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Skipping the ponding inspection until rain", "is_correct": false, "explanation": "Ponding evidence is documentable on dry days."},
+            {"letter": "B", "text": "Using chalk to outline the extent marked by dirt rings, then photographing", "is_correct": true, "explanation": "Standard ponding documentation. Reference: Chapter 16, Module 7."},
+            {"letter": "C", "text": "Estimating the ponding from satellite photos", "is_correct": false, "explanation": "On-roof documentation is required."},
+            {"letter": "D", "text": "Asking the customer to verify", "is_correct": false, "explanation": "Customer verification supplements but doesn't replace direct documentation."}
+          ]
+        },
+        {
+          "question_number": 27,
+          "question_text": "A customer asks for a verbal price during the inspection. The most appropriate response is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Quote the price on the spot to close the deal", "is_correct": false, "explanation": "Verbal pricing creates anchor problems and inaccuracies."},
+            {"letter": "B", "text": "Decline to inspect further until pricing is settled", "is_correct": false, "explanation": "Inspection precedes pricing, not the reverse."},
+            {"letter": "C", "text": "Defer to the written proposal so the scope and price match what's actually on the roof", "is_correct": true, "explanation": "Honest framework. Reference: Chapter 12, Module 11."},
+            {"letter": "D", "text": "Quote a high price to anchor the negotiation", "is_correct": false, "explanation": "Anchoring is a pressure tactic."}
+          ]
+        },
+        {
+          "question_number": 28,
+          "question_text": "Which of the following may a sales rep NOT document or certify in an inspection report?",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Visible roof surface conditions", "is_correct": false, "explanation": "Reps may document visible conditions."},
+            {"letter": "B", "text": "Customer-reported information (clearly attributed)", "is_correct": false, "explanation": "Reps may document customer reports when clearly attributed."},
+            {"letter": "C", "text": "Severity ratings using the four-point scale", "is_correct": false, "explanation": "Reps apply severity ratings."},
+            {"letter": "D", "text": "Structural failure, hail damage for insurance, or mold identification", "is_correct": true, "explanation": "These exceed rep authorization. Reference: Chapter 12, Module 6."}
+          ]
+        },
+        {
+          "question_number": 29,
+          "question_text": "The first step in the inspection sequence is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Climbing the ladder", "is_correct": false, "explanation": "Pre-inspection conversation comes first."},
+            {"letter": "B", "text": "Asking lead-qualification questions before inspection", "is_correct": true, "explanation": "Standard inspection sequence. Reference: Chapter 12."},
+            {"letter": "C", "text": "Drone deployment", "is_correct": false, "explanation": "Drone use is a method choice, not the first step."},
+            {"letter": "D", "text": "Quoting a price", "is_correct": false, "explanation": "Pricing comes after inspection and proposal preparation."}
+          ]
+        },
+        {
+          "question_number": 30,
+          "question_text": "'Leak entry point' on a roof typically:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Sits directly above the visible interior damage", "is_correct": false, "explanation": "Water travels along structure before showing inside."},
+            {"letter": "B", "text": "Sits on the opposite side of the roof from the damage", "is_correct": false, "explanation": "Not the typical pattern."},
+            {"letter": "C", "text": "Travels along structure, conduit, or substrate before showing inside — rarely directly above interior damage", "is_correct": true, "explanation": "Leak-source rule. Reference: Chapter 11, Module 2."},
+            {"letter": "D", "text": "Cannot be identified by inspection", "is_correct": false, "explanation": "Often identifiable through thorough inspection."}
+          ]
+        },
+        {
+          "question_number": 31,
+          "question_text": "A rep arrives at a steep-slope tile roof on a windy day. The customer wants a thorough inspection. The most appropriate approach is:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Walk the roof carefully despite conditions", "is_correct": false, "explanation": "Wet or windy tile roofs are unsafe to walk."},
+            {"letter": "B", "text": "Skip the inspection entirely", "is_correct": false, "explanation": "Inspection is still possible with alternative methods."},
+            {"letter": "C", "text": "Use a combination of ground-level walk-around, drone (if conditions permit), and ladder-edge — and reschedule the roof walk if conditions don't support it", "is_correct": true, "explanation": "Safe and thorough approach. Reference: Chapter 12."},
+            {"letter": "D", "text": "Tell the customer their roof is fine", "is_correct": false, "explanation": "Pronouncing condition without inspection is dishonest."}
+          ]
+        },
+        {
+          "question_number": 32,
+          "question_text": "A rep arrives at a leak repair call and cannot identify the leak source after a full inspection. The most appropriate next step is:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Patch the area directly above the interior damage", "is_correct": false, "explanation": "Patching the wrong location is the textbook leak-call mistake."},
+            {"letter": "B", "text": "Charge for the inspection and leave without patching", "is_correct": false, "explanation": "Better to escalate than abandon the customer."},
+            {"letter": "C", "text": "Escalate to senior estimator or qualified inspector for further investigation; communicate honestly with the customer", "is_correct": true, "explanation": "Honest response when source can't be identified. Reference: Module 2."},
+            {"letter": "D", "text": "Recommend full replacement to be safe", "is_correct": false, "explanation": "Recommending replacement without inspection support is overselling."}
+          ]
+        },
+        {
+          "question_number": 33,
+          "question_text": "A maintenance call reveals an Urgent severity condition the rep is not authorized to address. The most appropriate response is:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Address it anyway to be helpful", "is_correct": false, "explanation": "Exceeding authorization creates problems."},
+            {"letter": "B", "text": "Ignore it and complete the maintenance scope only", "is_correct": false, "explanation": "Ignoring urgent conditions is unprofessional."},
+            {"letter": "C", "text": "Document the condition, escalate, and communicate the finding to the customer", "is_correct": true, "explanation": "Standard escalation pattern. Reference: Chapter 11, Chapter 12."},
+            {"letter": "D", "text": "Quote a price on the spot", "is_correct": false, "explanation": "Pricing follows scope, not the reverse."}
+          ]
+        },
+        {
+          "question_number": 34,
+          "question_text": "A customer says 'you're documenting too much — I just want a price.' The most honest response is:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Skip the documentation and provide a verbal price", "is_correct": false, "explanation": "Skipping documentation creates downstream problems."},
+            {"letter": "B", "text": "Explain that the documentation protects them in the future for warranty, insurance, and resale, and that the price will be accurate because the scope is real", "is_correct": true, "explanation": "Honest framing from Module 7. Reference: Module 7, Chapter 12."},
+            {"letter": "C", "text": "Apologize and reduce the inspection scope", "is_correct": false, "explanation": "Reducing scope to placate the customer creates problems."},
+            {"letter": "D", "text": "Bill the customer for the documentation time", "is_correct": false, "explanation": "Documentation is part of standard inspection scope."}
+          ]
+        },
+        {
+          "question_number": 35,
+          "question_text": "Substrate identification on a heavily coated commercial roof matters most because:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "The coating chemistry is more important than the substrate", "is_correct": false, "explanation": "Substrate matters more than coating chemistry for future work."},
+            {"letter": "B", "text": "The substrate determines future scope options for repair, restoration, and replacement", "is_correct": true, "explanation": "Substrate matters more than coating chemistry for future work. Reference: Chapter 17."},
+            {"letter": "C", "text": "Coatings always last longer than substrates", "is_correct": false, "explanation": "Coatings extend substrate life but the substrate is what matters."},
+            {"letter": "D", "text": "The warranty depends only on the coating", "is_correct": false, "explanation": "Warranty depends on coating but substrate matters for future scope."}
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Repair vs Restoration vs Replacement",
+      "question_count": 15,
+      "questions": [
+        {
+          "question_number": 36,
+          "question_text": "'Repair' in the four-scope framework is best described as:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Adding a continuous waterproof layer to an aged roof", "is_correct": false, "explanation": "That describes restoration."},
+            {"letter": "B", "text": "Removing the existing roof and installing a new one", "is_correct": false, "explanation": "That describes replacement."},
+            {"letter": "C", "text": "Addressing a specific failure on a roof that otherwise has remaining service life", "is_correct": true, "explanation": "Standard definition. Reference: Chapter 13."},
+            {"letter": "D", "text": "Annual maintenance work", "is_correct": false, "explanation": "Maintenance is broader than repair."}
+          ]
+        },
+        {
+          "question_number": 37,
+          "question_text": "'Restoration' in the four-scope framework is best described as:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Targeted patching of a single failure", "is_correct": false, "explanation": "That describes repair."},
+            {"letter": "B", "text": "Adding waterproofing, performance, or service life to an aged but sound substrate", "is_correct": true, "explanation": "Standard definition. Reference: Chapter 13."},
+            {"letter": "C", "text": "Tearing off the existing roof and starting over", "is_correct": false, "explanation": "That describes replacement."},
+            {"letter": "D", "text": "The same as roof painting", "is_correct": false, "explanation": "Coatings aren't paint."}
+          ]
+        },
+        {
+          "question_number": 38,
+          "question_text": "'Recover (overlay)' is best described as:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Removing the existing roof down to the deck", "is_correct": false, "explanation": "That describes tear-off."},
+            {"letter": "B", "text": "Installing a new roof system over the existing one, where code permits and the substrate qualifies", "is_correct": true, "explanation": "Standard definition. Reference: Chapter 13."},
+            {"letter": "C", "text": "Repairing only the leaks", "is_correct": false, "explanation": "That describes repair."},
+            {"letter": "D", "text": "Annual maintenance", "is_correct": false, "explanation": "Maintenance isn't recover."}
+          ]
+        },
+        {
+          "question_number": 39,
+          "question_text": "Which of the following is a disqualifying condition for restoration across most systems?",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Light surface dirt", "is_correct": false, "explanation": "Surface dirt is addressable through prep."},
+            {"letter": "B", "text": "Wet insulation, severe ponding, or widespread substrate failure", "is_correct": true, "explanation": "Cross-system disqualifiers. Reference: Chapter 13, Table 6."},
+            {"letter": "C", "text": "A single failed pipe boot", "is_correct": false, "explanation": "Localized failures are addressable in prep."},
+            {"letter": "D", "text": "Biological staining on the north slope", "is_correct": false, "explanation": "Treatable; not disqualifying."}
+          ]
+        },
+        {
+          "question_number": 40,
+          "question_text": "The four decision lenses for recommendations, in order, are:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Cost, customer, condition, closing", "is_correct": false, "explanation": "Not the standard framework."},
+            {"letter": "B", "text": "Condition, customer fit, budget, honest-versus-easy", "is_correct": true, "explanation": "Four lenses in order. Reference: Chapter 13."},
+            {"letter": "C", "text": "Budget, condition, paperwork, warranty", "is_correct": false, "explanation": "Not the standard framework."},
+            {"letter": "D", "text": "Customer, condition, customer, condition", "is_correct": false, "explanation": "Not the standard framework."}
+          ]
+        },
+        {
+          "question_number": 41,
+          "question_text": "A customer with a 6-year-old roof in good condition asks for replacement. The most appropriate response is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Write the replacement proposal — the customer asked for it", "is_correct": false, "explanation": "Overselling on a roof that doesn't need replacement is dishonest."},
+            {"letter": "B", "text": "Explain that the roof has significant remaining life and recommend repair or maintenance instead", "is_correct": true, "explanation": "Honest answer when customer wants more than the roof needs. Reference: Chapter 13, Module 9."},
+            {"letter": "C", "text": "Recommend silicone restoration as a compromise", "is_correct": false, "explanation": "Restoration on a young roof is also overselling."},
+            {"letter": "D", "text": "Refer the customer elsewhere", "is_correct": false, "explanation": "Honest engagement preferred over deflection."}
+          ]
+        },
+        {
+          "question_number": 42,
+          "question_text": "A repeat customer asks for restoration on a roof the rep believes does not qualify. The most appropriate response is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Provide the proposal because they're a repeat customer", "is_correct": false, "explanation": "Long-term relationship is the reason to hold the line, not capitulate."},
+            {"letter": "B", "text": "Provide the proposal but with a higher-tier product", "is_correct": false, "explanation": "Higher-tier product on disqualified substrate still doesn't perform."},
+            {"letter": "C", "text": "Decline to propose restoration, explain why, and recommend an honest alternative", "is_correct": true, "explanation": "Honest-versus-easy moment. Reference: Chapters 3, 13, Module 13."},
+            {"letter": "D", "text": "Refer them to a different contractor without explanation", "is_correct": false, "explanation": "Explanation is part of honest engagement."}
+          ]
+        },
+        {
+          "question_number": 43,
+          "question_text": "The 'repair-plus-plan' conversation is appropriate when:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "The roof is brand new", "is_correct": false, "explanation": "Brand new roofs don't need plans for replacement."},
+            {"letter": "B", "text": "The roof has a localized failure but is also at the older end of its service range or showing broader aging signs", "is_correct": true, "explanation": "Definition of repair-plus-plan. Reference: Chapter 11, Module 9."},
+            {"letter": "C", "text": "The customer wants only replacement", "is_correct": false, "explanation": "Repair-plus-plan addresses cases where customer hasn't requested replacement."},
+            {"letter": "D", "text": "Insurance is involved", "is_correct": false, "explanation": "Insurance involvement is a separate conversation."}
+          ]
+        },
+        {
+          "question_number": 44,
+          "question_text": "A 12-year-old TPO roof has a single punctured area and is otherwise in excellent condition. The most appropriate recommendation is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Full replacement", "is_correct": false, "explanation": "Replacement on young roof with localized failure is overselling."},
+            {"letter": "B", "text": "Silicone restoration coating", "is_correct": false, "explanation": "Restoration is more than localized failure requires."},
+            {"letter": "C", "text": "Targeted repair of the puncture, with annual maintenance recommended", "is_correct": true, "explanation": "Young roof with localized failure. Reference: Chapter 2, Chapter 13."},
+            {"letter": "D", "text": "Decline to inspect", "is_correct": false, "explanation": "Inspection is the rep's job."}
+          ]
+        },
+        {
+          "question_number": 45,
+          "question_text": "A 17-year-old two-ply self-adhered modified bitumen roof has light surface wear, intact seams, light ponding in two spots, and adequate granule coverage. The most appropriate recommendation is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Full replacement immediately", "is_correct": false, "explanation": "Aged but serviceable roof doesn't need immediate replacement."},
+            {"letter": "B", "text": "Spot repair only", "is_correct": false, "explanation": "Mid-life roof with broader aging signs benefits from restoration."},
+            {"letter": "C", "text": "Silicone coating restoration if the substrate qualifies, with a longer-term replacement plan", "is_correct": true, "explanation": "Mid-life roof with sound substrate. Reference: Chapter 6."},
+            {"letter": "D", "text": "Decline to inspect further", "is_correct": false, "explanation": "Inspection is required for recommendation."}
+          ]
+        },
+        {
+          "question_number": 46,
+          "question_text": "USA Flat Roof's recommendation framework on a single-layer BUR is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Aluminum coating / silicone / TPO overlay", "is_correct": false, "explanation": "Aluminum isn't part of USA Flat Roof's framework."},
+            {"letter": "B", "text": "Silicone restoration / TPO overlay / full replacement (with SPF as a fourth option for specific use cases)", "is_correct": true, "explanation": "USA Flat Roof's specific framework. Reference: Chapter 9."},
+            {"letter": "C", "text": "Patching only / overlay / replacement", "is_correct": false, "explanation": "Doesn't reflect USA Flat Roof's specific framework."},
+            {"letter": "D", "text": "Modified bitumen overlay / new BUR / replacement", "is_correct": false, "explanation": "USA Flat Roof doesn't install new BUR."}
+          ]
+        },
+        {
+          "question_number": 47,
+          "question_text": "A 28-year-old PVC roof shows widespread membrane stiffening, multiple cracked areas, and chronic ponding. The most honest recommendation is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Silicone coating restoration", "is_correct": false, "explanation": "End-of-life conditions disqualify restoration."},
+            {"letter": "B", "text": "Spot repair the cracked areas", "is_correct": false, "explanation": "Widespread aging means localized repair won't address the system."},
+            {"letter": "C", "text": "Full replacement", "is_correct": true, "explanation": "End-of-life PVC with chronic ponding. Reference: Chapter 5."},
+            {"letter": "D", "text": "Acrylic coating to restore flexibility", "is_correct": false, "explanation": "Coatings don't restore flexibility to aged PVC."}
+          ]
+        },
+        {
+          "question_number": 48,
+          "question_text": "A property manager wants the cheapest option to address chronic ponding on a flat commercial roof. The honest options on the table are:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Silicone restoration coating only", "is_correct": false, "explanation": "Coatings don't fix ponding."},
+            {"letter": "B", "text": "SPF (with taper) or replacement with tapered insulation; both address the slope, neither is cheapest by total cost but both actually solve the problem", "is_correct": true, "explanation": "Both address slope. Reference: Chapter 16."},
+            {"letter": "C", "text": "Add another drain anywhere on the roof", "is_correct": false, "explanation": "Drain placement requires engineering analysis."},
+            {"letter": "D", "text": "Apply two coats of acrylic coating", "is_correct": false, "explanation": "Coatings don't fix ponding."}
+          ]
+        },
+        {
+          "question_number": 49,
+          "question_text": "A homeowner with a 23-year-old three-tab roof, widespread granule loss, and active leaks wants Fresh Roof rejuvenation. The most appropriate response is:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Apply the rejuvenation as requested", "is_correct": false, "explanation": "Outside qualifying window; rejuvenation won't perform."},
+            {"letter": "B", "text": "Apply rejuvenation but with a higher application rate", "is_correct": false, "explanation": "Application rate doesn't fix qualifying-window issues."},
+            {"letter": "C", "text": "Decline to propose rejuvenation, explain why the roof does not qualify, and recommend an honest alternative", "is_correct": true, "explanation": "End-of-life shingle outside qualifying window. Reference: Chapter 4, Module 5."},
+            {"letter": "D", "text": "Offer rejuvenation only if the customer signs a waiver", "is_correct": false, "explanation": "Waivers don't make a non-qualifying roof qualify."}
+          ]
+        },
+        {
+          "question_number": 50,
+          "question_text": "A property owner asks USA Flat Roof to torch-down a replacement modified bitumen roof. The most appropriate response is:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Quote the project as torch-down to capture the work", "is_correct": false, "explanation": "USA Flat Roof installs only self-adhered."},
+            {"letter": "B", "text": "Explain that USA Flat Roof installs only self-adhered modified bitumen, the reasoning, and offer to quote self-adhered as an alternative", "is_correct": true, "explanation": "Honest positioning. Reference: Chapter 6."},
+            {"letter": "C", "text": "Decline the project without explanation", "is_correct": false, "explanation": "Explanation is part of honest engagement."},
+            {"letter": "D", "text": "Propose silicone coating instead", "is_correct": false, "explanation": "Silicone isn't a replacement for new modified bitumen."}
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Customer Communication",
+      "question_count": 15,
+      "questions": [
+        {
+          "question_number": 51,
+          "question_text": "The most accurate response to a customer asking 'how long will this roof last?' includes:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "A specific number of years based on warranty length", "is_correct": false, "explanation": "Warranty length isn't service life."},
+            {"letter": "B", "text": "A range based on system, conditions, and observed condition — never a specific year-count", "is_correct": true, "explanation": "Honest framework. Reference: Module 1, all system chapters."},
+            {"letter": "C", "text": "A guarantee", "is_correct": false, "explanation": "Reps don't guarantee specific lifespans."},
+            {"letter": "D", "text": "A non-answer", "is_correct": false, "explanation": "Customers deserve a substantive answer."}
+          ]
+        },
+        {
+          "question_number": 52,
+          "question_text": "When a customer reports a ceiling leak, the entry point on the roof is:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Always directly above the interior damage", "is_correct": false, "explanation": "Water travels along structure first."},
+            {"letter": "B", "text": "Rarely directly above the interior damage; water travels before showing inside", "is_correct": true, "explanation": "Leak-source rule. Reference: Chapter 11, Module 2."},
+            {"letter": "C", "text": "Impossible to identify", "is_correct": false, "explanation": "Often identifiable through inspection."},
+            {"letter": "D", "text": "Always at the nearest penetration", "is_correct": false, "explanation": "Penetrations are common but not always the source."}
+          ]
+        },
+        {
+          "question_number": 53,
+          "question_text": "'Lifetime warranty' on shingles typically means:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "The roof itself lasts a lifetime", "is_correct": false, "explanation": "Warranty length doesn't equal service life."},
+            {"letter": "B", "text": "A non-prorated period followed by prorated coverage that decreases over time, with significant exclusions throughout", "is_correct": true, "explanation": "Honest definition. Reference: Chapter 1, Module 12."},
+            {"letter": "C", "text": "The customer can claim repair forever", "is_correct": false, "explanation": "Coverage decreases over time."},
+            {"letter": "D", "text": "The manufacturer covers any failure", "is_correct": false, "explanation": "Significant exclusions apply."}
+          ]
+        },
+        {
+          "question_number": 54,
+          "question_text": "When a customer asks 'is this covered under warranty?', the most accurate response is:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "'Yes, definitely'", "is_correct": false, "explanation": "Coverage requires document review."},
+            {"letter": "B", "text": "'No, never'", "is_correct": false, "explanation": "Coverage requires document review."},
+            {"letter": "C", "text": "Walk through the layered warranty structure (manufacturer material, manufacturer system, contractor workmanship) and review the specific document", "is_correct": true, "explanation": "Honest response. Reference: Module 12."},
+            {"letter": "D", "text": "'I'll check with the manufacturer and call you back'", "is_correct": false, "explanation": "Document review is part of the conversation, not deferral."}
+          ]
+        },
+        {
+          "question_number": 55,
+          "question_text": "A customer who insists on a verbal price during inspection should be:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Given a verbal price to close the deal", "is_correct": false, "explanation": "Verbal pricing creates problems."},
+            {"letter": "B", "text": "Told the price will come in the written proposal so the scope and price match", "is_correct": true, "explanation": "Honest framework. Reference: Module 11."},
+            {"letter": "C", "text": "Refused further inspection", "is_correct": false, "explanation": "Inspection continues regardless of pricing pressure."},
+            {"letter": "D", "text": "Quoted a high anchor", "is_correct": false, "explanation": "Anchoring is a pressure tactic."}
+          ]
+        },
+        {
+          "question_number": 56,
+          "question_text": "A customer says 'I want the cheapest option.' The most honest rep response is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Recommend the cheapest option regardless of fit", "is_correct": false, "explanation": "Cheapest option may not perform."},
+            {"letter": "B", "text": "Confirm that the cheapest option performs for their roof; if it doesn't, name that and offer alternatives", "is_correct": true, "explanation": "Honest engagement. Reference: Module 11, Chapter 13."},
+            {"letter": "C", "text": "Decline the project", "is_correct": false, "explanation": "Engagement is appropriate."},
+            {"letter": "D", "text": "Pressure the customer toward a higher-cost option", "is_correct": false, "explanation": "Pressure tactics damage trust."}
+          ]
+        },
+        {
+          "question_number": 57,
+          "question_text": "A customer says 'money is no object — give me the most expensive option.' The most appropriate response is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Sell the most expensive option since it's requested", "is_correct": false, "explanation": "Overselling on a roof that doesn't need it is dishonest."},
+            {"letter": "B", "text": "Recommend what the roof actually needs, not the most expensive option", "is_correct": true, "explanation": "Don't upsell. Reference: Module 11, Chapter 13."},
+            {"letter": "C", "text": "Add unnecessary scope to justify a higher price", "is_correct": false, "explanation": "Scope inflation is dishonest."},
+            {"letter": "D", "text": "Refer the customer elsewhere", "is_correct": false, "explanation": "Engagement is appropriate."}
+          ]
+        },
+        {
+          "question_number": 58,
+          "question_text": "When a customer reports their roof system as something different from what the rep observed, the most appropriate response is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Defer to the customer's report", "is_correct": false, "explanation": "Observations supplement reports."},
+            {"letter": "B", "text": "Tell the customer they're wrong", "is_correct": false, "explanation": "Confrontational framing damages trust."},
+            {"letter": "C", "text": "Document what was observed, ask for documentation, and reconcile any discrepancy honestly", "is_correct": true, "explanation": "Honest framework. Reference: Chapter 17, Chapter 18."},
+            {"letter": "D", "text": "Quote work based on the customer's report", "is_correct": false, "explanation": "Quoting on unverified information creates problems."}
+          ]
+        },
+        {
+          "question_number": 59,
+          "question_text": "A customer says 'another contractor said the warranty covers everything.' The most honest response is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Confirm the other contractor is correct", "is_correct": false, "explanation": "Coverage isn't unlimited."},
+            {"letter": "B", "text": "Bash the other contractor", "is_correct": false, "explanation": "Bashing competitors is unprofessional."},
+            {"letter": "C", "text": "Don't bash the contractor; explain what warranties typically actually cover", "is_correct": true, "explanation": "Honest framing. Reference: Module 12."},
+            {"letter": "D", "text": "Recommend full replacement to avoid the issue", "is_correct": false, "explanation": "Replacement isn't always the right scope."}
+          ]
+        },
+        {
+          "question_number": 60,
+          "question_text": "When discussing ponding water with a customer, the industry standard threshold for acceptable ponding is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "24 hours after rain stops", "is_correct": false, "explanation": "Industry standard is 48 hours."},
+            {"letter": "B", "text": "48 hours after rain stops", "is_correct": true, "explanation": "Industry standard. Reference: Chapter 16, Module 3."},
+            {"letter": "C", "text": "One week after rain stops", "is_correct": false, "explanation": "One week is too long."},
+            {"letter": "D", "text": "There is no standard", "is_correct": false, "explanation": "Standard exists."}
+          ]
+        },
+        {
+          "question_number": 61,
+          "question_text": "A customer says 'rejuvenation is a scam.' The most appropriate response includes:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Agree with the customer", "is_correct": false, "explanation": "Legitimate rejuvenation chemistry exists."},
+            {"letter": "B", "text": "Acknowledge the concern, explain the chemistry, and emphasize the qualification process", "is_correct": true, "explanation": "Honest response. Reference: Module 5, Chapter 4."},
+            {"letter": "C", "text": "Insist the product works regardless", "is_correct": false, "explanation": "Pressure tactic; doesn't address the concern."},
+            {"letter": "D", "text": "Refer the customer elsewhere", "is_correct": false, "explanation": "Engagement is appropriate."}
+          ]
+        },
+        {
+          "question_number": 62,
+          "question_text": "A customer with persistent ceiling-tile staining inside a commercial building asks for a roof patch quote. Roof inspection shows no visible failure. The most appropriate response is:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Quote a patch on the area above the staining", "is_correct": false, "explanation": "Patching without identified source is wrong."},
+            {"letter": "B", "text": "Decline the work", "is_correct": false, "explanation": "Customer still deserves engagement."},
+            {"letter": "C", "text": "Document inspection findings, flag the possibility of vapor or assembly moisture issues, and escalate for moisture survey or qualified assembly assessment before quoting", "is_correct": true, "explanation": "Vapor concern requires escalation. Reference: Chapter 14."},
+            {"letter": "D", "text": "Recommend restoration coating", "is_correct": false, "explanation": "Restoration on roof without inspection-identified issue is overselling."}
+          ]
+        },
+        {
+          "question_number": 63,
+          "question_text": "A homeowner has installed a ridge vent and gable vents on the same roof. The likely effect is:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Improved ventilation through redundancy", "is_correct": false, "explanation": "Redundancy doesn't help; short-circuit is the result."},
+            {"letter": "B", "text": "A short-circuit pattern where the two exhaust types pull from each other instead of pulling air through the full attic", "is_correct": true, "explanation": "Common ventilation configuration error. Reference: Chapter 14."},
+            {"letter": "C", "text": "Better cooling in summer only", "is_correct": false, "explanation": "Short-circuit reduces effectiveness across seasons."},
+            {"letter": "D", "text": "No effect on ventilation", "is_correct": false, "explanation": "Significant negative effect."}
+          ]
+        },
+        {
+          "question_number": 64,
+          "question_text": "A homeowner asks the rep to skip the ventilation upgrade on a re-roof to save cost. The most honest response is:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Skip the ventilation work without further comment", "is_correct": false, "explanation": "Honest engagement requires explanation."},
+            {"letter": "B", "text": "Insist the customer accept the ventilation upgrade", "is_correct": false, "explanation": "Pressure tactic."},
+            {"letter": "C", "text": "Explain that ventilation drives how long the new roof lasts and may affect manufacturer warranty coverage; document the conversation if the customer still declines", "is_correct": true, "explanation": "Honest framework. Reference: Chapter 14."},
+            {"letter": "D", "text": "Refer the customer elsewhere", "is_correct": false, "explanation": "Engagement is appropriate."}
+          ]
+        },
+        {
+          "question_number": 65,
+          "question_text": "A customer says 'you're being too thorough — just give me a number.' The most honest response is:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Apologize and reduce inspection scope", "is_correct": false, "explanation": "Reducing scope creates downstream problems."},
+            {"letter": "B", "text": "Skip documentation", "is_correct": false, "explanation": "Documentation is part of standard scope."},
+            {"letter": "C", "text": "Explain that documentation protects them for warranty, insurance, and resale, and that pricing will be accurate because the scope is real", "is_correct": true, "explanation": "Honest framing. Reference: Module 7, Module 11."},
+            {"letter": "D", "text": "Bill the customer for documentation time", "is_correct": false, "explanation": "Documentation is part of standard inspection."}
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 5,
+      "title": "System-Specific Knowledge",
+      "question_count": 15,
+      "questions": [
+        {
+          "question_number": 66,
+          "question_text": "Composition shingles are surfaced with what protective material?",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Mineral granules embedded in the asphalt", "is_correct": true, "explanation": "Standard composition shingle definition. Reference: Chapter 1."},
+            {"letter": "B", "text": "Aluminum foil", "is_correct": false, "explanation": "Not the standard surface."},
+            {"letter": "C", "text": "Plastic film", "is_correct": false, "explanation": "Not the standard surface."},
+            {"letter": "D", "text": "Nothing — the asphalt is exposed", "is_correct": false, "explanation": "Granules protect the asphalt."}
+          ]
+        },
+        {
+          "question_number": 67,
+          "question_text": "On a concrete tile roof, the actual waterproofing layer is:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "The tiles themselves", "is_correct": false, "explanation": "Tiles are the weather covering, not the waterproofing."},
+            {"letter": "B", "text": "The underlayment beneath the tiles", "is_correct": true, "explanation": "Central tile fact. Reference: Chapter 8."},
+            {"letter": "C", "text": "The mortar at the ridge", "is_correct": false, "explanation": "Mortar is decorative/structural at ridge, not waterproofing."},
+            {"letter": "D", "text": "The flashings only", "is_correct": false, "explanation": "Flashings are details, not the primary layer."}
+          ]
+        },
+        {
+          "question_number": 68,
+          "question_text": "Concrete tiles themselves typically last:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "5–10 years", "is_correct": false, "explanation": "Tiles last much longer."},
+            {"letter": "B", "text": "15–20 years", "is_correct": false, "explanation": "Underlayment lifespan, not tile lifespan."},
+            {"letter": "C", "text": "50+ years", "is_correct": true, "explanation": "Standard tile lifespan. Reference: Chapter 8."},
+            {"letter": "D", "text": "Forever", "is_correct": false, "explanation": "Tiles eventually fail."}
+          ]
+        },
+        {
+          "question_number": 69,
+          "question_text": "TPO seams are joined by:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Adhesive bonding", "is_correct": false, "explanation": "Not the TPO method."},
+            {"letter": "B", "text": "Self-adhesive tape", "is_correct": false, "explanation": "Not the TPO method."},
+            {"letter": "C", "text": "Hot-air welding", "is_correct": true, "explanation": "TPO is thermoplastic. Reference: Chapter 2."},
+            {"letter": "D", "text": "Mechanical clamping", "is_correct": false, "explanation": "Mechanical attachment is field; seams are welded."}
+          ]
+        },
+        {
+          "question_number": 70,
+          "question_text": "The protective layer applied over cured SPF foam is called:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "The base sheet", "is_correct": false, "explanation": "Base sheet is multi-ply terminology."},
+            {"letter": "B", "text": "The topcoat", "is_correct": true, "explanation": "Required for UV protection. Reference: Chapter 10."},
+            {"letter": "C", "text": "The cap sheet", "is_correct": false, "explanation": "Cap sheet is mod-bit terminology."},
+            {"letter": "D", "text": "The flashing", "is_correct": false, "explanation": "Flashing is a detail, not the field protection."}
+          ]
+        },
+        {
+          "question_number": 71,
+          "question_text": "USA Flat Roof installs which type of modified bitumen?",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Torch-down only", "is_correct": false, "explanation": "USA Flat Roof doesn't use torch-down."},
+            {"letter": "B", "text": "Hot-mopped only", "is_correct": false, "explanation": "USA Flat Roof doesn't use hot-mopped."},
+            {"letter": "C", "text": "Self-adhered (peel-and-stick) only", "is_correct": true, "explanation": "Specific to USA Flat Roof. Reference: Chapter 6."},
+            {"letter": "D", "text": "All three methods", "is_correct": false, "explanation": "Self-adhered only."}
+          ]
+        },
+        {
+          "question_number": 72,
+          "question_text": "Roof rejuvenation is appropriate for:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Asphalt shingle roofs only", "is_correct": true, "explanation": "Standard rejuvenation scope. Reference: Chapter 4."},
+            {"letter": "B", "text": "All roof types including tile, metal, and flat roofs", "is_correct": false, "explanation": "Specifically for asphalt shingle."},
+            {"letter": "C", "text": "Flat commercial roofs primarily", "is_correct": false, "explanation": "Not for flat commercial."},
+            {"letter": "D", "text": "Wood shake and slate roofs", "is_correct": false, "explanation": "Not for wood or slate."}
+          ]
+        },
+        {
+          "question_number": 73,
+          "question_text": "A standard silicone coating warranty typically covers:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "The coating product, but not the substrate underneath", "is_correct": true, "explanation": "Critical warranty point. Reference: Chapter 3, Module 12."},
+            {"letter": "B", "text": "The full roof system including substrate failures", "is_correct": false, "explanation": "Substrate not covered by coating warranty."},
+            {"letter": "C", "text": "Only manufacturing defects, not application", "is_correct": false, "explanation": "Coverage extends beyond manufacturing."},
+            {"letter": "D", "text": "All leaks regardless of cause", "is_correct": false, "explanation": "Coverage has specific terms."}
+          ]
+        },
+        {
+          "question_number": 74,
+          "question_text": "The primary technical reason a restaurant or commercial kitchen might specify PVC over TPO is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "PVC is required by California building code", "is_correct": false, "explanation": "Not a code requirement."},
+            {"letter": "B", "text": "PVC's grease and chemical resistance is significantly better than TPO's", "is_correct": true, "explanation": "Technical reason for restaurant specification. Reference: Chapter 5."},
+            {"letter": "C", "text": "PVC is more reflective", "is_correct": false, "explanation": "Reflectivity is similar."},
+            {"letter": "D", "text": "PVC weighs less", "is_correct": false, "explanation": "Weight isn't the primary reason."}
+          ]
+        },
+        {
+          "question_number": 75,
+          "question_text": "The primary long-term aging mechanism in PVC is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Granule loss", "is_correct": false, "explanation": "PVC has no granules."},
+            {"letter": "B", "text": "Plasticizer migration leading to stiffening and brittleness", "is_correct": true, "explanation": "Primary aging mechanism. Reference: Chapter 5."},
+            {"letter": "C", "text": "UV color change", "is_correct": false, "explanation": "Not the primary mechanism."},
+            {"letter": "D", "text": "Seam adhesive degradation", "is_correct": false, "explanation": "PVC seams are welded, not adhesive."}
+          ]
+        },
+        {
+          "question_number": 76,
+          "question_text": "A 60-mil mechanically attached TPO roof in NorCal commonly performs in the field for:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "About 5 to 10 years", "is_correct": false, "explanation": "Too short."},
+            {"letter": "B", "text": "About 18 to 25 years", "is_correct": true, "explanation": "NorCal field range. Reference: Chapter 2."},
+            {"letter": "C", "text": "Exactly 30 years", "is_correct": false, "explanation": "Specific numbers aren't accurate."},
+            {"letter": "D", "text": "Over 50 years", "is_correct": false, "explanation": "Beyond expected service life."}
+          ]
+        },
+        {
+          "question_number": 77,
+          "question_text": "Pipe boots most commonly fail because:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Manufacturer defects", "is_correct": false, "explanation": "Not the primary cause."},
+            {"letter": "B", "text": "UV degradation cracking the rubber, particularly at the top where the boot wraps the pipe", "is_correct": true, "explanation": "Most common failure mechanism. Reference: Chapter 15."},
+            {"letter": "C", "text": "Wind damage", "is_correct": false, "explanation": "Less common than UV."},
+            {"letter": "D", "text": "Snow load", "is_correct": false, "explanation": "Not relevant to NorCal residential."}
+          ]
+        },
+        {
+          "question_number": 78,
+          "question_text": "The primary practical advantage of self-adhered modified bitumen installation over torch-down is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Significantly longer service life", "is_correct": false, "explanation": "Service life is similar."},
+            {"letter": "B", "text": "Lower material cost", "is_correct": false, "explanation": "Not the primary advantage."},
+            {"letter": "C", "text": "No open flame during installation, eliminating fire risk", "is_correct": true, "explanation": "Central reason for self-adhered choice. Reference: Chapter 6."},
+            {"letter": "D", "text": "Faster cure time", "is_correct": false, "explanation": "Not the primary advantage."}
+          ]
+        },
+        {
+          "question_number": 79,
+          "question_text": "USA Flat Roof installs SPF for which three primary use cases?",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Residential roofs, decorative roofs, and metal recover", "is_correct": false, "explanation": "Not the USA Flat Roof use cases."},
+            {"letter": "B", "text": "Ponding water correction, BUR recover after gravel removal, and insulation upgrade", "is_correct": true, "explanation": "USA Flat Roof's specific positioning. Reference: Chapter 10."},
+            {"letter": "C", "text": "Steep-slope shingle replacement, parapet flashing, and chimney work", "is_correct": false, "explanation": "Not appropriate SPF applications."},
+            {"letter": "D", "text": "Emergency leak repair, attic ventilation, and skylight installation", "is_correct": false, "explanation": "Not appropriate SPF applications."}
+          ]
+        },
+        {
+          "question_number": 80,
+          "question_text": "A homeowner asks 'How many years will rejuvenation add to my roof?' The most accurate response is:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Quote the manufacturer's marketing maximum", "is_correct": false, "explanation": "Marketing maximum isn't realistic for all roofs."},
+            {"letter": "B", "text": "Refer to the manufacturer's published extension range and note that actual results depend on roof condition and maintenance", "is_correct": true, "explanation": "Honest framework. Reference: Chapter 4, Module 5."},
+            {"letter": "C", "text": "Promise a specific number of years", "is_correct": false, "explanation": "Specific numbers are guesses."},
+            {"letter": "D", "text": "Tell the customer rejuvenation has no defined extension", "is_correct": false, "explanation": "Manufacturer publishes ranges."}
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 6,
+      "title": "Comparisons and Cross-System Reasoning",
+      "question_count": 10,
+      "questions": [
+        {
+          "question_number": 81,
+          "question_text": "Which of the following systems can correct ponding water through tapered application during installation?",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "TPO overlay", "is_correct": false, "explanation": "TPO doesn't correct slope."},
+            {"letter": "B", "text": "SPF", "is_correct": true, "explanation": "Unique among standard flat-roof systems for slope correction. Reference: Chapter 10, Chapter 16."},
+            {"letter": "C", "text": "Silicone coating", "is_correct": false, "explanation": "Coatings don't add slope."},
+            {"letter": "D", "text": "Modified bitumen", "is_correct": false, "explanation": "Mod-bit doesn't correct slope."}
+          ]
+        },
+        {
+          "question_number": 82,
+          "question_text": "Which roof system has the longest documented field track record in commercial use?",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "TPO", "is_correct": false, "explanation": "TPO is more recent than BUR."},
+            {"letter": "B", "text": "Silicone coating", "is_correct": false, "explanation": "Restoration product, more recent."},
+            {"letter": "C", "text": "BUR (Built-Up Roofing)", "is_correct": true, "explanation": "Longest documented field track record. Reference: Chapter 9."},
+            {"letter": "D", "text": "SPF", "is_correct": false, "explanation": "More recent than BUR."}
+          ]
+        },
+        {
+          "question_number": 83,
+          "question_text": "Compared to silicone coatings, acrylic coatings typically:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Tolerate ponding water better", "is_correct": false, "explanation": "Acrylic tolerates ponding less well than silicone."},
+            {"letter": "B", "text": "Tolerate ponding water less well; tend to be lower cost; recoat more flexibly with other chemistries", "is_correct": true, "explanation": "Standard comparison. Reference: Chapter 7, Table 6."},
+            {"letter": "C", "text": "Last longer", "is_correct": false, "explanation": "Generally shorter service life than silicone."},
+            {"letter": "D", "text": "Require less prep", "is_correct": false, "explanation": "Prep requirements similar."}
+          ]
+        },
+        {
+          "question_number": 84,
+          "question_text": "Compared to TPO, PVC is generally:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Lower cost with comparable performance", "is_correct": false, "explanation": "PVC is higher cost."},
+            {"letter": "B", "text": "Higher cost with premium positioning, longer track record, and better grease/chemical resistance", "is_correct": true, "explanation": "Standard comparison. Reference: Chapter 5, Table 2."},
+            {"letter": "C", "text": "Available only in black", "is_correct": false, "explanation": "PVC is typically white."},
+            {"letter": "D", "text": "Used only on residential", "is_correct": false, "explanation": "PVC is commercial."}
+          ]
+        },
+        {
+          "question_number": 85,
+          "question_text": "A composition shingle roof in mid-life with sound substrate is most appropriately addressed with:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Silicone coating", "is_correct": false, "explanation": "Silicone doesn't apply to shingle."},
+            {"letter": "B", "text": "Fresh Roof rejuvenation if the roof is in the qualifying window", "is_correct": true, "explanation": "Standard mid-life shingle recommendation. Reference: Chapter 1, Chapter 4."},
+            {"letter": "C", "text": "Full replacement", "is_correct": false, "explanation": "Premature on mid-life roof with sound substrate."},
+            {"letter": "D", "text": "SPF", "is_correct": false, "explanation": "SPF doesn't apply to shingle."}
+          ]
+        },
+        {
+          "question_number": 86,
+          "question_text": "Compared to single-ply systems, modified bitumen offers:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Faster installation", "is_correct": false, "explanation": "Generally slower than single-ply."},
+            {"letter": "B", "text": "Multi-ply redundancy and asphalt-based proven chemistry", "is_correct": true, "explanation": "Standard mod-bit comparison. Reference: Chapter 6."},
+            {"letter": "C", "text": "Lighter weight", "is_correct": false, "explanation": "Heavier than single-ply."},
+            {"letter": "D", "text": "Lower up-front cost in all cases", "is_correct": false, "explanation": "Cost varies by scope."}
+          ]
+        },
+        {
+          "question_number": 87,
+          "question_text": "When comparing two coating proposals — one substantially cheaper than the other on the same product — the meaningful evaluation is usually:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "The cheaper one is always a worse deal", "is_correct": false, "explanation": "Not always; scope determines value."},
+            {"letter": "B", "text": "The price by itself; cheaper is better", "is_correct": false, "explanation": "Price alone isn't the meaningful comparison."},
+            {"letter": "C", "text": "Scope differences (mil thickness, prep, fabric reinforcement, detail repair, warranty tier) — not the price alone", "is_correct": true, "explanation": "Standard comparison framing. Reference: Module 4, Module 11."},
+            {"letter": "D", "text": "Brand reputation only", "is_correct": false, "explanation": "Reputation matters but scope is the primary comparison."}
+          ]
+        },
+        {
+          "question_number": 88,
+          "question_text": "A property manager asks USA Flat Roof to quote like-for-like BUR replacement. The most appropriate response is:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Quote BUR replacement to capture the work", "is_correct": false, "explanation": "USA Flat Roof doesn't install new BUR."},
+            {"letter": "B", "text": "Decline without explanation", "is_correct": false, "explanation": "Explanation is part of honest engagement."},
+            {"letter": "C", "text": "Explain that USA Flat Roof does not install new BUR, present alternatives, and offer to refer to a BUR specialty contractor if they prefer like-for-like", "is_correct": true, "explanation": "Honest positioning. Reference: Chapter 9."},
+            {"letter": "D", "text": "Recommend silicone restoration regardless", "is_correct": false, "explanation": "Restoration may not be appropriate; depends on inspection."}
+          ]
+        },
+        {
+          "question_number": 89,
+          "question_text": "A homeowner has both a pitched composition shingle main roof and a flat-roof section over the back addition. The flat section will likely require:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "The same recommendation as the shingle", "is_correct": false, "explanation": "Different system requires different recommendation."},
+            {"letter": "B", "text": "Its own separate inspection and recommendation, applying the commercial-system framework", "is_correct": true, "explanation": "Standard mixed-roof handling. Reference: Chapter 17, Chapter 18."},
+            {"letter": "C", "text": "Replacement of the entire roof together", "is_correct": false, "explanation": "Often inappropriate to bundle."},
+            {"letter": "D", "text": "No inspection — flat sections are not part of residential scope", "is_correct": false, "explanation": "Flat sections are part of the home."}
+          ]
+        },
+        {
+          "question_number": 90,
+          "question_text": "Across systems, the four most common locations for roof leaks are:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "The center of the roof field", "is_correct": false, "explanation": "Field is the easiest part to waterproof."},
+            {"letter": "B", "text": "Penetrations, transitions (walls, parapets), edges, and valleys / drains", "is_correct": true, "explanation": "Universal failure pattern. Reference: Chapter 15, Table 7."},
+            {"letter": "C", "text": "Random locations with no pattern", "is_correct": false, "explanation": "Patterns exist."},
+            {"letter": "D", "text": "The deck only", "is_correct": false, "explanation": "Deck failures are rare."}
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 7,
+      "title": "Objection Handling and Honest-Versus-Easy Scenarios",
+      "question_count": 10,
+      "questions": [
+        {
+          "question_number": 91,
+          "question_text": "A customer says 'you're more expensive than the other guys.' The most appropriate first response is:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Match their price immediately", "is_correct": false, "explanation": "Capitulation damages the deal and trust."},
+            {"letter": "B", "text": "Decline to engage", "is_correct": false, "explanation": "Engagement is appropriate."},
+            {"letter": "C", "text": "Acknowledge that price differences usually reflect scope differences and offer to walk through the comparison", "is_correct": true, "explanation": "Standard pricing comparison framing. Reference: Module 4, Module 11."},
+            {"letter": "D", "text": "Discount the proposal automatically", "is_correct": false, "explanation": "Discounting on the same scope creates problems."}
+          ]
+        },
+        {
+          "question_number": 92,
+          "question_text": "A customer says 'just patch where it's leaking.' On a 24-year-old roof with multiple leak repairs in the last 18 months. The most appropriate response is:",
+          "difficulty": "beginner",
+          "answers": [
+            {"letter": "A", "text": "Patch as requested without comment", "is_correct": false, "explanation": "Repeated repairs warrant the broader conversation."},
+            {"letter": "B", "text": "Explain that repeat repairs on a roof of this age are short-term spending, recommend an inspection, and present replacement options if findings support it", "is_correct": true, "explanation": "Standard repeat-leak pattern. Reference: Chapter 11, Module 9."},
+            {"letter": "C", "text": "Decline the work", "is_correct": false, "explanation": "Engagement is appropriate."},
+            {"letter": "D", "text": "Recommend silicone coating immediately", "is_correct": false, "explanation": "Recommendation requires inspection."}
+          ]
+        },
+        {
+          "question_number": 93,
+          "question_text": "A property manager dismisses ponding concerns because 'another contractor said it's fine.' The most appropriate response is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Defer to the other contractor's assessment", "is_correct": false, "explanation": "Document and explain what was observed."},
+            {"letter": "B", "text": "Tell the customer the other contractor was wrong", "is_correct": false, "explanation": "Bashing is unprofessional."},
+            {"letter": "C", "text": "Document what you observed, explain the 48-hour standard, and let the customer compare contractor assessments", "is_correct": true, "explanation": "Honest framework. Reference: Chapter 16, Module 3."},
+            {"letter": "D", "text": "Decline to provide a proposal", "is_correct": false, "explanation": "Engagement is appropriate."}
+          ]
+        },
+        {
+          "question_number": 94,
+          "question_text": "A customer pushes back hard on the rep's honest recommendation and demands a cheaper alternative the rep believes won't perform. The most appropriate response is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Capitulate and write the cheaper proposal to keep the deal", "is_correct": false, "explanation": "Capitulation damages trust."},
+            {"letter": "B", "text": "Maintain the honest recommendation, offer a documented alternative if appropriate, and accept that the customer may choose a different contractor", "is_correct": true, "explanation": "Honest discipline. Reference: Module 13, Chapter 13."},
+            {"letter": "C", "text": "Lower the price on the original recommendation", "is_correct": false, "explanation": "Price isn't the issue if scope is right."},
+            {"letter": "D", "text": "Insist the customer accept the original recommendation", "is_correct": false, "explanation": "Pressure tactic."}
+          ]
+        },
+        {
+          "question_number": 95,
+          "question_text": "A storm-damage customer says 'insurance will cover this.' The most appropriate response is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Confirm the carrier will cover it", "is_correct": false, "explanation": "Carrier outcomes can't be promised."},
+            {"letter": "B", "text": "Document conditions thoroughly and explain that you can't promise carrier outcomes", "is_correct": true, "explanation": "Standard storm-damage framing. Reference: Module 6."},
+            {"letter": "C", "text": "Decline to inspect", "is_correct": false, "explanation": "Inspection is appropriate."},
+            {"letter": "D", "text": "Quote a low number to support the claim", "is_correct": false, "explanation": "Manipulating quotes for claims is unethical."}
+          ]
+        },
+        {
+          "question_number": 96,
+          "question_text": "A customer asks the rep to add scope to 'maximize the insurance claim.' The most honest response is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Add the scope to support the claim", "is_correct": false, "explanation": "Scope inflation is fraud."},
+            {"letter": "B", "text": "Decline; explain that scope reflects what the roof needs, not what the claim might cover", "is_correct": true, "explanation": "Honest discipline. Reference: Module 6."},
+            {"letter": "C", "text": "Refer the customer elsewhere", "is_correct": false, "explanation": "Engagement is appropriate."},
+            {"letter": "D", "text": "Reduce scope to make the claim look smaller", "is_correct": false, "explanation": "Scope reflects actual need."}
+          ]
+        },
+        {
+          "question_number": 97,
+          "question_text": "A customer dismisses detail-focused inspection as 'looking for problems.' The most honest response is:",
+          "difficulty": "intermediate",
+          "answers": [
+            {"letter": "A", "text": "Apologize and reduce the inspection scope", "is_correct": false, "explanation": "Reducing scope creates problems."},
+            {"letter": "B", "text": "Skip the detail inspection", "is_correct": false, "explanation": "Details are where leaks happen."},
+            {"letter": "C", "text": "Explain that details are where roofs typically leak; offer the customer the choice of a less thorough inspection but with caveats", "is_correct": true, "explanation": "Honest response. Reference: Chapter 15."},
+            {"letter": "D", "text": "Tell the customer they don't need any work", "is_correct": false, "explanation": "Pronouncement without inspection is dishonest."}
+          ]
+        },
+        {
+          "question_number": 98,
+          "question_text": "When a customer chooses another contractor after the rep gave the honest answer, the most appropriate rep response is:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Bitter exit; never engage with the customer again", "is_correct": false, "explanation": "Damages relationship."},
+            {"letter": "B", "text": "Clean exit, professional warmth, door left open for future engagement", "is_correct": true, "explanation": "Standard pattern when customer goes elsewhere. Reference: Module 13."},
+            {"letter": "C", "text": "Lower the price to match the competitor and try to keep the deal", "is_correct": false, "explanation": "Capitulation after recommendation damages credibility."},
+            {"letter": "D", "text": "Pressure the customer to reconsider", "is_correct": false, "explanation": "Pressure tactic."}
+          ]
+        },
+        {
+          "question_number": 99,
+          "question_text": "A long-term maintenance customer's roof has reached end of life. The most appropriate response is:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Continue maintenance visits indefinitely to preserve recurring revenue", "is_correct": false, "explanation": "Maintenance on end-of-life roof is short-term spending."},
+            {"letter": "B", "text": "Have the honest conversation: explain that maintenance is no longer the appropriate scope, and recommend replacement options", "is_correct": true, "explanation": "Honest framework. Reference: Chapter 11, Module 13."},
+            {"letter": "C", "text": "Drop the customer", "is_correct": false, "explanation": "Engagement is appropriate."},
+            {"letter": "D", "text": "Continue maintenance but raise the price", "is_correct": false, "explanation": "Continuing inappropriate scope is dishonest."}
+          ]
+        },
+        {
+          "question_number": 100,
+          "question_text": "Across all customer outcomes — closed deal, deferred deal, lost deal, referral — the rep's behavioral pattern should be:",
+          "difficulty": "advanced",
+          "answers": [
+            {"letter": "A", "text": "Different based on whether the deal closes", "is_correct": false, "explanation": "Consistency builds trust."},
+            {"letter": "B", "text": "Aggressive when the deal is at risk of being lost", "is_correct": false, "explanation": "Aggression damages relationships."},
+            {"letter": "C", "text": "Consistent professional warmth and honesty regardless of outcome, recognizing that all customer interactions are deposits in the long-term relationship account", "is_correct": true, "explanation": "Long-term relationship framework. Reference: Module 13."},
+            {"letter": "D", "text": "Detached and transactional", "is_correct": false, "explanation": "Detachment damages relationships."}
+          ]
+        }
+      ]
+    }
+  ]
+}

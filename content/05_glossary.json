@@ -1,0 +1,1046 @@
+{
+  "metadata": {
+    "title": "Glossary",
+    "description": "Alphabetical listing of key terms used throughout the Roof Systems Field Guide",
+    "edition": "April 2026",
+    "total_terms": 154
+  },
+  "terms": [
+    {
+      "term": "Acceptable ponding",
+      "definition": "Water that drains within 48 hours of rain stopping. The industry standard threshold for ponding that is not considered problematic.",
+      "references": [
+        "Chapter 16",
+        "Module 3"
+      ]
+    },
+    {
+      "term": "Acrylic coating",
+      "definition": "Liquid-applied roof coating using acrylic chemistry. Lower cost than silicone, less ponding tolerance, more recoat flexibility with other chemistries. USA Flat Roof recognizes but does not typically lead with acrylic.",
+      "references": [
+        "Chapter 7"
+      ]
+    },
+    {
+      "term": "Aging signs",
+      "definition": "Observable indicators that a roof is moving through its service life: granule loss on shingles, chalking on coatings, plasticizer migration on PVC, blistering on modified bitumen, and similar system-specific patterns.",
+      "references": []
+    },
+    {
+      "term": "Aluminum-pigmented asphalt coating",
+      "definition": "Older reflective coating applied over BUR or modified bitumen. 2–5 year life-extension product, not a true restoration system. Recognized but not typically proposed by USA Flat Roof.",
+      "references": []
+    },
+    {
+      "term": "Apron flashing",
+      "definition": "Metal flashing at the downslope side of a chimney or curb, redirecting water away from the penetration.",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Architectural and era lens",
+      "definition": "Recognition heuristic using the home's architectural style and construction era to anticipate likely roof system before inspection.",
+      "references": [
+        "Chapter 18"
+      ]
+    },
+    {
+      "term": "Architectural shingle",
+      "definition": "Composition shingle with two layers bonded together creating a dimensional, shadowed appearance. Industry standard on new residential installs since the 2000s.",
+      "references": [
+        "Chapter 1"
+      ]
+    },
+    {
+      "term": "Asbestos",
+      "definition": "Fibrous mineral commonly used in pre-1980s roofing materials. Requires testing before disturbance and abatement procedures during tear-off on older buildings.",
+      "references": [
+        "Chapter 9"
+      ]
+    },
+    {
+      "term": "Asphalt cement",
+      "definition": "Plastic-bodied asphalt-based sealant used for repairs on BUR and modified bitumen.",
+      "references": [
+        "Chapter 6",
+        "Chapter 9"
+      ]
+    },
+    {
+      "term": "Asphalt squeeze-out",
+      "definition": "Visible asphalt bead at seams where torch-down or hot-mopped modified bitumen has been installed. Distinguishes torch-down from cleaner self-adhered seams.",
+      "references": [
+        "Chapter 6",
+        "Chapter 17"
+      ]
+    },
+    {
+      "term": "Attic ventilation",
+      "definition": "System of intake vents (typically at soffits) and exhaust vents (typically at ridge or upper roof) that allows air to flow through an attic, preventing heat and moisture buildup.",
+      "references": [
+        "Chapter 14"
+      ]
+    },
+    {
+      "term": "Authorization tier",
+      "definition": "A company-defined level of decision-making authority granted to a sales rep, indicating what they may and may not commit to without escalation.",
+      "references": []
+    },
+    {
+      "term": "Backer rod",
+      "definition": "Closed-cell foam rod placed in joints before sealant application to control depth and improve sealant performance.",
+      "references": []
+    },
+    {
+      "term": "Balanced ventilation",
+      "definition": "Attic ventilation configuration with appropriate proportions of intake and exhaust, allowing air to move through the full attic space.",
+      "references": [
+        "Chapter 14"
+      ]
+    },
+    {
+      "term": "Base sheet",
+      "definition": "First ply in a multi-ply roof system, attached to the substrate as the foundation for subsequent plies.",
+      "references": []
+    },
+    {
+      "term": "Bird stop",
+      "definition": "Closure detail at the eave on tile roofs preventing birds and pests from entering under tiles.",
+      "references": [
+        "Chapter 8"
+      ]
+    },
+    {
+      "term": "Blistering",
+      "definition": "Bubble or bubble-cluster formation in roof membranes, typically caused by trapped moisture or air. Common on modified bitumen and BUR.",
+      "references": [
+        "Chapter 6",
+        "Chapter 9"
+      ]
+    },
+    {
+      "term": "Boot (pipe boot)",
+      "definition": "Flexible flashing component that wraps around a roof penetration (vent stack, plumbing pipe) to seal against the membrane or shingle.",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Brittleness",
+      "definition": "Loss of flexibility in roofing materials due to age, UV exposure, or chemistry change. Indicates advanced aging.",
+      "references": []
+    },
+    {
+      "term": "Building-use lens",
+      "definition": "Recognition heuristic using the building's purpose (restaurant, cold storage, etc.) to anticipate likely roof system.",
+      "references": [
+        "Chapter 17"
+      ]
+    },
+    {
+      "term": "BUR (Built-Up Roofing)",
+      "definition": "Multi-ply asphalt-and-felt roofing system, often gravel-surfaced. Long field track record. USA Flat Roof restores, recovers, or replaces but does not install new BUR.",
+      "references": [
+        "Chapter 9"
+      ]
+    },
+    {
+      "term": "Cap sheet",
+      "definition": "Top ply of a multi-ply roof system, often granule-surfaced for UV protection.",
+      "references": []
+    },
+    {
+      "term": "Chalking",
+      "definition": "White powder appearance on coating surfaces, indicating UV-driven surface degradation. Approaching recoat window.",
+      "references": [
+        "Chapter 3",
+        "Chapter 10"
+      ]
+    },
+    {
+      "term": "Chronic ponding",
+      "definition": "Water that consistently persists beyond 48 hours after rain. Disqualifies most restoration coatings.",
+      "references": [
+        "Chapter 16",
+        "Module 3"
+      ]
+    },
+    {
+      "term": "Clay tile",
+      "definition": "Roofing tile made of fired clay (terracotta). Distinctive aesthetic, very long tile life, separate underlayment. Outside USA Flat Roof's standard scope.",
+      "references": [
+        "Chapter 18"
+      ]
+    },
+    {
+      "term": "Coating",
+      "definition": "Liquid-applied roof material that cures into a continuous waterproof layer on the roof surface. Includes silicone, acrylic, and aluminum-pigmented chemistries.",
+      "references": [
+        "Chapter 3",
+        "Chapter 7"
+      ]
+    },
+    {
+      "term": "Coating chemistry",
+      "definition": "The base resin or material composition of a coating product, e.g., silicone, acrylic, polyurethane. Compatibility between coating chemistries during recoat is not guaranteed.",
+      "references": [
+        "Chapter 3",
+        "Chapter 7"
+      ]
+    },
+    {
+      "term": "Composition shingle",
+      "definition": "Asphalt-based shingle with mineral granule surface. Most common residential roof system in the United States.",
+      "references": [
+        "Chapter 1"
+      ]
+    },
+    {
+      "term": "Compression",
+      "definition": "In ventilation, the loss of insulation R-value when compressed; in flat-roof systems, the loss of slope when tapered insulation is crushed by foot traffic or equipment.",
+      "references": [
+        "Chapter 14",
+        "Chapter 16"
+      ]
+    },
+    {
+      "term": "Conductive heat transfer",
+      "definition": "Heat moving through solid materials. One of the modes ventilation manages.",
+      "references": []
+    },
+    {
+      "term": "Coping",
+      "definition": "Top covering of a parapet wall, typically metal, designed to shed water and protect the wall assembly.",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Core sample",
+      "definition": "Small cross-section cut into a roof assembly to confirm layer count, substrate, or moisture content. Production team task.",
+      "references": [
+        "Chapter 17"
+      ]
+    },
+    {
+      "term": "Counter-flashing",
+      "definition": "Metal flashing installed over a base flashing (such as step flashing) to direct water away and protect the joint.",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Cricket",
+      "definition": "Sloped diversion built behind a chimney or curb to direct water around the obstruction.",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Cross-section inspection",
+      "definition": "Examining edges, terminations, or cut areas to assess multi-ply construction or substrate.",
+      "references": [
+        "Chapter 17"
+      ]
+    },
+    {
+      "term": "Curb (HVAC curb)",
+      "definition": "Raised platform on which rooftop equipment is mounted, requiring its own flashing details.",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Daylight visible",
+      "definition": "Light visible through small openings, indicating gaps in the roof or flashing assembly. Common attic-side indicator of penetration failures.",
+      "references": []
+    },
+    {
+      "term": "Deck",
+      "definition": "The structural surface beneath the roofing system. Wood sheathing on residential; concrete, metal, or wood on commercial.",
+      "references": []
+    },
+    {
+      "term": "Decoy option",
+      "definition": "In Good/Better/Best presentations, a tier included only to make another tier look more reasonable. Manipulative practice.",
+      "references": [
+        "Module 10"
+      ]
+    },
+    {
+      "term": "Designer shingle",
+      "definition": "Premium composition shingle, typically multi-layer, designed to mimic slate, shake, or other specialty materials.",
+      "references": [
+        "Chapter 1"
+      ]
+    },
+    {
+      "term": "Detail coat",
+      "definition": "Reinforced coating layer at penetrations, transitions, and other high-stress areas, typically applied with embedded fabric.",
+      "references": [
+        "Chapter 3",
+        "Chapter 10"
+      ]
+    },
+    {
+      "term": "Detail repair",
+      "definition": "Targeted repair work at penetrations, transitions, or specific failure locations rather than field-wide repair.",
+      "references": []
+    },
+    {
+      "term": "Disqualifying conditions",
+      "definition": "Specific conditions that make a roof unsuitable for restoration: wet insulation, chronic ponding, widespread substrate failure, asbestos, end-of-life condition, etc.",
+      "references": [
+        "Chapter 13",
+        "Table 6"
+      ]
+    },
+    {
+      "term": "Drain ring (clamping ring)",
+      "definition": "Metal ring that clamps a flat-roof membrane to a roof drain.",
+      "references": [
+        "Chapter 16"
+      ]
+    },
+    {
+      "term": "Drip edge",
+      "definition": "Metal flashing at the eave designed to direct water into the gutter rather than back behind the gutter into the fascia.",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Drone inspection",
+      "definition": "Aerial photography of a roof using a drone, valuable for multi-story commercial, tile roofs, and complex geometries. Supplements but does not replace hands-on inspection.",
+      "references": [
+        "Chapter 12",
+        "Module 7"
+      ]
+    },
+    {
+      "term": "Edge drainage",
+      "definition": "Flat-roof drainage off an unparapeted edge into a gutter.",
+      "references": [
+        "Chapter 16"
+      ]
+    },
+    {
+      "term": "Efflorescence",
+      "definition": "White mineral deposits on masonry surfaces, indicating water has been moving through the masonry. Common around chimney bases.",
+      "references": []
+    },
+    {
+      "term": "Elevation (building elevation)",
+      "definition": "Each face of the building (north, south, east, west). Documented during inspection.",
+      "references": [
+        "Chapter 12"
+      ]
+    },
+    {
+      "term": "End-of-life",
+      "definition": "Stage at which a roof system has exhausted its useful service life and replacement is the appropriate scope.",
+      "references": [
+        "Chapter 13"
+      ]
+    },
+    {
+      "term": "EPDM (Ethylene Propylene Diene Monomer)",
+      "definition": "Single-ply rubber roof membrane, almost always black. Common on older commercial buildings nationally; smaller share of NorCal commercial. Limited USA Flat Roof scope.",
+      "references": []
+    },
+    {
+      "term": "Escalation",
+      "definition": "Process of routing a finding, condition, or customer scenario beyond the rep's authorization to a senior estimator, production manager, or qualified inspector.",
+      "references": []
+    },
+    {
+      "term": "Exhaust ventilation",
+      "definition": "Outflow point of an attic ventilation system, typically at the ridge or upper roof.",
+      "references": [
+        "Chapter 14"
+      ]
+    },
+    {
+      "term": "Fabric reinforcement",
+      "definition": "Embedded fabric (typically polyester) used in coating systems at high-stress areas to bridge cracks, reinforce seams, and improve performance.",
+      "references": []
+    },
+    {
+      "term": "Fanfold",
+      "definition": "Insulation board used as a recover layer over BUR before TPO overlay, providing a smooth substrate.",
+      "references": [
+        "Chapter 9"
+      ]
+    },
+    {
+      "term": "Fascia",
+      "definition": "Vertical board at the eave of a residential roof, behind which the gutter typically attaches.",
+      "references": []
+    },
+    {
+      "term": "Field range",
+      "definition": "The range of years a roof system typically performs in actual NorCal conditions, accounting for variation in installation, ventilation, exposure, and maintenance.",
+      "references": [
+        "Module 1",
+        "Table 3"
+      ]
+    },
+    {
+      "term": "Fishmouth",
+      "definition": "Localized seam separation forming a small bubble or open pocket. Common single-ply seam failure.",
+      "references": [
+        "Chapter 2",
+        "Chapter 5"
+      ]
+    },
+    {
+      "term": "Flashing",
+      "definition": "Metal or membrane component that directs water away from joints, transitions, and penetrations.",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Foam (SPF)",
+      "definition": "See Spray Polyurethane Foam.",
+      "references": []
+    },
+    {
+      "term": "Four-step decision tree (commercial)",
+      "definition": "Quick-recognition process for commercial flat-roof systems: surface color → seam type → surface texture → edge appearance.",
+      "references": [
+        "Chapter 17"
+      ]
+    },
+    {
+      "term": "Four-step decision tree (residential)",
+      "definition": "Quick-recognition process for residential steep-slope systems: shape and weight → surface texture → tap sound → age and architectural context.",
+      "references": [
+        "Chapter 18"
+      ]
+    },
+    {
+      "term": "Fresh Roof",
+      "definition": "USA Flat Roof's brand for rejuvenation services. Manufacturer-specific product applied to qualifying composition shingle roofs.",
+      "references": [
+        "Chapter 4"
+      ]
+    },
+    {
+      "term": "Granule broadcast",
+      "definition": "Application of mineral granules onto a wet coating to add walkability, aesthetic, or warranty-required surfacing.",
+      "references": []
+    },
+    {
+      "term": "Granule loss",
+      "definition": "Erosion of the protective mineral granules from composition shingle surfaces, indicating aging. Significant granule loss with exposed asphalt is an aging marker.",
+      "references": [
+        "Chapter 1"
+      ]
+    },
+    {
+      "term": "Gutter",
+      "definition": "Channel along the eave of a residential roof that collects rainwater and directs it to downspouts.",
+      "references": [
+        "Chapter 16"
+      ]
+    },
+    {
+      "term": "Hail damage",
+      "definition": "Impact damage from hail, characterized by craters, soft spots, or granule displacement on shingles; impact bruising on membranes. Certification requires qualified inspector.",
+      "references": [
+        "Module 6"
+      ]
+    },
+    {
+      "term": "Headwall flashing",
+      "definition": "Flashing where a sloped roof meets a vertical wall above (e.g., where a lower roof meets the higher house wall).",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Honest-versus-easy moment",
+      "definition": "Recurring scenario where the rep can take an easier sale (writing a proposal that won't perform, capitulating to a customer's preferred but inappropriate scope) or hold the line on the honest answer.",
+      "references": [
+        "Chapter 13",
+        "Module 13"
+      ]
+    },
+    {
+      "term": "Insulation upgrade",
+      "definition": "Adding insulation thickness during a roof recover or replacement, typically to meet code, energy targets, or to add R-value. One of three USA Flat Roof SPF use cases.",
+      "references": [
+        "Chapter 10"
+      ]
+    },
+    {
+      "term": "Intake ventilation",
+      "definition": "Inflow point of an attic ventilation system, typically at the soffit.",
+      "references": [
+        "Chapter 14"
+      ]
+    },
+    {
+      "term": "Interior leak evidence",
+      "definition": "Stains, drips, or moisture damage visible from inside the building. Documented during inspection.",
+      "references": [
+        "Chapter 12"
+      ]
+    },
+    {
+      "term": "Internal drain",
+      "definition": "Roof drain located within the roof field, with piping carrying water through the building's interior.",
+      "references": [
+        "Chapter 16"
+      ]
+    },
+    {
+      "term": "Kettle asphalt",
+      "definition": "Heated asphalt used in hot-mopped BUR or modified bitumen installation. Not used by USA Flat Roof on new installs.",
+      "references": []
+    },
+    {
+      "term": "Kick-out flashing",
+      "definition": "Small piece of flashing at the bottom of a sidewall step flashing line that diverts water away from the wall and into the gutter. Frequently missing on older homes.",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Layer count",
+      "definition": "Number of distinct roofing systems on a building. Central inspection question on BUR substrates for recover decisions.",
+      "references": [
+        "Chapter 9",
+        "Chapter 17"
+      ]
+    },
+    {
+      "term": "Lead-qualification questions",
+      "definition": "Initial conversation with the customer to establish history, concerns, and goals before inspection.",
+      "references": [
+        "Chapter 12"
+      ]
+    },
+    {
+      "term": "Leak entry point",
+      "definition": "The actual location where water enters the roof assembly. Rarely directly above the visible interior damage.",
+      "references": [
+        "Chapter 11",
+        "Module 2"
+      ]
+    },
+    {
+      "term": "Lifetime warranty",
+      "definition": "Warranty term commonly used in marketing for shingles. Typically structured as a non-prorated period followed by prorated coverage that decreases over time.",
+      "references": [
+        "Module 12"
+      ]
+    },
+    {
+      "term": "Maintenance program",
+      "definition": "Subscription or recurring service offering for ongoing roof care. Captures customers who don't need major work today and supports long-term relationship.",
+      "references": [
+        "Module 13"
+      ]
+    },
+    {
+      "term": "Manager Review Checklist",
+      "definition": "Section at the end of each chapter listing items the manager should verify before publication.",
+      "references": []
+    },
+    {
+      "term": "Manufacturer system warranty (NDL)",
+      "definition": "Stronger manufacturer warranty available when full system is installed by certified contractor following specifications. NDL = No Dollar Limit.",
+      "references": [
+        "Module 12"
+      ]
+    },
+    {
+      "term": "Mil",
+      "definition": "One-thousandth of an inch. Standard unit for membrane and coating thickness.",
+      "references": [
+        "Chapter 2"
+      ]
+    },
+    {
+      "term": "Mixed-roof home",
+      "definition": "Residential home with both pitched and flat-roof sections. Requires both Chapter 17 and Chapter 18 recognition skills.",
+      "references": [
+        "Chapter 18"
+      ]
+    },
+    {
+      "term": "Modified bitumen",
+      "definition": "Asphalt-based multi-ply roofing system with polymer modifiers. Available in self-adhered, torch-down, or hot-mopped installation methods; USA Flat Roof installs only self-adhered.",
+      "references": [
+        "Chapter 6"
+      ]
+    },
+    {
+      "term": "Monitor (severity rating)",
+      "definition": "Lowest severity level on the four-point scale; condition warrants documentation and re-inspection but no immediate action.",
+      "references": [
+        "Chapter 12"
+      ]
+    },
+    {
+      "term": "Monolithic",
+      "definition": "Single continuous seamless layer. Characteristic of coatings and SPF.",
+      "references": [
+        "Chapter 17"
+      ]
+    },
+    {
+      "term": "Mortar (tile roofing)",
+      "definition": "Mortar used at ridge and hip lines on tile roofs. Subject to deterioration and a common maintenance item.",
+      "references": [
+        "Chapter 8"
+      ]
+    },
+    {
+      "term": "NDL (No Dollar Limit)",
+      "definition": "See manufacturer system warranty.",
+      "references": []
+    },
+    {
+      "term": "Orange-peel texture",
+      "definition": "Characteristic surface texture of cured SPF foam. Most reliable visual identifier.",
+      "references": [
+        "Chapter 10",
+        "Chapter 17"
+      ]
+    },
+    {
+      "term": "Overflow drain (overflow scupper)",
+      "definition": "Secondary drainage at higher elevation than primary, intended to handle water if primary clogs. Required by code on most commercial flat roofs.",
+      "references": [
+        "Chapter 16"
+      ]
+    },
+    {
+      "term": "Overlay (recover)",
+      "definition": "Installation of a new roof system over an existing one. Code typically permits one overlay before tear-off becomes required.",
+      "references": [
+        "Chapter 13"
+      ]
+    },
+    {
+      "term": "Parapet",
+      "definition": "Low wall extending above the roof line on a commercial building. Often involves complex flashing details.",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Penetration",
+      "definition": "Anything that passes through the roof: pipes, vents, drains, conduit, skylights, etc.",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Phased work",
+      "definition": "Approach where a roof scope is divided into stages, addressing the most urgent items first and planning the broader scope later. Honest alternative when budget doesn't support full scope.",
+      "references": [
+        "Chapter 13",
+        "Module 11"
+      ]
+    },
+    {
+      "term": "Pitch pan",
+      "definition": "Sealed enclosure used at irregular penetrations on BUR and similar systems. Sealant-dependent; high-failure detail.",
+      "references": [
+        "Chapter 9",
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Plasticizer migration",
+      "definition": "Aging mechanism in PVC where plasticizers leach out, causing stiffening and brittleness. Visible on aged PVC (15+ years).",
+      "references": [
+        "Chapter 5"
+      ]
+    },
+    {
+      "term": "Ply",
+      "definition": "Individual layer of a multi-ply roofing system.",
+      "references": []
+    },
+    {
+      "term": "Ponding",
+      "definition": "Water remaining on a roof beyond the time intended by design. Acceptable up to 48 hours; problematic beyond.",
+      "references": [
+        "Chapter 16",
+        "Module 3"
+      ]
+    },
+    {
+      "term": "Ponding ring",
+      "definition": "Dirt accumulation pattern marking where water has been sitting on the roof. Most reliable indicator of past ponding on a dry roof.",
+      "references": [
+        "Chapter 16"
+      ]
+    },
+    {
+      "term": "Primer (coating)",
+      "definition": "Preparatory coat applied before main coating, designed to improve adhesion and substrate compatibility.",
+      "references": [
+        "Chapter 3"
+      ]
+    },
+    {
+      "term": "Profile",
+      "definition": "The shape and configuration of a roof covering: three-tab, architectural, S-tile, barrel, etc.",
+      "references": [
+        "Chapter 1",
+        "Chapter 8"
+      ]
+    },
+    {
+      "term": "Prorated coverage",
+      "definition": "Warranty coverage that decreases over time. Common on shingle 'lifetime' warranties.",
+      "references": [
+        "Module 12"
+      ]
+    },
+    {
+      "term": "PVC (Polyvinyl Chloride)",
+      "definition": "Single-ply thermoplastic roof membrane; premium positioning; chemical-resistant.",
+      "references": [
+        "Chapter 5"
+      ]
+    },
+    {
+      "term": "R-value",
+      "definition": "Measure of thermal resistance of insulation. Higher R-value = better insulation.",
+      "references": []
+    },
+    {
+      "term": "Recover (overlay)",
+      "definition": "See overlay.",
+      "references": []
+    },
+    {
+      "term": "Reference scale",
+      "definition": "An object included in a photo to indicate size: business card, tape measure, ruler, chalk mark.",
+      "references": [
+        "Module 7"
+      ]
+    },
+    {
+      "term": "Rejuvenation",
+      "definition": "Chemical treatment that absorbs into asphalt shingles to replace lost oils and extend service life. USA Flat Roof's brand: Fresh Roof.",
+      "references": [
+        "Chapter 4"
+      ]
+    },
+    {
+      "term": "Repair",
+      "definition": "Targeted fix of a specific failure on a roof that otherwise has remaining service life.",
+      "references": [
+        "Chapter 13"
+      ]
+    },
+    {
+      "term": "Repair-plus-plan",
+      "definition": "Conversation pattern where the rep addresses the immediate issue and surfaces the broader situation honestly.",
+      "references": [
+        "Chapter 11",
+        "Module 9"
+      ]
+    },
+    {
+      "term": "Replacement",
+      "definition": "Full removal of the existing roof down to the deck and installation of a new system.",
+      "references": [
+        "Chapter 13"
+      ]
+    },
+    {
+      "term": "Restoration",
+      "definition": "Adding a layer to extend the useful service life of a roof. Usually a coating; can include rejuvenation.",
+      "references": [
+        "Chapter 13"
+      ]
+    },
+    {
+      "term": "Ridge cap",
+      "definition": "Course of shingles or specialized component at the peak of a sloped roof.",
+      "references": [
+        "Chapter 1"
+      ]
+    },
+    {
+      "term": "Ridge vent",
+      "definition": "Continuous exhaust ventilation at the ridge of a sloped roof.",
+      "references": [
+        "Chapter 14"
+      ]
+    },
+    {
+      "term": "Roll-out test",
+      "definition": "Walk-test on a flat roof to identify soft or spongy areas suggesting wet insulation or substrate failure.",
+      "references": []
+    },
+    {
+      "term": "Sales rep boundary",
+      "definition": "Recurring callout in the book identifying tasks or judgments that exceed the rep's role and require escalation.",
+      "references": []
+    },
+    {
+      "term": "Scupper",
+      "definition": "Opening through a parapet wall for drainage.",
+      "references": [
+        "Chapter 16"
+      ]
+    },
+    {
+      "term": "Seam (membrane seam)",
+      "definition": "Joint between two pieces of membrane material. Welded on TPO and PVC; asphalt-bonded on modified bitumen; glued or taped on EPDM.",
+      "references": []
+    },
+    {
+      "term": "Self-adhered",
+      "definition": "Installation method where the membrane has a peel-and-stick backing. The only modified bitumen installation method USA Flat Roof uses on new installs.",
+      "references": [
+        "Chapter 6"
+      ]
+    },
+    {
+      "term": "Severity scale",
+      "definition": "The four-point inspection rating used throughout this book: Monitor, Maintenance Needed, Repair Recommended, Urgent / Escalate.",
+      "references": [
+        "Chapter 12"
+      ]
+    },
+    {
+      "term": "Short-circuit (ventilation)",
+      "definition": "Pattern where two exhaust types (e.g., gable vents and ridge vents on the same roof) pull from each other instead of pulling air through the full attic.",
+      "references": [
+        "Chapter 14"
+      ]
+    },
+    {
+      "term": "Sidewall flashing",
+      "definition": "Flashing where a sloped roof meets a vertical wall to the side. Includes step flashing and counter-flashing.",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Silicone coating",
+      "definition": "High-build liquid-applied roof coating using silicone chemistry. Excellent ponding tolerance, UV-resistant. USA Flat Roof's primary restoration product.",
+      "references": [
+        "Chapter 3"
+      ]
+    },
+    {
+      "term": "Single-ply",
+      "definition": "Roof system using a single layer of membrane (TPO, PVC, EPDM).",
+      "references": []
+    },
+    {
+      "term": "Slope (flat-roof)",
+      "definition": "The intentional minor slope (typically 1/4 inch per foot or less) built into flat-roof design to direct water toward drainage.",
+      "references": [
+        "Chapter 16"
+      ]
+    },
+    {
+      "term": "Soffit",
+      "definition": "The horizontal underside of a roof eave, typically containing intake vents on residential homes.",
+      "references": [
+        "Chapter 14"
+      ]
+    },
+    {
+      "term": "SPF (Spray Polyurethane Foam)",
+      "definition": "Sprayed foam roofing system, applied with a topcoat. Three USA Flat Roof use cases: ponding correction, BUR recover, insulation upgrade.",
+      "references": [
+        "Chapter 10"
+      ]
+    },
+    {
+      "term": "Stack pattern",
+      "definition": "Typical sequence of original system + recovers/coatings over time on a commercial roof.",
+      "references": [
+        "Chapter 17"
+      ]
+    },
+    {
+      "term": "Step flashing",
+      "definition": "Stepped metal flashing at the sidewall of a sloped roof, with each piece overlapping the one below.",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Stone-coated metal",
+      "definition": "Metal roof panels with stone-coated surface designed to mimic shake or tile. Specialty trade; outside USA Flat Roof's standard scope.",
+      "references": [
+        "Chapter 18"
+      ]
+    },
+    {
+      "term": "Substrate",
+      "definition": "The existing roof beneath a coating, recover, or new system.",
+      "references": [
+        "Chapter 17"
+      ]
+    },
+    {
+      "term": "Synthetic / composite tile or slate",
+      "definition": "Manufactured tile- or slate-look roofing made of polymer, rubber, or composite materials. Lighter than real tile or slate. Limited USA Flat Roof scope.",
+      "references": [
+        "Chapter 18"
+      ]
+    },
+    {
+      "term": "Tab (three-tab shingle)",
+      "definition": "Visible cutout segments on three-tab composition shingles creating the three-tab pattern.",
+      "references": [
+        "Chapter 1"
+      ]
+    },
+    {
+      "term": "Tap test",
+      "definition": "Light tapping on roofing materials to distinguish concrete (dull thud), clay (ring), synthetic (plastic pop), or metal (metallic).",
+      "references": [
+        "Chapter 8",
+        "Chapter 18"
+      ]
+    },
+    {
+      "term": "Tapered insulation",
+      "definition": "Insulation manufactured or installed with thickness variation to create slope. Alternative to SPF taper for ponding correction.",
+      "references": [
+        "Chapter 16"
+      ]
+    },
+    {
+      "term": "Tear-off",
+      "definition": "Full removal of existing roof down to the deck.",
+      "references": [
+        "Chapter 13"
+      ]
+    },
+    {
+      "term": "Termination bar",
+      "definition": "Metal bar that secures the top edge of a flat-roof membrane against a wall or parapet.",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Three-tab shingle",
+      "definition": "Composition shingle with cutouts creating three tab segments per shingle. Older style; less common on new installs.",
+      "references": [
+        "Chapter 1"
+      ]
+    },
+    {
+      "term": "Title 24",
+      "definition": "California's energy efficiency code, including cool-roof requirements that influence membrane and coating color specifications.",
+      "references": []
+    },
+    {
+      "term": "Topcoat",
+      "definition": "UV-protective layer applied over SPF foam. Typically silicone (sometimes acrylic). Required for SPF performance and warranty.",
+      "references": [
+        "Chapter 10"
+      ]
+    },
+    {
+      "term": "Torch-down",
+      "definition": "Modified bitumen installation method using a propane torch to melt and bond plies. Not used by USA Flat Roof on new installs.",
+      "references": [
+        "Chapter 6"
+      ]
+    },
+    {
+      "term": "TPO (Thermoplastic Polyolefin)",
+      "definition": "Single-ply thermoplastic roof membrane; USA Flat Roof's flagship commercial system; 60-mil mechanically attached standard.",
+      "references": [
+        "Chapter 2"
+      ]
+    },
+    {
+      "term": "Transition",
+      "definition": "Junction where two different roof planes, walls, or systems meet.",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Underlayment",
+      "definition": "Material installed over the deck before the surface roofing material. On tile roofs, the underlayment is the actual waterproofing layer, not the tiles.",
+      "references": [
+        "Chapter 8"
+      ]
+    },
+    {
+      "term": "Urgent / Escalate (severity rating)",
+      "definition": "Highest severity level on the four-point scale; condition requires immediate action and rep escalation.",
+      "references": [
+        "Chapter 12"
+      ]
+    },
+    {
+      "term": "Valley",
+      "definition": "Where two sloped roof planes meet creating a low channel for water flow. High-stress area; common leak location.",
+      "references": [
+        "Chapter 15"
+      ]
+    },
+    {
+      "term": "Verify locally",
+      "definition": "Recurring callout in the book reminding the rep to confirm code requirements, jurisdiction-specific items, or product details with local authorities or current documentation.",
+      "references": []
+    },
+    {
+      "term": "Walk pad",
+      "definition": "Protective surface installed on flat roofs at high-traffic areas to prevent membrane wear from foot traffic.",
+      "references": []
+    },
+    {
+      "term": "Walk-test",
+      "definition": "Walking on a flat roof while feeling for soft or spongy areas indicating wet insulation or substrate failure.",
+      "references": []
+    },
+    {
+      "term": "Warranty layers",
+      "definition": "The three typical warranty layers on a roof: manufacturer material warranty, manufacturer system warranty, contractor workmanship warranty.",
+      "references": [
+        "Module 12"
+      ]
+    },
+    {
+      "term": "Wet insulation",
+      "definition": "Insulation that has absorbed moisture from a leak or vapor migration. Disqualifying condition for restoration.",
+      "references": [
+        "Chapter 13"
+      ]
+    },
+    {
+      "term": "Wind-driven leak",
+      "definition": "Leak that occurs only during heavy wind events, often at sidewall transitions, parapets, or sealant joints subject to wind-driven rain.",
+      "references": [
+        "Module 2"
+      ]
+    },
+    {
+      "term": "Workmanship warranty",
+      "definition": "Contractor-issued warranty covering installation quality. Issued by USA Flat Roof, not the manufacturer.",
+      "references": [
+        "Module 12"
+      ]
+    },
+    {
+      "term": "WUI (Wildland-Urban Interface)",
+      "definition": "Areas where development meets wildland fuel. California fire codes restrict certain roofing materials in WUI zones, particularly wood shake.",
+      "references": []
+    }
+  ]
+}

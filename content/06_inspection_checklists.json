@@ -1,0 +1,926 @@
+{
+  "metadata": {
+    "title": "Inspection Checklists",
+    "description": "Field-usable inspection checklists for every system USA Flat Roof works on, plus general residential and commercial overview checklists",
+    "total_checklists": 11,
+    "edition": "April 2026",
+    "severity_scale": ["Monitor", "Maintenance Needed", "Repair Recommended", "Urgent / Escalate"],
+    "usage_notes": [
+      "These checklists are tools, not scripts. Order may shift based on specific roof, weather, access conditions, and customer.",
+      "Every inspection produces documented findings with severity ratings, captured photos covering the universal photo standards, and an honest customer conversation.",
+      "For conditions not fitting the checklist clearly, document plus escalate.",
+      "The checklist is comprehensive but not exhaustive."
+    ]
+  },
+  "checklists": [
+    {
+      "checklist_number": 1,
+      "title": "General Residential Steep-Slope",
+      "use_when": "System is not yet identified or for any residential pitched roof inspection.",
+      "sections": [
+        {
+          "section_title": "Pre-Inspection",
+          "items": [
+            "Review any documentation customer provided (prior reports, warranty papers, repair history)",
+            "Note home age, address, architectural style",
+            "Apply architectural and era lens (Chapter 18) to set expectations",
+            "Confirm equipment: ladder, PPE, camera, drone if applicable, reference scale items, cleaning cloth, backup power",
+            "Review any customer-reported leak or damage location"
+          ]
+        },
+        {
+          "section_title": "Customer Conversation Before Inspection",
+          "items": [
+            "Introduce yourself; confirm scope of visit",
+            "Ask lead-qualification questions",
+            "Listen for concerns, history, customer goals",
+            "Confirm specific areas customer wants inspected",
+            "Set expectation for inspection process and timing"
+          ]
+        },
+        {
+          "section_title": "Building Exterior Walk-Around",
+          "items": [
+            "Photograph all four elevations",
+            "Note parapet, gutter, downspout, fascia, and soffit conditions",
+            "Note tree overhang, debris exposure, adjacent structures",
+            "Note any visible interior leak evidence reported by customer",
+            "Identify roof system per the four-step decision tree (Chapter 18)"
+          ]
+        },
+        {
+          "section_title": "System Identification",
+          "items": [
+            "Composition shingle (note profile: three-tab / architectural / designer)",
+            "Concrete tile (note profile: flat / S-tile / barrel)",
+            "Other (clay tile / wood shake / synthetic / metal / slate — note for escalation or referral)",
+            "Mixed roof: any flat-roof sections? (if yes, also use Checklist 2 or system-specific commercial checklist)"
+          ]
+        },
+        {
+          "section_title": "Roof Access Decision",
+          "items": [
+            "Ladder access available and safe?",
+            "Drone authorized and conditions appropriate?",
+            "Roof walk safe and within rep's training?",
+            "If unsafe: ground-level + drone, document conditions that prevent walk"
+          ]
+        },
+        {
+          "section_title": "Roof Surface Inspection",
+          "items": [
+            "Photograph each slope from elevated viewpoint",
+            "Inspect every penetration: pipe boots, vents, skylights, chimneys, conduits",
+            "Inspect every transition: sidewalls, headwalls, dormers",
+            "Inspect every valley",
+            "Inspect drip edge and rake-edge details",
+            "Inspect ridge and hip lines",
+            "Note ventilation provisions: ridge vent, box vents, gable vents, soffit vents"
+          ]
+        },
+        {
+          "section_title": "Detail Inspection (per Chapter 15)",
+          "items": [
+            "Pipe boots — cracking, sealant condition, daylight visible",
+            "Step flashing at sidewalls — counter-flashing present, kick-out at bottom",
+            "Headwall flashing — counter-flashing condition, sealant",
+            "Chimney flashing — step, apron, cricket, counter-flashing, mortar condition",
+            "Skylight flashing — perimeter integrity, frame seal",
+            "Valleys — debris, wear, rust, displacement",
+            "Ridge / hip — fastening condition, mortar (tile)"
+          ]
+        },
+        {
+          "section_title": "Attic Inspection (if accessible)",
+          "items": [
+            "Daylight visible at penetrations or eaves?",
+            "Water staining on deck, rafters, insulation?",
+            "Ventilation pattern: balanced intake/exhaust?",
+            "Insulation condition: dry, compressed, blocking soffits?",
+            "Mold or biological growth?",
+            "Frost on deck (in cold conditions)?",
+            "Condition consistent with reported leak?"
+          ]
+        },
+        {
+          "section_title": "Gutter Inspection",
+          "items": [
+            "Gutter condition: rust, holes, separation",
+            "Slope toward downspouts; standing water in gutters?",
+            "Debris accumulation; granule loss visible?",
+            "Downspout count and position",
+            "Drip edge integration with gutter"
+          ]
+        },
+        {
+          "section_title": "Documentation",
+          "items": [
+            "All four elevations photographed",
+            "Each slope photographed",
+            "Every penetration photographed",
+            "Every detail (flashings, transitions, valleys) photographed",
+            "Damage close-ups with reference scale",
+            "Substrate visible at any worn or exposed areas",
+            "Attic photos if accessible",
+            "Interior leak evidence if reported"
+          ]
+        },
+        {
+          "section_title": "Severity Ratings Applied",
+          "items": [
+            "Each documented condition rated using the four-point scale"
+          ]
+        },
+        {
+          "section_title": "Red Flags Requiring Escalation",
+          "items": [
+            "Active interior leak with unknown source",
+            "Visibly sagging roof plane",
+            "Soft / spongy deck underfoot",
+            "Significant hail or wind damage suspected",
+            "Mold or biological growth in attic",
+            "Asbestos suspected in older underlayment",
+            "Solar array on the roof",
+            "Customer requests work outside scope (clay tile replacement, wood shake, etc.)"
+          ]
+        },
+        {
+          "section_title": "Post-Inspection Customer Conversation",
+          "items": [
+            "Walk through findings using severity scale",
+            "Set expectations for proposal and timing",
+            "Defer specific pricing to written proposal",
+            "Address any questions; confirm next steps"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist_number": 2,
+      "title": "General Commercial Flat-Roof",
+      "use_when": "System is not yet identified or for any commercial flat-roof inspection.",
+      "sections": [
+        {
+          "section_title": "Pre-Inspection",
+          "items": [
+            "Review documentation customer provided",
+            "Note building age, address, occupancy/use",
+            "Apply building-use lens (Chapter 17) to set expectations",
+            "Confirm equipment: ladder, PPE, camera, drone, chalk for ponding outlines, reference scale, cleaning cloth",
+            "Review reported leaks or recent issues"
+          ]
+        },
+        {
+          "section_title": "Customer Conversation Before Inspection",
+          "items": [
+            "Confirm scope; ask lead-qualification questions",
+            "Note history: leaks, repairs, recover work, prior coatings",
+            "Note any rooftop equipment or trade activity",
+            "Confirm any active leaks or interior damage"
+          ]
+        },
+        {
+          "section_title": "Building Exterior Walk-Around",
+          "items": [
+            "Photograph all four elevations",
+            "Note parapet condition, coping, scuppers, downspouts",
+            "Note efflorescence or staining on exterior walls",
+            "Note tree overhang or adjacent structure issues"
+          ]
+        },
+        {
+          "section_title": "Roof Access",
+          "items": [
+            "Confirm ladder, hatch, or stair access is safe",
+            "Note any code violations or missing safety equipment",
+            "Drone authorized and conditions appropriate?",
+            "Roof walk safe?"
+          ]
+        },
+        {
+          "section_title": "System Identification (Chapter 17)",
+          "items": [
+            "Apply four-step decision tree: surface color, seam type, surface texture, edge appearance",
+            "Identify: TPO / PVC / EPDM / Modified Bitumen / BUR / SPF / Coating / Mixed",
+            "If coated or recovered: identify substrate where exposed",
+            "Note any uncertainty for escalation"
+          ]
+        },
+        {
+          "section_title": "Roof Surface Overview",
+          "items": [
+            "Photograph each quadrant from elevated view",
+            "Note overall membrane / surface color and condition",
+            "Note dirt, biological staining, walkability",
+            "Note walk pad coverage at high-traffic areas"
+          ]
+        },
+        {
+          "section_title": "Seams and Field",
+          "items": [
+            "Inspect every seam (single-ply systems)",
+            "Note T-joints (high-failure locations)",
+            "Inspect ply layers (multi-ply systems)",
+            "Note any blistering, alligatoring, or ply separation",
+            "Note any membrane or surface damage"
+          ]
+        },
+        {
+          "section_title": "Penetrations and Details",
+          "items": [
+            "Photograph every pipe, vent, drain, scupper, skylight",
+            "Inspect every HVAC curb and equipment platform",
+            "Inspect every conduit and miscellaneous penetration",
+            "Note pitch pans (high-failure detail)",
+            "Note flashing condition at all details"
+          ]
+        },
+        {
+          "section_title": "Drainage (Chapter 16)",
+          "items": [
+            "Inspect every drain ring; check for rust, lifting, sealant failure",
+            "Inspect every scupper; check through-wall flashing",
+            "Confirm overflow drainage present and functional",
+            "Document ponding evidence — chalk-outline extent on dry days",
+            "Note dirt rings, biological growth, accelerated wear in ponding areas",
+            "Photograph any standing water with depth indication"
+          ]
+        },
+        {
+          "section_title": "Parapet and Edge Details",
+          "items": [
+            "Inspect parapet flashing along full length",
+            "Note coping condition, fastener integrity, sealant joints",
+            "Inspect termination bars",
+            "Note any membrane shrinkage at perimeter",
+            "Inspect edge and gravel-stop details (BUR)"
+          ]
+        },
+        {
+          "section_title": "Substrate Inspection (Coated or Recovered Roofs)",
+          "items": [
+            "Note substrate visible at edges, drains, worn areas",
+            "Note coating chemistry indicators (silicone vs acrylic vs SPF)",
+            "Note any coating delamination, peeling, or substrate failure",
+            "Walk-test for soft / spongy areas suggesting wet insulation"
+          ]
+        },
+        {
+          "section_title": "Interior Inspection (if accessible)",
+          "items": [
+            "Note ceiling tile staining, water marks, efflorescence",
+            "Note drip patterns relative to known roof penetrations",
+            "Note interior moisture indicators that may suggest vapor issues (Chapter 14)"
+          ]
+        },
+        {
+          "section_title": "Documentation",
+          "items": [
+            "All four elevations",
+            "Each quadrant from elevated view",
+            "Every penetration with close-up and context shot",
+            "Every flashing and detail",
+            "Every seam concern with reference scale",
+            "Ponding evidence (chalk outlines on dry days)",
+            "Substrate exposed at edges or worn areas",
+            "Walk-test soft areas marked",
+            "Interior leak evidence if reported"
+          ]
+        },
+        {
+          "section_title": "Red Flags Requiring Escalation",
+          "items": [
+            "Active interior leak with unknown source",
+            "Soft / spongy underfoot — suspected wet insulation",
+            "Visible structural deflection or sagging deck",
+            "Widespread seam failure or substrate failure",
+            "Multiple roof layers",
+            "Pre-1980s building — asbestos potential",
+            "Suspected hail or storm damage with insurance involvement",
+            "Solar array on the roof",
+            "Coating chemistry uncertain and scope depends on it",
+            "PVC vs TPO identification uncertain and scope depends on it"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist_number": 3,
+      "title": "Composition Shingle",
+      "use_when": "Any composition shingle inspection. Reference Chapter 1 for full guidance.",
+      "sections": [
+        {
+          "section_title": "Shingle Profile and Condition",
+          "items": [
+            "Profile: three-tab / architectural / designer",
+            "Granule coverage — uniform / light loss / significant loss with exposed asphalt",
+            "Lifted or curling tab edges",
+            "Cracked or split shingles",
+            "Missing shingles",
+            "Exposed nails (failed seals)",
+            "Algae streaking (typically north slope)",
+            "Moss growth in shaded areas"
+          ]
+        },
+        {
+          "section_title": "Inspection by Slope",
+          "items": [
+            "Inspect each slope separately",
+            "Note any soft spots underfoot — escalate immediately",
+            "South / west exposure aging signs",
+            "North / shaded aging signs (algae, moss)"
+          ]
+        },
+        {
+          "section_title": "Detail Inspection",
+          "items": [
+            "Pipe boots — cracking, sealant",
+            "Step flashing — counter-flashing, kick-out at bottom of sidewalls",
+            "Chimney — step, apron, cricket, counter-flashing, mortar",
+            "Skylight flashing",
+            "Valleys — debris, rust, wear"
+          ]
+        },
+        {
+          "section_title": "Gutters",
+          "items": [
+            "Granules in gutters (handful or more = significant aging indicator)",
+            "Gutter slope, sagging, detachment",
+            "Drip edge integration"
+          ]
+        },
+        {
+          "section_title": "Attic Check (if accessible)",
+          "items": [
+            "Daylight visible",
+            "Water staining on deck or rafters",
+            "Ventilation provisions — balanced intake/exhaust",
+            "Insulation condition"
+          ]
+        },
+        {
+          "section_title": "Rejuvenation Qualification (Chapter 4)",
+          "items": [
+            "Roof age within qualifying window?",
+            "Granule coverage adequate?",
+            "Shingle flexibility — significant brittleness?",
+            "Active leaks (disqualifying)?",
+            "Multiple damaged or missing shingles (disqualifying)?"
+          ]
+        },
+        {
+          "section_title": "Severity Quick Reference",
+          "items": [
+            "Monitor: light granule loss; algae streaking",
+            "Maintenance: moss growth; gutter granule accumulation; minor sealant",
+            "Repair: lifted tabs, cracked shingles, missing shingles, exposed nails, failed pipe boots, deteriorated flashing",
+            "Urgent / Escalate: sagging deck, active interior leak, hail damage, multiple layers, suspected asbestos"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist_number": 4,
+      "title": "Concrete Tile",
+      "use_when": "Any concrete tile inspection. Reference Chapter 8 for full guidance.",
+      "sections": [
+        {
+          "section_title": "Safety Reminder",
+          "items": [
+            "Walk only on the lower third of each tile, on supported areas",
+            "Do not walk a wet, mossy, or debris-covered tile roof",
+            "Use drone or ladder-edge inspection if walking is not safe or trained"
+          ]
+        },
+        {
+          "section_title": "Tile and Ridge Inspection",
+          "items": [
+            "Tile profile: flat / S-tile / barrel",
+            "Identify concrete vs clay vs synthetic (tap test, edge inspection)",
+            "Broken, cracked, or displaced tiles",
+            "Slipped tiles",
+            "Tile color fade / surface coating wear (aesthetic only)",
+            "Mortar condition at ridge and hips",
+            "Mortar condition at chimney transitions"
+          ]
+        },
+        {
+          "section_title": "Underlayment Indicators (the actual waterproofing layer)",
+          "items": [
+            "Roof age — best estimate",
+            "Underlayment age based on roof age and any prior re-felt history",
+            "Underlayment visible at any lifted-tile inspection points — note condition",
+            "Customer-reported leak history"
+          ]
+        },
+        {
+          "section_title": "Detail Inspection",
+          "items": [
+            "Pipe boots and penetration flashings",
+            "Valley flashings — rust, debris dam, water tracking under tiles",
+            "Chimney flashings",
+            "Skylight flashings",
+            "Eave closures and bird-stop details"
+          ]
+        },
+        {
+          "section_title": "Drainage",
+          "items": [
+            "Gutters — debris, biological growth, granule equivalent buildup",
+            "Downspout function"
+          ]
+        },
+        {
+          "section_title": "Attic Inspection (if accessible)",
+          "items": [
+            "Daylight visible at penetrations",
+            "Water staining on deck underside",
+            "Evidence of past leaks or repairs",
+            "Deck condition"
+          ]
+        },
+        {
+          "section_title": "Severity Quick Reference",
+          "items": [
+            "Monitor: color fade; minor biological growth; light debris",
+            "Maintenance: moss treatment; debris removal; minor sealant",
+            "Repair: broken or cracked tiles; mortar deterioration; failed pipe boot; failed flashing",
+            "Urgent / Escalate: active interior leak; visible underlayment failure; sagging deck; multiple damaged tiles indicating broader issue; full underlayment replacement scope (refer out)"
+          ]
+        },
+        {
+          "section_title": "Important Reminder",
+          "items": [
+            "The tiles are not the waterproofing — the underlayment underneath is",
+            "Tiles last 50+ years; underlayment typically 20–30 years",
+            "USA Flat Roof scope is repair and maintenance; full re-felt is referred out"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist_number": 5,
+      "title": "TPO",
+      "use_when": "Any TPO inspection. Reference Chapter 2 for full guidance.",
+      "sections": [
+        {
+          "section_title": "Membrane and Seam Inspection",
+          "items": [
+            "Membrane color and overall condition",
+            "Surface dirt and biological staining",
+            "UV degradation / chalking — particularly at seams",
+            "Walk every seam if safely accessible",
+            "Note any seam separation, fishmouth, or visible weld inconsistency",
+            "Note T-joints (where three sheets meet) — high-failure locations",
+            "Note membrane shrinkage at perimeter"
+          ]
+        },
+        {
+          "section_title": "Mechanical Attachment Indicators",
+          "items": [
+            "Visible fastener back-out (raised bumps)",
+            "Membrane separation along seams suggesting attachment failure",
+            "Note any unusual fastener patterns"
+          ]
+        },
+        {
+          "section_title": "Penetrations and Details",
+          "items": [
+            "Every pipe boot, vent, drain, HVAC curb, conduit, skylight",
+            "Note pipe boot condition, sealant, flashing integrity",
+            "Any unsealed or improperly detailed penetrations"
+          ]
+        },
+        {
+          "section_title": "Drainage",
+          "items": [
+            "Every drain — clamping ring, debris, vegetation",
+            "Every scupper",
+            "Overflow drains present and clear",
+            "Ponding evidence (chalk outline; dirt rings; biological growth)"
+          ]
+        },
+        {
+          "section_title": "Parapet and Terminations",
+          "items": [
+            "Wall flashings — pulled, separated, unsealed",
+            "Termination bars",
+            "Coping condition and joints",
+            "Counter-flashing"
+          ]
+        },
+        {
+          "section_title": "Substrate / Underfoot",
+          "items": [
+            "Walk-test for soft / spongy areas",
+            "Any visible insulation or substrate failure"
+          ]
+        },
+        {
+          "section_title": "TPO vs PVC Identification (Chapter 17)",
+          "items": [
+            "Documentation available?",
+            "If not: document visual indicators; note that product type cannot be certified by appearance alone"
+          ]
+        },
+        {
+          "section_title": "Severity Quick Reference",
+          "items": [
+            "Monitor: surface dirt; light staining",
+            "Maintenance: chalking; light ponding; debris in drains",
+            "Repair: seam separation; punctures; failed pipe boot; chronic ponding; drain failures",
+            "Urgent / Escalate: active interior leak; soft underfoot (wet insulation); structural deflection; widespread seam failure; PV array"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist_number": 6,
+      "title": "PVC",
+      "use_when": "Any PVC inspection. Reference Chapter 5 for full guidance.",
+      "sections": [
+        {
+          "section_title": "Membrane and Seam Inspection (parallel to TPO)",
+          "items": [
+            "Same general scope as TPO",
+            "Note any plasticizer migration on aged systems (15+ years) — stiffening, cracking",
+            "Confirm chemical or grease exposure environments — restaurant exhaust, kitchen vents, industrial discharge"
+          ]
+        },
+        {
+          "section_title": "Building Use Considerations",
+          "items": [
+            "Restaurant / kitchen / hospital / industrial — confirms PVC's use case",
+            "Note any chemical or grease exposure pattern"
+          ]
+        },
+        {
+          "section_title": "Penetrations, Details, Drainage, Parapet, Terminations",
+          "items": [
+            "Same as TPO checklist"
+          ]
+        },
+        {
+          "section_title": "TPO vs PVC Identification",
+          "items": [
+            "Documentation available?",
+            "If not: document visual indicators; note that product type cannot be certified by appearance alone",
+            "If product type drives proposal scope: escalate"
+          ]
+        },
+        {
+          "section_title": "Severity Quick Reference",
+          "items": [
+            "Monitor: surface dirt; light staining",
+            "Maintenance: chalking; light ponding; debris in drains",
+            "Repair: seam separation; punctures; failed pipe boot; chronic ponding; drain failures; plasticizer-driven cracking",
+            "Urgent / Escalate: active interior leak; soft underfoot; structural deflection; widespread membrane stiffening or cracking on aged PVC"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist_number": 7,
+      "title": "Modified Bitumen (Self-Adhered)",
+      "use_when": "Any modified bitumen inspection. Reference Chapter 6 for full guidance.",
+      "sections": [
+        {
+          "section_title": "Membrane Finish Identification",
+          "items": [
+            "Granule-surfaced cap sheet (most common)",
+            "Smooth-surfaced (often with prior coating)",
+            "Identify installation method: self-adhered (clean seams), torch-down (asphalt squeeze-out), hot-mopped (kettle residue)"
+          ]
+        },
+        {
+          "section_title": "Membrane and Seam Inspection",
+          "items": [
+            "Granule coverage — uniform / light loss / significant loss with exposed asphalt",
+            "Inspect every seam — both lateral overlaps and end laps",
+            "Note any seam separation or lifting",
+            "Note any blistering (moisture entrapment indicator)",
+            "Note alligatoring on smooth-surfaced or aged systems"
+          ]
+        },
+        {
+          "section_title": "Penetrations and Details",
+          "items": [
+            "Every pipe boot, vent, drain, scupper, curb",
+            "Note flashing condition at all details",
+            "Note any prior repair patches (asphalt cement, flashing tape additions)"
+          ]
+        },
+        {
+          "section_title": "Drainage",
+          "items": [
+            "Drains, scuppers, overflow drains",
+            "Ponding evidence",
+            "Debris accumulation"
+          ]
+        },
+        {
+          "section_title": "Parapet and Terminations",
+          "items": [
+            "Wall flashings, termination bars, coping"
+          ]
+        },
+        {
+          "section_title": "Substrate / Underfoot",
+          "items": [
+            "Walk-test for soft / spongy areas"
+          ]
+        },
+        {
+          "section_title": "Coating Compatibility (if existing coating present)",
+          "items": [
+            "Any prior coating? If yes, note chemistry indicators",
+            "Coating condition"
+          ]
+        },
+        {
+          "section_title": "Severity Quick Reference",
+          "items": [
+            "Monitor: light surface granule loss; minor biological staining",
+            "Maintenance: moderate granule loss; minor sealant work; debris removal",
+            "Repair: seam separation; blistering; punctures; failed pipe boot; flashing failures",
+            "Urgent / Escalate: active interior leak; soft underfoot; widespread alligatoring; widespread seam failure on aged systems"
+          ]
+        },
+        {
+          "section_title": "Important Reminder",
+          "items": [
+            "USA Flat Roof installs only self-adhered modified bitumen",
+            "Existing torch-down or hot-mopped roofs may be inspected and repaired, but like-for-like replacement requires escalation or referral"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist_number": 8,
+      "title": "BUR (Built-Up Roofing)",
+      "use_when": "Any BUR inspection. Reference Chapter 9 for full guidance.",
+      "sections": [
+        {
+          "section_title": "Layer Count Assessment (the central question)",
+          "items": [
+            "Inspect cross-sections at edges, terminations, or cut areas",
+            "Estimate layer count from visible evidence",
+            "Review any building documentation",
+            "Ask customer / property manager about prior recover history",
+            "If layer count cannot be confirmed: escalate"
+          ]
+        },
+        {
+          "section_title": "Surface Inspection",
+          "items": [
+            "Surface type: gravel-surfaced / smooth asphalt / coated",
+            "Gravel displacement and bald spots (where gravel-surfaced)",
+            "Surface alligatoring (smooth or coated areas)",
+            "Blistering",
+            "Ply separation visible at edges"
+          ]
+        },
+        {
+          "section_title": "Penetrations and Details",
+          "items": [
+            "Every pipe, vent, drain, curb, skylight",
+            "Pitch pans — sealant condition (high-failure detail)",
+            "Flashings — asphalt-based and metal"
+          ]
+        },
+        {
+          "section_title": "Drainage",
+          "items": [
+            "Drains, scuppers, overflow",
+            "Ponding evidence"
+          ]
+        },
+        {
+          "section_title": "Substrate / Underfoot",
+          "items": [
+            "Walk-test for soft / spongy areas — common on aged BUR",
+            "Any visible deflection"
+          ]
+        },
+        {
+          "section_title": "Building Age and Asbestos Consideration",
+          "items": [
+            "Building installation pre-1980s? — asbestos testing required before any tear-off or major disturbance",
+            "Document age and any prior testing history"
+          ]
+        },
+        {
+          "section_title": "Solar Array Consideration",
+          "items": [
+            "PV present? — coordination required for any restoration or replacement scope"
+          ]
+        },
+        {
+          "section_title": "Severity Quick Reference",
+          "items": [
+            "Monitor: light gravel displacement; surface dirt",
+            "Maintenance: debris removal; gravel redistribution; minor sealant",
+            "Repair: moderate alligatoring; failed pipe boot; pitch pan sealant failure; flashing failures",
+            "Urgent / Escalate: active interior leak; soft underfoot; multiple layers; pre-1980s building (asbestos); structural deflection; widespread blistering or ply separation"
+          ]
+        },
+        {
+          "section_title": "Recommendation Framework Reminder",
+          "items": [
+            "Single-layer BUR with sound substrate: silicone restoration / TPO overlay / SPF / replacement (per Chapter 9)",
+            "Multi-layer or disqualifying conditions: typically full replacement"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist_number": 9,
+      "title": "Silicone Coatings (Existing)",
+      "use_when": "Inspecting an existing silicone-coated roof. Reference Chapter 3 for full guidance.",
+      "sections": [
+        {
+          "section_title": "Coating Identification and Substrate",
+          "items": [
+            "Confirm coating chemistry (silicone vs acrylic — see Chapter 7)",
+            "If documentation unavailable, note visual indicators",
+            "Identify substrate underneath coating (visible at edges, drains, worn areas)"
+          ]
+        },
+        {
+          "section_title": "Coating Condition",
+          "items": [
+            "Surface dirt and biological staining",
+            "Chalking (rub-finger test)",
+            "Coating thinning or wear in ponded areas",
+            "Coating delamination (peeling, lifting)",
+            "Coating cracking",
+            "Substrate failure visible through coating"
+          ]
+        },
+        {
+          "section_title": "Detail Inspection",
+          "items": [
+            "Coating wrap at penetrations, parapets, drains",
+            "Fabric reinforcement areas — exposure or lift",
+            "Stripe / detail coat condition"
+          ]
+        },
+        {
+          "section_title": "Drainage",
+          "items": [
+            "Ponding evidence in coated areas",
+            "Drain condition"
+          ]
+        },
+        {
+          "section_title": "Substrate / Underfoot",
+          "items": [
+            "Walk-test for soft / spongy areas"
+          ]
+        },
+        {
+          "section_title": "Severity Quick Reference",
+          "items": [
+            "Monitor: light dirt; surface staining",
+            "Maintenance: chalking; biological growth; surface wear approaching recoat window",
+            "Repair: localized delamination; coating cracking; detail-coat failure; substrate visible through worn coating",
+            "Urgent / Escalate: active interior leak; widespread delamination; substrate failure under intact coating; soft underfoot; coating applied over non-qualifying substrate"
+          ]
+        },
+        {
+          "section_title": "Recommendation Framework Reminder",
+          "items": [
+            "Existing silicone in serviceable condition: maintenance recoat",
+            "Damaged coating: repair",
+            "Failed coating with substrate issues: replacement scope"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist_number": 10,
+      "title": "SPF (Spray Polyurethane Foam)",
+      "use_when": "Any SPF inspection. Reference Chapter 10 for full guidance.",
+      "sections": [
+        {
+          "section_title": "System Identification",
+          "items": [
+            "Confirm SPF (orange-peel texture; visible foam thickness at terminations)",
+            "Distinguish from silicone-coated single-ply or BUR (Chapter 17)"
+          ]
+        },
+        {
+          "section_title": "Topcoat-Specific Inspection",
+          "items": [
+            "Topcoat color and condition",
+            "Chalking (rub-finger test)",
+            "Thin or worn areas",
+            "Any topcoat damage exposing foam — yellow / tan foam visible",
+            "Walk pad coverage and condition",
+            "Topcoat at penetrations, parapets, details"
+          ]
+        },
+        {
+          "section_title": "Foam-Specific Inspection",
+          "items": [
+            "Any exposed foam areas (UV degradation indicator)",
+            "Foam darkening, surface deterioration, friability",
+            "Bird or rodent damage",
+            "Hail damage (impact craters)",
+            "Suspected installation voids (tap test, hollow areas)"
+          ]
+        },
+        {
+          "section_title": "Drainage",
+          "items": [
+            "Ponding evidence — particularly important on SPF if installed for ponding correction",
+            "Tapered drainage at drains still functioning?",
+            "Drain condition"
+          ]
+        },
+        {
+          "section_title": "Detail and Penetration Inspection",
+          "items": [
+            "Cracking or pulling at drain rings, pipe penetrations, curbs",
+            "Sealant repairs or unauthorized modifications"
+          ]
+        },
+        {
+          "section_title": "Substrate Inspection",
+          "items": [
+            "Walk-test for soft / spongy areas — wet substrate indicator",
+            "Visible substrate failure or deflection"
+          ]
+        },
+        {
+          "section_title": "Maintenance History",
+          "items": [
+            "Original SPF installation date if known",
+            "Last topcoat recoat date",
+            "Maintenance and repair records"
+          ]
+        },
+        {
+          "section_title": "Severity Quick Reference",
+          "items": [
+            "Monitor: surface dirt; light topcoat staining",
+            "Maintenance: chalking; topcoat thinning approaching recoat schedule; minor walk-pad wear",
+            "Repair: topcoat damage exposing foam; localized foam damage; failed detail; bird or impact damage",
+            "Urgent / Escalate: active interior leak; widespread topcoat failure with exposed foam; widespread foam degradation; suspected voids; soft underfoot; PV array"
+          ]
+        },
+        {
+          "section_title": "Important Reminder",
+          "items": [
+            "Topcoat recoat is part of standard SPF maintenance, not emergency repair",
+            "The foam can last 25+ years when topcoat is maintained"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist_number": 11,
+      "title": "Maintenance Visit Quick Checklist",
+      "use_when": "Scheduled maintenance visits on customers in active maintenance programs.",
+      "sections": [
+        {
+          "section_title": "Pre-Visit",
+          "items": [
+            "Review prior inspection reports and findings",
+            "Note any conditions previously rated Monitor or Maintenance",
+            "Confirm equipment and access"
+          ]
+        },
+        {
+          "section_title": "During Visit",
+          "items": [
+            "Conduct full inspection per the relevant system checklist",
+            "Compare current conditions to prior inspection",
+            "Note any condition that has progressed to a higher severity level",
+            "Note any new conditions",
+            "Address maintenance items within scope: cleaning, debris removal, sealant refresh, fastener resealing, drain clearing, walk-pad inspection",
+            "Photograph current conditions for warranty and documentation purposes"
+          ]
+        },
+        {
+          "section_title": "Documentation",
+          "items": [
+            "Photo update on all major conditions",
+            "Severity ratings applied",
+            "Note any items that have crossed into Repair Recommended or Urgent territory",
+            "Confirm warranty registration documentation if applicable"
+          ]
+        },
+        {
+          "section_title": "Customer Conversation",
+          "items": [
+            "Walk through any progression in conditions",
+            "Identify any items requiring proposal beyond maintenance scope",
+            "Schedule next maintenance visit",
+            "Address any customer questions or concerns"
+          ]
+        }
+      ]
+    }
+  ]
+}

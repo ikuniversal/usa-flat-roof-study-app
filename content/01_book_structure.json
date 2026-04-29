@@ -1,0 +1,661 @@
+{
+  "metadata": {
+    "title": "Roof Systems Field Guide",
+    "subtitle": "USA Flat Roof Sales Training Manual",
+    "edition": "April 2026",
+    "company": "USA Flat Roof",
+    "region": "Northern California",
+    "units": "US Imperial",
+    "voice_style": "Voice B - crisp, reference-style",
+    "total_estimated_word_count": 120000,
+    "total_chapters": 18,
+    "total_modules": 13,
+    "total_quiz_questions": 280,
+    "total_exam_questions": 100,
+    "exam_passing_score_percent": 80,
+    "chapter_quiz_passing_score_percent": 70
+  },
+  "parts": [
+    {
+      "part_number": 1,
+      "title": "Roof Systems",
+      "description": "Detailed coverage of every roof system USA Flat Roof works on, plus reference coverage of systems encountered in inspections.",
+      "display_order": 1,
+      "chapters": [
+        {
+          "chapter_number": 1,
+          "title": "Composition Shingle",
+          "type": "chapter",
+          "depth": "core",
+          "estimated_read_time_minutes": 25,
+          "estimated_word_count": 5200,
+          "display_order": 1,
+          "has_quiz": true
+        },
+        {
+          "chapter_number": 2,
+          "title": "TPO (Thermoplastic Polyolefin)",
+          "type": "chapter",
+          "depth": "core",
+          "estimated_read_time_minutes": 25,
+          "estimated_word_count": 5300,
+          "display_order": 2,
+          "has_quiz": true
+        },
+        {
+          "chapter_number": 3,
+          "title": "Silicone Coatings",
+          "type": "chapter",
+          "depth": "core",
+          "estimated_read_time_minutes": 26,
+          "estimated_word_count": 5400,
+          "display_order": 3,
+          "has_quiz": true
+        },
+        {
+          "chapter_number": 4,
+          "title": "Roof Rejuvenation (Fresh Roof)",
+          "type": "chapter",
+          "depth": "core",
+          "estimated_read_time_minutes": 26,
+          "estimated_word_count": 5400,
+          "display_order": 4,
+          "has_quiz": true
+        },
+        {
+          "chapter_number": 5,
+          "title": "PVC (Polyvinyl Chloride)",
+          "type": "chapter",
+          "depth": "secondary",
+          "estimated_read_time_minutes": 17,
+          "estimated_word_count": 3500,
+          "display_order": 5,
+          "has_quiz": true
+        },
+        {
+          "chapter_number": 6,
+          "title": "Modified Bitumen (Self-Adhered)",
+          "type": "chapter",
+          "depth": "secondary",
+          "estimated_read_time_minutes": 17,
+          "estimated_word_count": 3400,
+          "display_order": 6,
+          "has_quiz": true
+        },
+        {
+          "chapter_number": 7,
+          "title": "Acrylic Coatings",
+          "type": "chapter",
+          "depth": "reference",
+          "estimated_read_time_minutes": 8,
+          "estimated_word_count": 1500,
+          "display_order": 7,
+          "has_quiz": true
+        },
+        {
+          "chapter_number": 8,
+          "title": "Concrete Tile",
+          "type": "chapter",
+          "depth": "secondary",
+          "estimated_read_time_minutes": 22,
+          "estimated_word_count": 4400,
+          "display_order": 8,
+          "has_quiz": true
+        },
+        {
+          "chapter_number": 9,
+          "title": "Built-Up Roofing (BUR)",
+          "type": "chapter",
+          "depth": "core",
+          "estimated_read_time_minutes": 27,
+          "estimated_word_count": 5500,
+          "display_order": 9,
+          "has_quiz": true
+        },
+        {
+          "chapter_number": 10,
+          "title": "Spray Polyurethane Foam (SPF)",
+          "type": "chapter",
+          "depth": "core",
+          "estimated_read_time_minutes": 28,
+          "estimated_word_count": 5800,
+          "display_order": 10,
+          "has_quiz": true
+        }
+      ]
+    },
+    {
+      "part_number": 2,
+      "title": "Supporting Topics",
+      "description": "Cross-system topics that affect every roofing recommendation: maintenance, inspections, decision frameworks, ventilation, flashings, drainage, and overview chapters.",
+      "display_order": 2,
+      "chapters": [
+        {
+          "chapter_number": 11,
+          "title": "Maintenance and Repairs",
+          "type": "chapter",
+          "depth": "core",
+          "estimated_read_time_minutes": 17,
+          "estimated_word_count": 3400,
+          "display_order": 1,
+          "has_quiz": true
+        },
+        {
+          "chapter_number": 12,
+          "title": "Inspections and Documentation",
+          "type": "chapter",
+          "depth": "core",
+          "estimated_read_time_minutes": 22,
+          "estimated_word_count": 4300,
+          "display_order": 2,
+          "has_quiz": true
+        },
+        {
+          "chapter_number": 13,
+          "title": "Repair vs Restoration vs Replacement Decision Framework",
+          "type": "chapter",
+          "depth": "core",
+          "estimated_read_time_minutes": 26,
+          "estimated_word_count": 5200,
+          "display_order": 3,
+          "has_quiz": true
+        },
+        {
+          "chapter_number": 14,
+          "title": "Ventilation and Condensation",
+          "type": "chapter",
+          "depth": "core",
+          "estimated_read_time_minutes": 24,
+          "estimated_word_count": 4800,
+          "display_order": 4,
+          "has_quiz": true
+        },
+        {
+          "chapter_number": 15,
+          "title": "Flashings, Penetrations, and Edge Details",
+          "type": "chapter",
+          "depth": "core",
+          "estimated_read_time_minutes": 26,
+          "estimated_word_count": 5200,
+          "display_order": 5,
+          "has_quiz": true
+        },
+        {
+          "chapter_number": 16,
+          "title": "Gutters, Drainage, and Ponding Water",
+          "type": "chapter",
+          "depth": "core",
+          "estimated_read_time_minutes": 26,
+          "estimated_word_count": 5300,
+          "display_order": 6,
+          "has_quiz": true
+        },
+        {
+          "chapter_number": 17,
+          "title": "Commercial Flat-Roof Systems Overview",
+          "type": "chapter",
+          "depth": "core",
+          "estimated_read_time_minutes": 25,
+          "estimated_word_count": 5000,
+          "display_order": 7,
+          "has_quiz": true
+        },
+        {
+          "chapter_number": 18,
+          "title": "Residential Steep-Slope Roof Systems Overview",
+          "type": "chapter",
+          "depth": "core",
+          "estimated_read_time_minutes": 22,
+          "estimated_word_count": 4300,
+          "display_order": 8,
+          "has_quiz": true
+        }
+      ]
+    },
+    {
+      "part_number": 3,
+      "title": "Sales Training Modules",
+      "description": "Focused sales training pieces covering the customer-conversation patterns that come up most frequently in the field.",
+      "display_order": 3,
+      "modules": [
+        {
+          "module_number": 1,
+          "title": "How to Talk About Roof Age",
+          "type": "module",
+          "estimated_read_time_minutes": 7,
+          "estimated_word_count": 1300,
+          "display_order": 1,
+          "has_quiz": false
+        },
+        {
+          "module_number": 2,
+          "title": "How to Talk About Leaks",
+          "type": "module",
+          "estimated_read_time_minutes": 8,
+          "estimated_word_count": 1500,
+          "display_order": 2,
+          "has_quiz": false
+        },
+        {
+          "module_number": 3,
+          "title": "How to Talk About Ponding Water on Flat Roofs",
+          "type": "module",
+          "estimated_read_time_minutes": 8,
+          "estimated_word_count": 1500,
+          "display_order": 3,
+          "has_quiz": false
+        },
+        {
+          "module_number": 4,
+          "title": "How to Talk About Coatings vs Repair vs Restoration vs Replacement",
+          "type": "module",
+          "estimated_read_time_minutes": 8,
+          "estimated_word_count": 1500,
+          "display_order": 4,
+          "has_quiz": false
+        },
+        {
+          "module_number": 5,
+          "title": "How to Talk About Roof Rejuvenation",
+          "type": "module",
+          "estimated_read_time_minutes": 7,
+          "estimated_word_count": 1400,
+          "display_order": 5,
+          "has_quiz": false
+        },
+        {
+          "module_number": 6,
+          "title": "How to Talk About Storm Damage",
+          "type": "module",
+          "estimated_read_time_minutes": 8,
+          "estimated_word_count": 1500,
+          "display_order": 6,
+          "has_quiz": false
+        },
+        {
+          "module_number": 7,
+          "title": "How to Take Roof Photos Like a Professional",
+          "type": "module",
+          "estimated_read_time_minutes": 19,
+          "estimated_word_count": 3800,
+          "display_order": 7,
+          "has_quiz": false,
+          "extended_section": true
+        },
+        {
+          "module_number": 8,
+          "title": "How to Build Trust: Consultative vs Pressure Selling",
+          "type": "module",
+          "estimated_read_time_minutes": 8,
+          "estimated_word_count": 1500,
+          "display_order": 8,
+          "has_quiz": false
+        },
+        {
+          "module_number": 9,
+          "title": "How to Recommend Repair vs Replacement",
+          "type": "module",
+          "estimated_read_time_minutes": 8,
+          "estimated_word_count": 1500,
+          "display_order": 9,
+          "has_quiz": false
+        },
+        {
+          "module_number": 10,
+          "title": "How to Present Good / Better / Best Options",
+          "type": "module",
+          "estimated_read_time_minutes": 8,
+          "estimated_word_count": 1500,
+          "display_order": 10,
+          "has_quiz": false
+        },
+        {
+          "module_number": 11,
+          "title": "How to Talk About Pricing",
+          "type": "module",
+          "estimated_read_time_minutes": 8,
+          "estimated_word_count": 1500,
+          "display_order": 11,
+          "has_quiz": false
+        },
+        {
+          "module_number": 12,
+          "title": "Warranty Reality: Cross-System Deep Dive",
+          "type": "module",
+          "estimated_read_time_minutes": 8,
+          "estimated_word_count": 1500,
+          "display_order": 12,
+          "has_quiz": false
+        },
+        {
+          "module_number": 13,
+          "title": "Why Honesty Is the Long-Term Sale",
+          "type": "module",
+          "estimated_read_time_minutes": 10,
+          "estimated_word_count": 2000,
+          "display_order": 13,
+          "has_quiz": false
+        }
+      ]
+    },
+    {
+      "part_number": 4,
+      "title": "Photo Training",
+      "description": "Photo training is covered in extended depth as Module 7 in Part III. This part is a reference pointer to that content.",
+      "display_order": 4,
+      "reference_only": true,
+      "points_to": "Part 3, Module 7"
+    },
+    {
+      "part_number": 5,
+      "title": "Inspection Checklists",
+      "description": "Field-usable inspection checklists for every system USA Flat Roof works on, plus general residential and commercial overview checklists.",
+      "display_order": 5,
+      "chapters": [
+        {
+          "chapter_number": 1,
+          "title": "How to Use These Checklists",
+          "type": "reference",
+          "estimated_read_time_minutes": 3,
+          "display_order": 1,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 2,
+          "title": "Checklist 1: General Residential Steep-Slope",
+          "type": "reference",
+          "estimated_read_time_minutes": 5,
+          "display_order": 2,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 3,
+          "title": "Checklist 2: General Commercial Flat-Roof",
+          "type": "reference",
+          "estimated_read_time_minutes": 5,
+          "display_order": 3,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 4,
+          "title": "Checklist 3: Composition Shingle",
+          "type": "reference",
+          "estimated_read_time_minutes": 4,
+          "display_order": 4,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 5,
+          "title": "Checklist 4: Concrete Tile",
+          "type": "reference",
+          "estimated_read_time_minutes": 4,
+          "display_order": 5,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 6,
+          "title": "Checklist 5: TPO",
+          "type": "reference",
+          "estimated_read_time_minutes": 4,
+          "display_order": 6,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 7,
+          "title": "Checklist 6: PVC",
+          "type": "reference",
+          "estimated_read_time_minutes": 3,
+          "display_order": 7,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 8,
+          "title": "Checklist 7: Modified Bitumen",
+          "type": "reference",
+          "estimated_read_time_minutes": 4,
+          "display_order": 8,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 9,
+          "title": "Checklist 8: BUR (Built-Up Roofing)",
+          "type": "reference",
+          "estimated_read_time_minutes": 5,
+          "display_order": 9,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 10,
+          "title": "Checklist 9: Silicone Coatings (Existing)",
+          "type": "reference",
+          "estimated_read_time_minutes": 4,
+          "display_order": 10,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 11,
+          "title": "Checklist 10: SPF (Spray Polyurethane Foam)",
+          "type": "reference",
+          "estimated_read_time_minutes": 5,
+          "display_order": 11,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 12,
+          "title": "Maintenance Visit Quick Checklist",
+          "type": "reference",
+          "estimated_read_time_minutes": 3,
+          "display_order": 12,
+          "has_quiz": false
+        }
+      ]
+    },
+    {
+      "part_number": 6,
+      "title": "Comparison Tables",
+      "description": "Quick-reference tables synthesizing information across the system chapters.",
+      "display_order": 6,
+      "chapters": [
+        {
+          "chapter_number": 1,
+          "title": "How to Use These Tables",
+          "type": "reference",
+          "estimated_read_time_minutes": 3,
+          "display_order": 1,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 2,
+          "title": "Table 1: Residential Steep-Slope Systems Comparison",
+          "type": "reference",
+          "estimated_read_time_minutes": 5,
+          "display_order": 2,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 3,
+          "title": "Table 2: Commercial Flat-Roof Systems Comparison",
+          "type": "reference",
+          "estimated_read_time_minutes": 5,
+          "display_order": 3,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 4,
+          "title": "Table 3: Lifespan Comparison",
+          "type": "reference",
+          "estimated_read_time_minutes": 4,
+          "display_order": 4,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 5,
+          "title": "Table 4: Maintenance Needs Comparison",
+          "type": "reference",
+          "estimated_read_time_minutes": 4,
+          "display_order": 5,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 6,
+          "title": "Table 5: Repair Difficulty Comparison",
+          "type": "reference",
+          "estimated_read_time_minutes": 4,
+          "display_order": 6,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 7,
+          "title": "Table 6: Restoration Potential Comparison",
+          "type": "reference",
+          "estimated_read_time_minutes": 5,
+          "display_order": 7,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 8,
+          "title": "Table 7: Common Failure Points Comparison",
+          "type": "reference",
+          "estimated_read_time_minutes": 4,
+          "display_order": 8,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 9,
+          "title": "Table 8: Sales Opportunity Comparison",
+          "type": "reference",
+          "estimated_read_time_minutes": 5,
+          "display_order": 9,
+          "has_quiz": false
+        }
+      ]
+    },
+    {
+      "part_number": 7,
+      "title": "Final Comprehensive Exam",
+      "description": "100-question certification exam covering the full scope of the Roof Systems Field Guide. 80% passing score.",
+      "display_order": 7,
+      "is_exam": true,
+      "exam_metadata": {
+        "total_questions": 100,
+        "passing_score_percent": 80,
+        "section_count": 7,
+        "estimated_time_minutes": 90,
+        "retake_cooldown_hours": 24,
+        "difficulty_distribution": {
+          "beginner_percent": 40,
+          "intermediate_percent": 40,
+          "advanced_percent": 20
+        }
+      },
+      "sections": [
+        {
+          "section_number": 1,
+          "title": "System Identification and Recognition",
+          "question_count": 20,
+          "display_order": 1
+        },
+        {
+          "section_number": 2,
+          "title": "Inspection Skills",
+          "question_count": 15,
+          "display_order": 2
+        },
+        {
+          "section_number": 3,
+          "title": "Repair vs Restoration vs Replacement",
+          "question_count": 15,
+          "display_order": 3
+        },
+        {
+          "section_number": 4,
+          "title": "Customer Communication",
+          "question_count": 15,
+          "display_order": 4
+        },
+        {
+          "section_number": 5,
+          "title": "System-Specific Knowledge",
+          "question_count": 15,
+          "display_order": 5
+        },
+        {
+          "section_number": 6,
+          "title": "Comparisons and Cross-System Reasoning",
+          "question_count": 10,
+          "display_order": 6
+        },
+        {
+          "section_number": 7,
+          "title": "Objection Handling and Honest-Versus-Easy Scenarios",
+          "question_count": 10,
+          "display_order": 7
+        }
+      ]
+    },
+    {
+      "part_number": 8,
+      "title": "Back Matter",
+      "description": "Glossary, recommended training paths, and quick-reference pocket card.",
+      "display_order": 8,
+      "chapters": [
+        {
+          "chapter_number": 1,
+          "title": "Glossary",
+          "type": "glossary",
+          "estimated_read_time_minutes": 25,
+          "display_order": 1,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 2,
+          "title": "Recommended Training Paths",
+          "type": "training_path",
+          "estimated_read_time_minutes": 10,
+          "display_order": 2,
+          "has_quiz": false
+        },
+        {
+          "chapter_number": 3,
+          "title": "Quick-Reference Pocket Card",
+          "type": "pocket_card",
+          "estimated_read_time_minutes": 5,
+          "display_order": 3,
+          "has_quiz": false
+        }
+      ]
+    }
+  ],
+  "chapter_section_templates": {
+    "_comment": "Each Core and Secondary chapter follows this 27-section template. Reference chapters use a shorter version. Section content gets imported separately from the markdown source.",
+    "core_chapter_sections": [
+      {"section_number": "1", "title": "Learning Objectives", "is_instructor_only": false},
+      {"section_number": "2", "title": "What This System Is", "is_instructor_only": false},
+      {"section_number": "3", "title": "Where USA Flat Roof Uses It", "is_instructor_only": false},
+      {"section_number": "4", "title": "Recognition - How to Identify on Sight", "is_instructor_only": false},
+      {"section_number": "5", "title": "Inspection Process", "is_instructor_only": false},
+      {"section_number": "6", "title": "Common Failure Points", "is_instructor_only": false},
+      {"section_number": "7", "title": "Severity Rating Reference", "is_instructor_only": false},
+      {"section_number": "8", "title": "Maintenance Patterns", "is_instructor_only": false},
+      {"section_number": "9", "title": "Repair Approach", "is_instructor_only": false},
+      {"section_number": "10", "title": "Restoration Approach", "is_instructor_only": false},
+      {"section_number": "11", "title": "Replacement Approach", "is_instructor_only": false},
+      {"section_number": "12", "title": "Recommendation Decision Framework", "is_instructor_only": false},
+      {"section_number": "13", "title": "Disqualifying Conditions", "is_instructor_only": false},
+      {"section_number": "14", "title": "Sales Conversation Guide", "is_instructor_only": false},
+      {"section_number": "15", "title": "Lead Qualification Questions", "is_instructor_only": false},
+      {"section_number": "16", "title": "Customer Objection Handling", "is_instructor_only": false},
+      {"section_number": "17", "title": "Honest-Versus-Easy Moments", "is_instructor_only": false},
+      {"section_number": "18", "title": "Common Sales Mistakes", "is_instructor_only": false},
+      {"section_number": "19", "title": "Warranty Reality", "is_instructor_only": false},
+      {"section_number": "20", "title": "Pricing Conversation Notes", "is_instructor_only": false},
+      {"section_number": "21", "title": "When to Escalate", "is_instructor_only": false},
+      {"section_number": "22", "title": "Company Method Box", "is_instructor_only": false},
+      {"section_number": "23", "title": "Instructor Notes", "is_instructor_only": true},
+      {"section_number": "24", "title": "Key Terms to Remember", "is_instructor_only": false},
+      {"section_number": "25", "title": "Chapter Summary", "is_instructor_only": false},
+      {"section_number": "26", "title": "End-of-Chapter Quiz", "is_instructor_only": false},
+      {"section_number": "27", "title": "Manager Review Checklist + Verification Notes", "is_instructor_only": true}
+    ]
+  }
+}
