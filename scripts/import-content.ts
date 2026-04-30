@@ -21,9 +21,15 @@
 //   quiz_questions      — upsert by (quiz_id, question_number)
 //   quiz_answers        — delete-and-reinsert per question_id (small
 //                         fanout; safer than diffing answer letters)
-//
-// (Importers for comparison tables, glossary, and checklists land
-//  in chunk 3.)
+//   comparison_tables   — upsert by table_number (UNIQUE). Any keys
+//                         not in the known set are bundled into
+//                         guidance_json.
+//   glossary_terms      — bulk upsert with onConflict=term, in
+//                         batches of 50. Existing-term names are
+//                         pre-queried so insert/update counts stay
+//                         accurate.
+//   checklists          — upsert by checklist_number (UNIQUE)
+//   checklist_sections  — upsert by (checklist_id, display_order)
 
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { readFileSync } from 'node:fs';
@@ -189,6 +195,59 @@ interface ChapterQuizzesJson {
   quizzes: ChapterQuizJson[];
 }
 
+// ----- Comparison tables -----
+interface ComparisonTableColumnJson {
+  key: string;
+  label: string;
+}
+
+// `[extra: string]: unknown` is intentional — any field beyond the
+// known set is bundled into guidance_json by importComparisonTables.
+interface ComparisonTableJson {
+  table_number: number;
+  title: string;
+  description?: string;
+  columns: ComparisonTableColumnJson[];
+  rows: Array<Record<string, string>>;
+  footnote?: string;
+  [extra: string]: unknown;
+}
+
+interface ComparisonTablesJson {
+  metadata: Record<string, unknown>;
+  tables: ComparisonTableJson[];
+}
+
+// ----- Glossary -----
+interface GlossaryTermJson {
+  term: string;
+  definition: string;
+  references: string[];
+}
+
+interface GlossaryJson {
+  metadata: Record<string, unknown>;
+  terms: GlossaryTermJson[];
+}
+
+// ----- Inspection checklists -----
+interface ChecklistSectionJson {
+  section_title: string;
+  items: unknown[];
+}
+
+interface ChecklistJson {
+  checklist_number: number;
+  title: string;
+  use_when?: string;
+  sections: ChecklistSectionJson[];
+}
+
+interface ChecklistsJson {
+  metadata: Record<string, unknown>;
+  checklists: ChecklistJson[];
+}
+
 // ---------------------------------------------------------------------------
 // Summary accumulator
 // ---------------------------------------------------------------------------
@@ -208,6 +267,10 @@ interface Summary {
   chapter_quizzes: TableStats;
   quiz_questions: TableStats;
   quiz_answers: TableStats;
+  comparison_tables: TableStats;
+  glossary_terms: TableStats;
+  checklists: TableStats;
+  checklist_sections: TableStats;
 }
 
 const summary: Summary = {
@@ -220,6 +283,31 @@ const summary: Summary = {
   chapter_quizzes: { inserted: 0, updated: 0, skipped: 0 },
   quiz_questions: { inserted: 0, updated: 0, skipped: 0 },
   quiz_answers: { inserted: 0, updated: 0, skipped: 0 },
+  comparison_tables: { inserted: 0, updated: 0, skipped: 0 },
+  glossary_terms: { inserted: 0, updated: 0, skipped: 0 },
+  checklists: { inserted: 0, updated: 0, skipped: 0 },
+  checklist_sections: { inserted: 0, updated: 0, skipped: 0 },
+};
+
+// Expected counts when importing into an empty database. Used by the
+// EXPECTED vs ACTUAL block in printSummary. Source-of-truth is the
+// JSON files; figures below are the static totals, NOT what dry-run
+// will print on a partially-loaded DB (where most rows are updates,
+// not inserts).
+const EXPECTED: Record<keyof Summary, number> = {
+  book_parts: 8,
+  chapters: 55, // 10 + 8 (Parts 1,2) + 13 modules (Part 3) + 12 + 9 + 3 (Parts 5,6,8)
+  sections: 524, // 9*27 (Part 1 core/secondary) + 8*27 (Part 2) + 13*5 (Part 3 modules)
+  final_exam_chapter: 1,
+  final_exam_quiz: 1,
+  quiz_sections: 7,
+  chapter_quizzes: 18,
+  quiz_questions: 280, // 100 final + 180 chapter
+  quiz_answers: 1120, // 280 * 4
+  comparison_tables: 8,
+  glossary_terms: 154,
+  checklists: 11,
+  checklist_sections: 93,
 };
 
 // ---------------------------------------------------------------------------
@@ -1107,13 +1195,305 @@ async function importChapterQuizzes(
 }
 
 // ---------------------------------------------------------------------------
+// Importer 6: comparison tables
+//
+// Any keys on a table beyond the known set
+// {table_number, title, description, columns, rows, footnote} are
+// bundled into guidance_json verbatim. This is how the JSON's
+// table-specific extras (guidance, patterns_worth_noting,
+// disqualifying_conditions_pattern, universal_pattern, pipeline_math)
+// reach the database without each one needing its own column.
+// ---------------------------------------------------------------------------
+const COMPARISON_TABLE_KNOWN_KEYS = new Set([
+  'table_number',
+  'title',
+  'description',
+  'columns',
+  'rows',
+  'footnote',
+]);
+
+async function importComparisonTables(supabase: SupabaseClient): Promise<void> {
+  log('Importing comparison_tables...');
+  const data = JSON.parse(
+    readFileSync(PATHS.comparisonTables, 'utf8'),
+  ) as ComparisonTablesJson;
+
+  for (const t of data.tables) {
+    const extras: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(t)) {
+      if (!COMPARISON_TABLE_KNOWN_KEYS.has(k)) {
+        extras[k] = v;
+      }
+    }
+    const guidance_json = Object.keys(extras).length > 0 ? extras : null;
+
+    const payload = {
+      table_number: t.table_number,
+      title: t.title,
+      description: t.description ?? null,
+      columns_json: t.columns,
+      rows_json: t.rows,
+      footnote: t.footnote ?? null,
+      guidance_json,
+      display_order: t.table_number,
+    };
+
+    const { data: existing, error: fetchErr } = await supabase
+      .from('comparison_tables')
+      .select('id')
+      .eq('table_number', t.table_number)
+      .maybeSingle();
+    if (fetchErr) {
+      throw new Error(
+        `comparison_tables query (table ${t.table_number}): ${fetchErr.message}`,
+      );
+    }
+
+    if (existing) {
+      if (!dryRun) {
+        const { error } = await supabase
+          .from('comparison_tables')
+          .update(payload)
+          .eq('id', existing.id);
+        if (error) {
+          throw new Error(
+            `comparison_tables update (table ${t.table_number}): ${error.message}`,
+          );
+        }
+      }
+      summary.comparison_tables.updated++;
+    } else {
+      if (!dryRun) {
+        const { error } = await supabase
+          .from('comparison_tables')
+          .insert(payload);
+        if (error) {
+          throw new Error(
+            `comparison_tables insert (table ${t.table_number}): ${error.message}`,
+          );
+        }
+      }
+      summary.comparison_tables.inserted++;
+    }
+  }
+
+  log(
+    `comparison_tables done — inserted=${summary.comparison_tables.inserted} ` +
+      `updated=${summary.comparison_tables.updated}`,
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Importer 7: glossary
+//
+// 154 terms — uses a single SELECT to know which terms already exist,
+// then bulk-upserts in batches of 50 (Supabase's PostgREST handles
+// upsert with onConflict natively). Counts are derived from the
+// pre-query, not the upsert response, so insert/update tracking is
+// accurate.
+// ---------------------------------------------------------------------------
+const GLOSSARY_BATCH_SIZE = 50;
+
+async function importGlossary(supabase: SupabaseClient): Promise<void> {
+  log('Importing glossary_terms...');
+  const data = JSON.parse(
+    readFileSync(PATHS.glossary, 'utf8'),
+  ) as GlossaryJson;
+
+  // Pre-query existing term names to classify each row insert/update.
+  const existingTerms = new Set<string>();
+  {
+    const { data: existing, error: fetchErr } = await supabase
+      .from('glossary_terms')
+      .select('term');
+    if (fetchErr) {
+      throw new Error(`glossary pre-query: ${fetchErr.message}`);
+    }
+    for (const row of existing ?? []) {
+      const t = (row as { term: string | null }).term;
+      if (t) existingTerms.add(t);
+    }
+  }
+
+  const rows = data.terms.map((g) => ({
+    term: g.term,
+    definition: g.definition,
+    references_json: g.references,
+  }));
+
+  for (const r of rows) {
+    if (existingTerms.has(r.term)) {
+      summary.glossary_terms.updated++;
+    } else {
+      summary.glossary_terms.inserted++;
+    }
+  }
+
+  if (!dryRun) {
+    for (let i = 0; i < rows.length; i += GLOSSARY_BATCH_SIZE) {
+      const batch = rows.slice(i, i + GLOSSARY_BATCH_SIZE);
+      const { error } = await supabase
+        .from('glossary_terms')
+        .upsert(batch, { onConflict: 'term' });
+      if (error) {
+        throw new Error(
+          `glossary upsert (batch starting at ${i}): ${error.message}`,
+        );
+      }
+    }
+  }
+
+  log(
+    `glossary_terms done — inserted=${summary.glossary_terms.inserted} ` +
+      `updated=${summary.glossary_terms.updated}`,
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Importer 8: inspection checklists
+//
+// Two tables: `checklists` (one row per checklist, keyed by
+// checklist_number) and `checklist_sections` (one row per section
+// within a checklist, keyed by (checklist_id, display_order)).
+// items_json carries each section's rich item structure verbatim.
+// ---------------------------------------------------------------------------
+async function importChecklists(supabase: SupabaseClient): Promise<void> {
+  log('Importing checklists...');
+  const data = JSON.parse(
+    readFileSync(PATHS.checklists, 'utf8'),
+  ) as ChecklistsJson;
+
+  for (const cl of data.checklists) {
+    const checklistPayload = {
+      checklist_number: cl.checklist_number,
+      title: cl.title,
+      use_when: cl.use_when ?? null,
+      display_order: cl.checklist_number,
+    };
+
+    let checklistId: string;
+    const { data: existing, error: fetchErr } = await supabase
+      .from('checklists')
+      .select('id')
+      .eq('checklist_number', cl.checklist_number)
+      .maybeSingle();
+    if (fetchErr) {
+      throw new Error(
+        `checklists query (checklist ${cl.checklist_number}): ${fetchErr.message}`,
+      );
+    }
+
+    if (existing) {
+      if (!dryRun) {
+        const { error } = await supabase
+          .from('checklists')
+          .update(checklistPayload)
+          .eq('id', existing.id);
+        if (error) {
+          throw new Error(
+            `checklists update (checklist ${cl.checklist_number}): ${error.message}`,
+          );
+        }
+      }
+      summary.checklists.updated++;
+      checklistId = existing.id as string;
+    } else {
+      if (!dryRun) {
+        const { data: inserted, error } = await supabase
+          .from('checklists')
+          .insert(checklistPayload)
+          .select('id')
+          .single();
+        if (error || !inserted) {
+          throw new Error(
+            `checklists insert (checklist ${cl.checklist_number}): ` +
+              (error?.message ?? 'no row returned'),
+          );
+        }
+        checklistId = inserted.id as string;
+      } else {
+        checklistId = `dry-checklist-${cl.checklist_number}`;
+      }
+      summary.checklists.inserted++;
+    }
+
+    for (let i = 0; i < cl.sections.length; i++) {
+      const sec = cl.sections[i];
+      const display_order = i + 1;
+      const secPayload = {
+        checklist_id: checklistId,
+        section_title: sec.section_title,
+        display_order,
+        items_json: sec.items,
+      };
+
+      if (checklistId.startsWith('dry-checklist-')) {
+        summary.checklist_sections.inserted++;
+        continue;
+      }
+
+      const { data: existingSec, error: secFetchErr } = await supabase
+        .from('checklist_sections')
+        .select('id')
+        .eq('checklist_id', checklistId)
+        .eq('display_order', display_order)
+        .maybeSingle();
+      if (secFetchErr) {
+        throw new Error(
+          `checklist_sections query (checklist ${cl.checklist_number}, ` +
+            `display_order ${display_order}): ${secFetchErr.message}`,
+        );
+      }
+
+      if (existingSec) {
+        if (!dryRun) {
+          const { error } = await supabase
+            .from('checklist_sections')
+            .update(secPayload)
+            .eq('id', existingSec.id);
+          if (error) {
+            throw new Error(
+              `checklist_sections update (checklist ${cl.checklist_number}, ` +
+                `display_order ${display_order}): ${error.message}`,
+            );
+          }
+        }
+        summary.checklist_sections.updated++;
+      } else {
+        if (!dryRun) {
+          const { error } = await supabase
+            .from('checklist_sections')
+            .insert(secPayload);
+          if (error) {
+            throw new Error(
+              `checklist_sections insert (checklist ${cl.checklist_number}, ` +
+                `display_order ${display_order}): ${error.message}`,
+            );
+          }
+        }
+        summary.checklist_sections.inserted++;
+      }
+    }
+  }
+
+  log(
+    `checklists done — checklists=${
+      summary.checklists.inserted + summary.checklists.updated
+    } sections=${
+      summary.checklist_sections.inserted + summary.checklist_sections.updated
+    }`,
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Summary printing
 // ---------------------------------------------------------------------------
 function printSummary(): void {
   console.log('');
   console.log('=== IMPORT SUMMARY ===');
   console.log(`Mode: ${dryRun ? 'DRY-RUN (no writes)' : 'LIVE'}`);
-  const rows: Array<[string, TableStats]> = [
+  const rows: Array<[keyof Summary, TableStats]> = [
     ['book_parts', summary.book_parts],
     ['chapters', summary.chapters],
     ['sections', summary.sections],
@@ -1123,6 +1503,10 @@ function printSummary(): void {
     ['chapter_quizzes', summary.chapter_quizzes],
     ['quiz_questions', summary.quiz_questions],
     ['quiz_answers', summary.quiz_answers],
+    ['comparison_tables', summary.comparison_tables],
+    ['glossary_terms', summary.glossary_terms],
+    ['checklists', summary.checklists],
+    ['checklist_sections', summary.checklist_sections],
   ];
   for (const [name, s] of rows) {
     console.log(
@@ -1130,11 +1514,26 @@ function printSummary(): void {
         `updated=${s.updated}  skipped=${s.skipped}`,
     );
   }
+
+  // EXPECTED vs ACTUAL — actual = inserted+updated+skipped, which
+  // should equal the number of rows in each JSON source when the
+  // importer is run against a target DB (empty or already-loaded).
   console.log('');
-  console.log(
-    'Importers still pending in this script: comparison tables, ' +
-      'glossary, checklists.',
-  );
+  console.log('=== EXPECTED vs ACTUAL (inserted + updated + skipped) ===');
+  let allMatch = true;
+  for (const [name] of rows) {
+    const stats = summary[name];
+    const actual = stats.inserted + stats.updated + stats.skipped;
+    const expected = EXPECTED[name];
+    const match = actual === expected;
+    if (!match) allMatch = false;
+    const flag = match ? 'OK ' : 'MISMATCH';
+    console.log(
+      `  ${flag}  ${name.padEnd(20)} expected=${String(expected).padEnd(5)} actual=${actual}`,
+    );
+  }
+  console.log('');
+  console.log(allMatch ? 'All counts match expected.' : 'WARNING: counts do not match expected. Investigate before live import.');
 }
 
 // ---------------------------------------------------------------------------
@@ -1159,6 +1558,9 @@ async function main(): Promise<void> {
   await importSections(supabase, chapterMap);
   await importFinalExam(supabase, partMap);
   await importChapterQuizzes(supabase, chapterMap);
+  await importComparisonTables(supabase);
+  await importGlossary(supabase);
+  await importChecklists(supabase);
 
   printSummary();
 }
