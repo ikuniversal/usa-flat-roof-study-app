@@ -1,7 +1,13 @@
 import { createServerClient } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
 
-export async function updateSession(request: NextRequest) {
+// Refreshes the Supabase session cookie and returns BOTH the response
+// (with refreshed cookies) and the current user. The middleware uses
+// the user value to make routing decisions.
+export async function updateSession(request: NextRequest): Promise<{
+  response: NextResponse;
+  user: Awaited<ReturnType<ReturnType<typeof createServerClient>['auth']['getUser']>>['data']['user'];
+}> {
   let supabaseResponse = NextResponse.next({ request });
 
   const supabase = createServerClient(
@@ -25,9 +31,11 @@ export async function updateSession(request: NextRequest) {
     },
   );
 
-  // IMPORTANT: do not run logic between createServerClient and getUser —
-  // it must touch the auth cookie on every request to refresh tokens.
-  await supabase.auth.getUser();
+  // IMPORTANT: do not run logic between createServerClient and
+  // getUser — it must touch the auth cookie on every request.
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
-  return supabaseResponse;
+  return { response: supabaseResponse, user };
 }
