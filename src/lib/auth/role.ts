@@ -14,10 +14,17 @@ export function homePathForRole(role: UserRole): string {
   }
 }
 
-// Fetches the current user and their profile. Redirects to /login if
-// the session is missing or no profile row exists.
+// Fetches the current user and their profile.
 //
-// Used inside protected route-group layouts as the auth gate.
+// IMPORTANT: middleware is the single source of truth for whether a
+// request is authenticated. By the time this helper runs in a
+// protected route-group layout, middleware has already verified
+// `getUser()` returned a user and forwarded the request. If our
+// server-component `getUser()` here returns null anyway, that is a
+// cookie-propagation inconsistency, NOT a logged-out user. In that
+// case we THROW (caught by the route-group error.tsx) rather than
+// redirecting to /login — a redirect here would race with middleware
+// on the next request and produce ERR_TOO_MANY_REDIRECTS.
 export async function requireUserWithProfile(): Promise<{
   user: { id: string; email?: string };
   profile: Profile;
@@ -28,7 +35,13 @@ export async function requireUserWithProfile(): Promise<{
   } = await supabase.auth.getUser();
 
   if (!user) {
-    redirect('/login');
+    throw new Error(
+      'requireUserWithProfile: middleware approved this request but ' +
+        'server-component getUser() returned null. Cookie propagation ' +
+        'between middleware and the RSC has failed. (Check the network ' +
+        'tab for missing sb-* cookies or rotated tokens that did not ' +
+        'reach the browser.)',
+    );
   }
 
   const { data: profile, error } = await supabase
@@ -38,10 +51,12 @@ export async function requireUserWithProfile(): Promise<{
     .single<Profile>();
 
   if (error || !profile) {
-    // No profile row means the user exists in auth.users but the
-    // handle_new_user trigger didn't run or failed. Treat as
-    // unauthenticated to keep the user out of the app.
-    redirect('/login');
+    throw new Error(
+      `requireUserWithProfile: no profile row for auth user ${user.id} ` +
+        `(${user.email ?? 'no email'}). Either the handle_new_user trigger ` +
+        `did not run on signup, or RLS is blocking the read. Underlying ` +
+        `error: ${error?.message ?? 'no error returned'}`,
+    );
   }
 
   return { user: { id: user.id, email: user.email ?? undefined }, profile };
@@ -49,7 +64,8 @@ export async function requireUserWithProfile(): Promise<{
 
 // Enforces that the current user has one of the allowed roles. If
 // authenticated but with the wrong role, sends the user to *their*
-// dashboard rather than /login (avoids confusing logout behaviour).
+// dashboard. (Mismatch redirect is fine — it goes to a different
+// protected route, which middleware will allow without bouncing.)
 export async function requireRole(allowed: UserRole[]): Promise<{
   user: { id: string; email?: string };
   profile: Profile;

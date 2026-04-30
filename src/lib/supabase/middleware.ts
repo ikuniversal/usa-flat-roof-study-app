@@ -5,9 +5,13 @@ import { NextResponse, type NextRequest } from 'next/server';
 // to / (the root page resolves the role-specific home).
 const AUTH_PATHS = ['/login', '/forgot-password', '/reset-password'];
 
-// URL prefixes that require authentication. Role-specific filtering
+// URL prefixes that require authentication. `/` is included so the
+// root page can trust that anyone reaching it is signed in (its
+// only job is the role-based redirect to /admin, /instructor, or
+// /learn — it must never redirect to /login itself or it would
+// fight middleware and create a loop). Role-specific filtering
 // happens inside each route-group layout, not here.
-const PROTECTED_PREFIXES = ['/admin', '/instructor', '/learn'];
+const PROTECTED_PREFIXES = ['/', '/admin', '/instructor', '/learn'];
 
 function matchesAny(pathname: string, candidates: string[]): boolean {
   return candidates.some(
