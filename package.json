@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "verify:supabase": "tsx --env-file=.env.local scripts/verify-supabase.ts"
+    "verify:supabase": "tsx --env-file=.env.local scripts/verify-supabase.ts",
+    "import:clear": "tsx --env-file=.env.local scripts/clear-content.ts",
+    "import:content": "tsx --env-file=.env.local scripts/import-content.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.10.2",
