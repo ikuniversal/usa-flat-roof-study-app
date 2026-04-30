@@ -1,41 +1,13 @@
-import { NextResponse, type NextRequest } from 'next/server';
+import { type NextRequest } from 'next/server';
 import { updateSession } from '@/lib/supabase/middleware';
 
-// Paths that authenticated users should NOT see — bounce them to /
-// (the root page redirects to the role-appropriate dashboard).
-const AUTH_PATHS = ['/login', '/forgot-password', '/reset-password'];
-
-// Path prefixes that require authentication. Role-specific access is
-// enforced inside each layout, not here.
-const PROTECTED_PREFIXES = ['/admin', '/instructor', '/learn'];
-
-function matchesAny(pathname: string, candidates: string[]): boolean {
-  return candidates.some(
-    (c) => pathname === c || pathname.startsWith(c + '/'),
-  );
-}
-
+// Thin wrapper. All session-refresh and URL-level auth rules live
+// inside `updateSession`, which returns a NextResponse already
+// carrying any rotated Supabase cookies. We must not wrap it in
+// another NextResponse — that would drop those cookies and re-create
+// the redirect loop.
 export async function middleware(request: NextRequest) {
-  const { response, user } = await updateSession(request);
-  const pathname = request.nextUrl.pathname;
-
-  // Authenticated user trying to view an auth page → send them home.
-  if (user && matchesAny(pathname, AUTH_PATHS)) {
-    const url = request.nextUrl.clone();
-    url.pathname = '/';
-    url.search = '';
-    return NextResponse.redirect(url);
-  }
-
-  // Unauthenticated user trying to access a protected area → /login.
-  if (!user && matchesAny(pathname, PROTECTED_PREFIXES)) {
-    const url = request.nextUrl.clone();
-    url.pathname = '/login';
-    url.search = '';
-    return NextResponse.redirect(url);
-  }
-
-  return response;
+  return await updateSession(request);
 }
 
 export const config = {
@@ -46,6 +18,10 @@ export const config = {
      * - _next/image   (image optimizer)
      * - favicon.ico
      * - any image extension
+     *
+     * Route groups like (admin)/(auth)/(learn) are NOT in URL paths
+     * (Next.js strips the parens), so the matcher already covers
+     * /admin, /login, etc. without listing each route group.
      */
     '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],
