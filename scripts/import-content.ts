@@ -13,9 +13,17 @@
 //                         not present; never update or delete (so
 //                         admin-edited content_markdown is preserved
 //                         across re-imports)
+//   quizzes             — upsert by chapter_id (one quiz per chapter,
+//                         including the final-exam quiz under the
+//                         synthesized Part 7 / chapter 1 row)
+//   quiz_sections       — upsert by (quiz_id, section_number)
+//                         (used only for the final exam's 7 sections)
+//   quiz_questions      — upsert by (quiz_id, question_number)
+//   quiz_answers        — delete-and-reinsert per question_id (small
+//                         fanout; safer than diffing answer letters)
 //
-// (Importers for final exam, chapter quizzes, comparison tables,
-//  glossary, and checklists land in subsequent commits.)
+// (Importers for comparison tables, glossary, and checklists land
+//  in chunk 3.)
 
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { readFileSync } from 'node:fs';
@@ -119,6 +127,68 @@ interface BookStructureJson {
   };
 }
 
+// ----- Final exam (full keys) -----
+type Difficulty = 'beginner' | 'intermediate' | 'advanced';
+type AnswerLetter = 'A' | 'B' | 'C' | 'D';
+
+interface FinalExamAnswerJson {
+  letter: AnswerLetter;
+  text: string;
+  is_correct: boolean;
+  explanation?: string;
+}
+
+interface FinalExamQuestionJson {
+  question_number: number;
+  question_text: string;
+  difficulty: Difficulty;
+  answers: FinalExamAnswerJson[];
+}
+
+interface FinalExamSectionJson {
+  section_number: number;
+  title: string;
+  question_count: number;
+  questions: FinalExamQuestionJson[];
+}
+
+interface FinalExamJson {
+  metadata: {
+    passing_score_percent: number;
+    total_questions: number;
+    section_count: number;
+    retake_cooldown_hours: number;
+    [k: string]: unknown;
+  };
+  sections: FinalExamSectionJson[];
+}
+
+// ----- Chapter quizzes (abbreviated keys: q/text/l/t/c/e) -----
+interface ChapterQuizAnswerJson {
+  l: AnswerLetter;
+  t: string;
+  c: boolean;
+  e?: string;
+}
+
+interface ChapterQuizQuestionJson {
+  q: number;
+  text: string;
+  difficulty: Difficulty;
+  answers: ChapterQuizAnswerJson[];
+}
+
+interface ChapterQuizJson {
+  chapter_number: number;
+  chapter_title: string;
+  questions: ChapterQuizQuestionJson[];
+}
+
+interface ChapterQuizzesJson {
+  metadata: Record<string, unknown>;
+  quizzes: ChapterQuizJson[];
+}
+
 // ---------------------------------------------------------------------------
 // Summary accumulator
 // ---------------------------------------------------------------------------
@@ -132,12 +202,24 @@ interface Summary {
   book_parts: TableStats;
   chapters: TableStats;
   sections: TableStats;
+  final_exam_chapter: TableStats;
+  final_exam_quiz: TableStats;
+  quiz_sections: TableStats;
+  chapter_quizzes: TableStats;
+  quiz_questions: TableStats;
+  quiz_answers: TableStats;
 }
 
 const summary: Summary = {
   book_parts: { inserted: 0, updated: 0, skipped: 0 },
   chapters: { inserted: 0, updated: 0, skipped: 0 },
   sections: { inserted: 0, updated: 0, skipped: 0 },
+  final_exam_chapter: { inserted: 0, updated: 0, skipped: 0 },
+  final_exam_quiz: { inserted: 0, updated: 0, skipped: 0 },
+  quiz_sections: { inserted: 0, updated: 0, skipped: 0 },
+  chapter_quizzes: { inserted: 0, updated: 0, skipped: 0 },
+  quiz_questions: { inserted: 0, updated: 0, skipped: 0 },
+  quiz_answers: { inserted: 0, updated: 0, skipped: 0 },
 };
 
 // ---------------------------------------------------------------------------
@@ -181,6 +263,29 @@ type ChapterIdMap = Map<string, ChapterRecord>;
 // they know would return nothing.
 const DRY_PART_PREFIX = 'dry-part-';
 const DRY_CHAPTER_PREFIX = 'dry-chap-';
+const DRY_QUIZ_PREFIX = 'dry-quiz-';
+const DRY_QSEC_PREFIX = 'dry-qsec-';
+const DRY_QUESTION_PREFIX = 'dry-q-';
+
+// Returns the first ChapterRecord whose chapter_number matches AND
+// whose part_number is in `allowedParts`. Returns null if no match.
+// Used by importChapterQuizzes to look up a Part 1/2 chapter from
+// the chapter quiz JSON's bare chapter_number field.
+function findChapterByNumberInParts(
+  chapterMap: ChapterIdMap,
+  chapterNumber: number,
+  allowedParts: number[],
+): ChapterRecord | null {
+  for (const ch of Array.from(chapterMap.values())) {
+    if (
+      ch.chapter_number === chapterNumber &&
+      allowedParts.includes(ch.part_number)
+    ) {
+      return ch;
+    }
+  }
+  return null;
+}
 
 // ---------------------------------------------------------------------------
 // Importer 1: book_parts
@@ -499,6 +604,509 @@ async function importSections(
 }
 
 // ---------------------------------------------------------------------------
+// Importer 4: final exam
+//
+// Three layers of upsert:
+//   1. Synthesize a chapter row under Part 7 with chapter_number=1
+//      and type='exam'.
+//   2. Upsert a quiz row keyed on that chapter_id with
+//      is_final_exam=true.
+//   3. For each of the 7 sections in the JSON, upsert a quiz_sections
+//      row, then upsert each question, then delete-and-reinsert that
+//      question's quiz_answers.
+// ---------------------------------------------------------------------------
+async function importFinalExam(
+  supabase: SupabaseClient,
+  partMap: PartIdMap,
+): Promise<void> {
+  log('Importing final exam...');
+  const data = JSON.parse(
+    readFileSync(PATHS.finalExam, 'utf8'),
+  ) as FinalExamJson;
+
+  // ----- step 1: synthesized exam chapter under Part 7 -----
+  const part7Id = partMap.get(7);
+  if (!part7Id) {
+    throw new Error('importFinalExam: Part 7 not present in partMap');
+  }
+
+  const examChapterPayload = {
+    part_id: part7Id,
+    chapter_number: 1,
+    title: 'Final Comprehensive Exam',
+    type: 'exam',
+    depth: null,
+    display_order: 1,
+    has_quiz: true,
+    extended_section: false,
+  };
+
+  let examChapterId: string;
+  if (part7Id.startsWith(DRY_PART_PREFIX)) {
+    examChapterId = `${DRY_CHAPTER_PREFIX}7-1`;
+    summary.final_exam_chapter.inserted++;
+  } else {
+    const { data: existing, error: fetchErr } = await supabase
+      .from('chapters')
+      .select('id')
+      .eq('part_id', part7Id)
+      .eq('chapter_number', 1)
+      .maybeSingle();
+    if (fetchErr) {
+      throw new Error(`final exam chapter query: ${fetchErr.message}`);
+    }
+    if (existing) {
+      if (!dryRun) {
+        const { error } = await supabase
+          .from('chapters')
+          .update(examChapterPayload)
+          .eq('id', existing.id);
+        if (error) {
+          throw new Error(`final exam chapter update: ${error.message}`);
+        }
+      }
+      summary.final_exam_chapter.updated++;
+      examChapterId = existing.id as string;
+    } else {
+      if (!dryRun) {
+        const { data: inserted, error } = await supabase
+          .from('chapters')
+          .insert(examChapterPayload)
+          .select('id')
+          .single();
+        if (error || !inserted) {
+          throw new Error(
+            `final exam chapter insert: ${error?.message ?? 'no row returned'}`,
+          );
+        }
+        examChapterId = inserted.id as string;
+      } else {
+        examChapterId = `${DRY_CHAPTER_PREFIX}7-1`;
+      }
+      summary.final_exam_chapter.inserted++;
+    }
+  }
+
+  // ----- step 2: final-exam quiz row -----
+  const examQuizPayload = {
+    chapter_id: examChapterId,
+    title: 'Final Comprehensive Exam',
+    passing_score_percent: data.metadata.passing_score_percent ?? 80,
+    question_count: data.metadata.total_questions ?? 100,
+    is_final_exam: true,
+    retake_cooldown_hours: data.metadata.retake_cooldown_hours ?? 24,
+    allow_section_review: true,
+  };
+
+  let examQuizId: string;
+  if (examChapterId.startsWith(DRY_CHAPTER_PREFIX)) {
+    examQuizId = `${DRY_QUIZ_PREFIX}final`;
+    summary.final_exam_quiz.inserted++;
+  } else {
+    const { data: existing, error: fetchErr } = await supabase
+      .from('quizzes')
+      .select('id')
+      .eq('chapter_id', examChapterId)
+      .maybeSingle();
+    if (fetchErr) {
+      throw new Error(`final exam quiz query: ${fetchErr.message}`);
+    }
+    if (existing) {
+      if (!dryRun) {
+        const { error } = await supabase
+          .from('quizzes')
+          .update(examQuizPayload)
+          .eq('id', existing.id);
+        if (error) {
+          throw new Error(`final exam quiz update: ${error.message}`);
+        }
+      }
+      summary.final_exam_quiz.updated++;
+      examQuizId = existing.id as string;
+    } else {
+      if (!dryRun) {
+        const { data: inserted, error } = await supabase
+          .from('quizzes')
+          .insert(examQuizPayload)
+          .select('id')
+          .single();
+        if (error || !inserted) {
+          throw new Error(
+            `final exam quiz insert: ${error?.message ?? 'no row returned'}`,
+          );
+        }
+        examQuizId = inserted.id as string;
+      } else {
+        examQuizId = `${DRY_QUIZ_PREFIX}final`;
+      }
+      summary.final_exam_quiz.inserted++;
+    }
+  }
+
+  // ----- step 3: 7 quiz_sections + 100 questions + 400 answers -----
+  for (const sec of data.sections) {
+    const secPayload = {
+      quiz_id: examQuizId,
+      section_number: sec.section_number,
+      title: sec.title,
+      question_count: sec.question_count,
+      display_order: sec.section_number,
+    };
+
+    let sectionId: string;
+    if (examQuizId.startsWith(DRY_QUIZ_PREFIX)) {
+      sectionId = `${DRY_QSEC_PREFIX}${sec.section_number}`;
+      summary.quiz_sections.inserted++;
+    } else {
+      const { data: existing, error: fetchErr } = await supabase
+        .from('quiz_sections')
+        .select('id')
+        .eq('quiz_id', examQuizId)
+        .eq('section_number', sec.section_number)
+        .maybeSingle();
+      if (fetchErr) {
+        throw new Error(
+          `quiz_sections query (sec ${sec.section_number}): ${fetchErr.message}`,
+        );
+      }
+      if (existing) {
+        if (!dryRun) {
+          const { error } = await supabase
+            .from('quiz_sections')
+            .update(secPayload)
+            .eq('id', existing.id);
+          if (error) {
+            throw new Error(`quiz_sections update: ${error.message}`);
+          }
+        }
+        summary.quiz_sections.updated++;
+        sectionId = existing.id as string;
+      } else {
+        if (!dryRun) {
+          const { data: inserted, error } = await supabase
+            .from('quiz_sections')
+            .insert(secPayload)
+            .select('id')
+            .single();
+          if (error || !inserted) {
+            throw new Error(
+              `quiz_sections insert: ${error?.message ?? 'no row returned'}`,
+            );
+          }
+          sectionId = inserted.id as string;
+        } else {
+          sectionId = `${DRY_QSEC_PREFIX}${sec.section_number}`;
+        }
+        summary.quiz_sections.inserted++;
+      }
+    }
+
+    for (const q of sec.questions) {
+      const qPayload = {
+        quiz_id: examQuizId,
+        quiz_section_id: sectionId.startsWith(DRY_QSEC_PREFIX) ? null : sectionId,
+        question_number: q.question_number,
+        question_text: q.question_text,
+        difficulty: q.difficulty,
+        display_order: q.question_number,
+      };
+
+      let questionId: string;
+      if (examQuizId.startsWith(DRY_QUIZ_PREFIX)) {
+        questionId = `${DRY_QUESTION_PREFIX}final-${q.question_number}`;
+        summary.quiz_questions.inserted++;
+      } else {
+        const { data: existing, error: fetchErr } = await supabase
+          .from('quiz_questions')
+          .select('id')
+          .eq('quiz_id', examQuizId)
+          .eq('question_number', q.question_number)
+          .maybeSingle();
+        if (fetchErr) {
+          throw new Error(
+            `quiz_questions query (q ${q.question_number}): ${fetchErr.message}`,
+          );
+        }
+        if (existing) {
+          if (!dryRun) {
+            const { error } = await supabase
+              .from('quiz_questions')
+              .update(qPayload)
+              .eq('id', existing.id);
+            if (error) {
+              throw new Error(`quiz_questions update: ${error.message}`);
+            }
+          }
+          summary.quiz_questions.updated++;
+          questionId = existing.id as string;
+        } else {
+          if (!dryRun) {
+            const { data: inserted, error } = await supabase
+              .from('quiz_questions')
+              .insert(qPayload)
+              .select('id')
+              .single();
+            if (error || !inserted) {
+              throw new Error(
+                `quiz_questions insert: ${error?.message ?? 'no row returned'}`,
+              );
+            }
+            questionId = inserted.id as string;
+          } else {
+            questionId = `${DRY_QUESTION_PREFIX}final-${q.question_number}`;
+          }
+          summary.quiz_questions.inserted++;
+        }
+      }
+
+      // Delete-and-reinsert answers (skipped entirely for synthetic ids).
+      if (!questionId.startsWith(DRY_QUESTION_PREFIX) && !dryRun) {
+        const { error: delErr } = await supabase
+          .from('quiz_answers')
+          .delete()
+          .eq('question_id', questionId);
+        if (delErr) {
+          throw new Error(
+            `quiz_answers delete (q ${q.question_number}): ${delErr.message}`,
+          );
+        }
+      }
+
+      for (let i = 0; i < q.answers.length; i++) {
+        const a = q.answers[i];
+        const aPayload = {
+          question_id: questionId,
+          answer_letter: a.letter,
+          answer_text: a.text,
+          is_correct: a.is_correct,
+          explanation: a.explanation ?? null,
+          display_order: i + 1,
+        };
+        if (!questionId.startsWith(DRY_QUESTION_PREFIX) && !dryRun) {
+          const { error } = await supabase
+            .from('quiz_answers')
+            .insert(aPayload);
+          if (error) {
+            throw new Error(
+              `quiz_answers insert (q ${q.question_number}, ${a.letter}): ${error.message}`,
+            );
+          }
+        }
+        summary.quiz_answers.inserted++;
+      }
+    }
+  }
+
+  log(
+    `final exam done — chapter=${summary.final_exam_chapter.inserted + summary.final_exam_chapter.updated} ` +
+      `quiz=${summary.final_exam_quiz.inserted + summary.final_exam_quiz.updated} ` +
+      `quiz_sections=${summary.quiz_sections.inserted + summary.quiz_sections.updated} ` +
+      `questions=${summary.quiz_questions.inserted + summary.quiz_questions.updated} ` +
+      `answers=${summary.quiz_answers.inserted}`,
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Importer 5: chapter quizzes (one per chapter in Parts 1–2)
+//
+// JSON uses abbreviated keys: q/text/difficulty + answers[].l/t/c/e.
+// Maps to the same database rows as the final-exam importer.
+// quiz_section_id is null for chapter quizzes (no sections).
+// ---------------------------------------------------------------------------
+async function importChapterQuizzes(
+  supabase: SupabaseClient,
+  chapterMap: ChapterIdMap,
+): Promise<void> {
+  log('Importing chapter quizzes...');
+  const data = JSON.parse(
+    readFileSync(PATHS.chapterQuizzes, 'utf8'),
+  ) as ChapterQuizzesJson;
+
+  for (const quiz of data.quizzes) {
+    const chapter = findChapterByNumberInParts(
+      chapterMap,
+      quiz.chapter_number,
+      [1, 2],
+    );
+    if (!chapter) {
+      console.warn(
+        `[WARN] Chapter quiz references chapter_number=${quiz.chapter_number} ` +
+          `which is not present in Parts 1–2 of book_structure.json. Skipping.`,
+      );
+      continue;
+    }
+
+    const quizPayload = {
+      chapter_id: chapter.id,
+      title:
+        quiz.chapter_title?.trim()
+          ? `Chapter ${quiz.chapter_number} Quiz — ${quiz.chapter_title}`
+          : `Chapter ${quiz.chapter_number} Quiz`,
+      passing_score_percent: 70,
+      question_count: 10,
+      is_final_exam: false,
+      retake_cooldown_hours: 24,
+      allow_section_review: true,
+    };
+
+    let quizId: string;
+    if (chapter.id.startsWith(DRY_CHAPTER_PREFIX)) {
+      quizId = `${DRY_QUIZ_PREFIX}ch-${quiz.chapter_number}`;
+      summary.chapter_quizzes.inserted++;
+    } else {
+      const { data: existing, error: fetchErr } = await supabase
+        .from('quizzes')
+        .select('id')
+        .eq('chapter_id', chapter.id)
+        .maybeSingle();
+      if (fetchErr) {
+        throw new Error(
+          `chapter quiz query (ch ${quiz.chapter_number}): ${fetchErr.message}`,
+        );
+      }
+      if (existing) {
+        if (!dryRun) {
+          const { error } = await supabase
+            .from('quizzes')
+            .update(quizPayload)
+            .eq('id', existing.id);
+          if (error) {
+            throw new Error(
+              `chapter quiz update (ch ${quiz.chapter_number}): ${error.message}`,
+            );
+          }
+        }
+        summary.chapter_quizzes.updated++;
+        quizId = existing.id as string;
+      } else {
+        if (!dryRun) {
+          const { data: inserted, error } = await supabase
+            .from('quizzes')
+            .insert(quizPayload)
+            .select('id')
+            .single();
+          if (error || !inserted) {
+            throw new Error(
+              `chapter quiz insert (ch ${quiz.chapter_number}): ` +
+                (error?.message ?? 'no row returned'),
+            );
+          }
+          quizId = inserted.id as string;
+        } else {
+          quizId = `${DRY_QUIZ_PREFIX}ch-${quiz.chapter_number}`;
+        }
+        summary.chapter_quizzes.inserted++;
+      }
+    }
+
+    for (const q of quiz.questions) {
+      const qPayload = {
+        quiz_id: quizId,
+        quiz_section_id: null,
+        question_number: q.q,
+        question_text: q.text,
+        difficulty: q.difficulty,
+        display_order: q.q,
+      };
+
+      let questionId: string;
+      if (quizId.startsWith(DRY_QUIZ_PREFIX)) {
+        questionId = `${DRY_QUESTION_PREFIX}ch-${quiz.chapter_number}-${q.q}`;
+        summary.quiz_questions.inserted++;
+      } else {
+        const { data: existing, error: fetchErr } = await supabase
+          .from('quiz_questions')
+          .select('id')
+          .eq('quiz_id', quizId)
+          .eq('question_number', q.q)
+          .maybeSingle();
+        if (fetchErr) {
+          throw new Error(
+            `chapter quiz_questions query (ch ${quiz.chapter_number}, q ${q.q}): ` +
+              fetchErr.message,
+          );
+        }
+        if (existing) {
+          if (!dryRun) {
+            const { error } = await supabase
+              .from('quiz_questions')
+              .update(qPayload)
+              .eq('id', existing.id);
+            if (error) {
+              throw new Error(
+                `chapter quiz_questions update (ch ${quiz.chapter_number}, q ${q.q}): ` +
+                  error.message,
+              );
+            }
+          }
+          summary.quiz_questions.updated++;
+          questionId = existing.id as string;
+        } else {
+          if (!dryRun) {
+            const { data: inserted, error } = await supabase
+              .from('quiz_questions')
+              .insert(qPayload)
+              .select('id')
+              .single();
+            if (error || !inserted) {
+              throw new Error(
+                `chapter quiz_questions insert (ch ${quiz.chapter_number}, q ${q.q}): ` +
+                  (error?.message ?? 'no row returned'),
+              );
+            }
+            questionId = inserted.id as string;
+          } else {
+            questionId = `${DRY_QUESTION_PREFIX}ch-${quiz.chapter_number}-${q.q}`;
+          }
+          summary.quiz_questions.inserted++;
+        }
+      }
+
+      if (!questionId.startsWith(DRY_QUESTION_PREFIX) && !dryRun) {
+        const { error: delErr } = await supabase
+          .from('quiz_answers')
+          .delete()
+          .eq('question_id', questionId);
+        if (delErr) {
+          throw new Error(
+            `chapter quiz_answers delete (ch ${quiz.chapter_number}, q ${q.q}): ` +
+              delErr.message,
+          );
+        }
+      }
+
+      for (let i = 0; i < q.answers.length; i++) {
+        const a = q.answers[i];
+        const aPayload = {
+          question_id: questionId,
+          answer_letter: a.l,
+          answer_text: a.t,
+          is_correct: a.c,
+          explanation: a.e ?? null,
+          display_order: i + 1,
+        };
+        if (!questionId.startsWith(DRY_QUESTION_PREFIX) && !dryRun) {
+          const { error } = await supabase
+            .from('quiz_answers')
+            .insert(aPayload);
+          if (error) {
+            throw new Error(
+              `chapter quiz_answers insert (ch ${quiz.chapter_number}, q ${q.q}, ${a.l}): ` +
+                error.message,
+            );
+          }
+        }
+        summary.quiz_answers.inserted++;
+      }
+    }
+  }
+
+  log(
+    `chapter quizzes done — quizzes=${summary.chapter_quizzes.inserted + summary.chapter_quizzes.updated}`,
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Summary printing
 // ---------------------------------------------------------------------------
 function printSummary(): void {
@@ -509,6 +1117,12 @@ function printSummary(): void {
     ['book_parts', summary.book_parts],
     ['chapters', summary.chapters],
     ['sections', summary.sections],
+    ['final_exam_chapter', summary.final_exam_chapter],
+    ['final_exam_quiz', summary.final_exam_quiz],
+    ['quiz_sections', summary.quiz_sections],
+    ['chapter_quizzes', summary.chapter_quizzes],
+    ['quiz_questions', summary.quiz_questions],
+    ['quiz_answers', summary.quiz_answers],
   ];
   for (const [name, s] of rows) {
     console.log(
@@ -518,8 +1132,8 @@ function printSummary(): void {
   }
   console.log('');
   console.log(
-    'Importers still pending in this script: final exam, chapter ' +
-      'quizzes, comparison tables, glossary, checklists.',
+    'Importers still pending in this script: comparison tables, ' +
+      'glossary, checklists.',
   );
 }
 
@@ -543,6 +1157,8 @@ async function main(): Promise<void> {
   const partMap = await importBookParts(supabase);
   const chapterMap = await importChapters(supabase, partMap);
   await importSections(supabase, chapterMap);
+  await importFinalExam(supabase, partMap);
+  await importChapterQuizzes(supabase, chapterMap);
 
   printSummary();
 }
