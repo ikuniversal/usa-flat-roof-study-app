@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase/server';
 import { requireUserWithProfile } from '@/lib/auth/role';
 import { MarkdownRenderer } from '@/components/markdown-renderer';
 import { SectionReadButton } from '@/components/section-read-button';
+import { BookmarkButton } from '@/components/bookmark-button';
 import type { Chapter, Section } from '@/types/database';
 
 export default async function SectionReaderPage({
@@ -55,6 +56,14 @@ export default async function SectionReaderPage({
 
   const isRead = progress?.completed === true;
 
+  const { data: bookmark } = await supabase
+    .from('bookmarks')
+    .select('id')
+    .eq('user_id', user.id)
+    .eq('section_id', section.id)
+    .maybeSingle<{ id: string }>();
+  const isBookmarked = bookmark != null;
+
   return (
     <article className="space-y-6">
       <div>
@@ -91,7 +100,13 @@ export default async function SectionReaderPage({
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-4">
-        <SectionReadButton sectionId={section.id} isRead={isRead} />
+        <div className="flex items-center gap-2">
+          <SectionReadButton sectionId={section.id} isRead={isRead} />
+          <BookmarkButton
+            sectionId={section.id}
+            isBookmarked={isBookmarked}
+          />
+        </div>
         <div className="flex items-center gap-2 text-sm">
           {prev ? (
             <Link
