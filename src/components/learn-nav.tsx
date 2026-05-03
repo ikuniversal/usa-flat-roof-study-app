@@ -4,6 +4,7 @@ import { requireUserWithProfile } from '@/lib/auth/role';
 
 const NAV_LINKS = [
   { href: '/learn', label: 'Reading' },
+  { href: '/learn/search', label: 'Search' },
   { href: '/learn/bookmarks', label: 'Bookmarks' },
   { href: '/learn/glossary', label: 'Glossary' },
   { href: '/learn/comparisons', label: 'Comparisons' },
@@ -31,10 +32,13 @@ export async function LearnNav() {
           ))}
         </nav>
         <div className="ml-auto flex items-center gap-3 text-xs text-slate-500">
-          <span className="hidden sm:inline">
+          <Link
+            href="/learn/profile"
+            className="hidden text-slate-500 hover:text-slate-900 sm:inline"
+          >
             {user.email}{' '}
             <span className="text-slate-400">&middot; {profile.role}</span>
-          </span>
+          </Link>
           <LogoutButton className="rounded-md border border-slate-300 bg-white px-2.5 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50" />
         </div>
       </div>
