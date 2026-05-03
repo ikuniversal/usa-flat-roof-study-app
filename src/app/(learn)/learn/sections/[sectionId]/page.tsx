@@ -5,6 +5,7 @@ import { requireUserWithProfile } from '@/lib/auth/role';
 import { MarkdownRenderer } from '@/components/markdown-renderer';
 import { SectionReadButton } from '@/components/section-read-button';
 import { BookmarkButton } from '@/components/bookmark-button';
+import { ScrollPositionTracker } from '@/components/scroll-position-tracker';
 import type { Chapter, Section } from '@/types/database';
 
 export default async function SectionReaderPage({
@@ -49,12 +50,18 @@ export default async function SectionReaderPage({
 
   const { data: progress } = await supabase
     .from('reading_progress')
-    .select('completed')
+    .select('completed, last_position, updated_at')
     .eq('user_id', user.id)
     .eq('section_id', section.id)
-    .maybeSingle<{ completed: boolean }>();
+    .maybeSingle<{
+      completed: boolean;
+      last_position: number;
+      updated_at: string | null;
+    }>();
 
   const isRead = progress?.completed === true;
+  const initialPosition = progress?.last_position ?? 0;
+  const initialPositionUpdatedAt = progress?.updated_at ?? null;
 
   const { data: bookmark } = await supabase
     .from('bookmarks')
@@ -66,6 +73,11 @@ export default async function SectionReaderPage({
 
   return (
     <article className="space-y-6">
+      <ScrollPositionTracker
+        sectionId={section.id}
+        initialPosition={initialPosition}
+        initialPositionUpdatedAt={initialPositionUpdatedAt}
+      />
       <div>
         {chapter ? (
           <Link
