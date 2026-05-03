@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { href: '/admin', label: 'Dashboard' },
   { href: '/admin/users', label: 'Users' },
   { href: '/admin/content', label: 'Content' },
+  { href: '/admin/reports', label: 'Reports' },
 ];
 
 export async function AdminNav() {

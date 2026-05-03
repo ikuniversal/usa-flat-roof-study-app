@@ -62,3 +62,25 @@ export async function removeBookmark(
   revalidatePath(`/learn/sections/${sectionId}`);
   return { error: null };
 }
+
+export async function updateBookmarkNote(
+  bookmarkId: string,
+  note: string | null,
+): Promise<ToggleBookmarkResult> {
+  const supabase = createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: 'You must be signed in.' };
+
+  const trimmed = note?.trim() ?? null;
+  const { error } = await supabase
+    .from('bookmarks')
+    .update({ note: trimmed && trimmed.length > 0 ? trimmed : null })
+    .eq('id', bookmarkId)
+    .eq('user_id', user.id);
+  if (error) return { error: error.message };
+
+  revalidatePath('/learn/bookmarks');
+  return { error: null };
+}
