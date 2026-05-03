@@ -13,6 +13,10 @@ import type {
   QuizSection,
 } from '@/types/database';
 
+function sectionAnchor(sectionNumber: number): string {
+  return `qsec-${sectionNumber}`;
+}
+
 export default async function QuizTakePage({
   params,
 }: {
@@ -90,25 +94,44 @@ export default async function QuizTakePage({
   }));
 
   const total = enriched.length;
-  const answered = enriched.filter((q) =>
-    responseByQuestion.has(q.id),
-  ).length;
+  const answered = enriched.filter((q) => responseByQuestion.has(q.id)).length;
 
   // Group questions by quiz_section_id for the final exam.
-  const grouped: { sectionTitle: string | null; items: QuestionWithAnswers[] }[] = [];
+  type Group = {
+    sectionTitle: string | null;
+    sectionNumber: number | null;
+    items: QuestionWithAnswers[];
+    answeredInSection: number;
+  };
+  const grouped: Group[] = [];
   if (quiz.is_final_exam && quizSections && quizSections.length > 0) {
     for (const s of quizSections) {
+      const items = enriched.filter((q) => q.quiz_section_id === s.id);
       grouped.push({
         sectionTitle: `Section ${s.section_number}: ${s.title}`,
-        items: enriched.filter((q) => q.quiz_section_id === s.id),
+        sectionNumber: s.section_number,
+        items,
+        answeredInSection: items.filter((q) => responseByQuestion.has(q.id))
+          .length,
       });
     }
     const orphaned = enriched.filter((q) => !q.quiz_section_id);
     if (orphaned.length > 0) {
-      grouped.push({ sectionTitle: 'Other', items: orphaned });
+      grouped.push({
+        sectionTitle: 'Other',
+        sectionNumber: null,
+        items: orphaned,
+        answeredInSection: orphaned.filter((q) => responseByQuestion.has(q.id))
+          .length,
+      });
     }
   } else {
-    grouped.push({ sectionTitle: null, items: enriched });
+    grouped.push({
+      sectionTitle: null,
+      sectionNumber: null,
+      items: enriched,
+      answeredInSection: answered,
+    });
   }
 
   return (
@@ -128,6 +151,52 @@ export default async function QuizTakePage({
         </p>
       </div>
 
+      {/* Section navigator: only for the final exam. Sticky under the
+          page header so jumping between sections in a 100-question
+          exam doesn't require scrolling back to the top. */}
+      {quiz.is_final_exam && grouped.length > 1 ? (
+        <nav
+          aria-label="Section navigator"
+          className="sticky top-16 z-[5] -mx-2 rounded-lg border border-slate-200 bg-white px-3 py-2 shadow-sm"
+        >
+          <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
+            Sections
+          </p>
+          <ul className="mt-1 flex flex-wrap gap-1">
+            {grouped.map((g, gi) => {
+              const complete = g.answeredInSection === g.items.length;
+              const partial = g.answeredInSection > 0 && !complete;
+              const cls = complete
+                ? 'border-emerald-300 bg-emerald-50 text-emerald-900 hover:bg-emerald-100'
+                : partial
+                  ? 'border-amber-300 bg-amber-50 text-amber-900 hover:bg-amber-100'
+                  : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50';
+              return (
+                <li key={gi}>
+                  <a
+                    href={`#${
+                      g.sectionNumber != null
+                        ? sectionAnchor(g.sectionNumber)
+                        : `qsec-other-${gi}`
+                    }`}
+                    className={`inline-flex items-center gap-2 rounded-md border px-2 py-1 text-xs font-medium ${cls}`}
+                  >
+                    <span>
+                      {g.sectionNumber != null
+                        ? `§${g.sectionNumber}`
+                        : 'Other'}
+                    </span>
+                    <span className="text-[10px] opacity-75">
+                      {g.answeredInSection}/{g.items.length}
+                    </span>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      ) : null}
+
       {total === 0 ? (
         <div className="rounded-lg border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-900">
           This quiz has no questions yet. Apply the remaining content-import
@@ -136,10 +205,21 @@ export default async function QuizTakePage({
       ) : (
         <>
           {grouped.map((group, gi) => (
-            <section key={gi} className="space-y-4">
+            <section
+              key={gi}
+              id={
+                group.sectionNumber != null
+                  ? sectionAnchor(group.sectionNumber)
+                  : `qsec-other-${gi}`
+              }
+              className="space-y-4 scroll-mt-32"
+            >
               {group.sectionTitle ? (
                 <h2 className="text-sm font-semibold text-slate-900">
-                  {group.sectionTitle}
+                  {group.sectionTitle}{' '}
+                  <span className="text-xs font-normal text-slate-500">
+                    ({group.answeredInSection} of {group.items.length} answered)
+                  </span>
                 </h2>
               ) : null}
               {group.items.map((q, idx) => (
