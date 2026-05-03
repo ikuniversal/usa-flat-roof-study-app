@@ -21,7 +21,7 @@ export default async function AdminDashboardPage() {
         </p>
       </div>
 
-      <section className="grid gap-4 sm:grid-cols-2">
+      <section className="grid gap-4 sm:grid-cols-3">
         <Link
           href="/admin/users"
           className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md"
@@ -39,6 +39,15 @@ export default async function AdminDashboardPage() {
           <h2 className="text-base font-semibold text-slate-900">Content editor</h2>
           <p className="mt-1 text-sm text-slate-600">
             Edit chapter sections in markdown. Saves write a revision audit row.
+          </p>
+        </Link>
+        <Link
+          href="/admin/reports"
+          className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md"
+        >
+          <h2 className="text-base font-semibold text-slate-900">Reports</h2>
+          <p className="mt-1 text-sm text-slate-600">
+            Per-quiz pass rates, certification counts, attempt history.
           </p>
         </Link>
       </section>

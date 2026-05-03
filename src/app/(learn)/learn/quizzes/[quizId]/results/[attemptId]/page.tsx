@@ -9,6 +9,7 @@ import type {
   QuizAnswer,
   QuizResponse,
   Profile,
+  Chapter,
 } from '@/types/database';
 
 function formatDuration(seconds: number | null): string {
@@ -63,6 +64,19 @@ export default async function QuizResultsPage({
     .select('*')
     .eq('attempt_id', attempt.id)
     .returns<QuizResponse[]>();
+
+  // Source chapter for the "Review chapter" deep link on wrong answers.
+  // Final exam questions live under the synthesized exam chapter, so
+  // this link is hidden for the exam (no real source chapter to send
+  // the user to).
+  const { data: chapter } = quiz.chapter_id
+    ? await supabase
+        .from('chapters')
+        .select('id, title, chapter_number')
+        .eq('id', quiz.chapter_id)
+        .maybeSingle<Pick<Chapter, 'id' | 'title' | 'chapter_number'>>()
+    : { data: null };
+  const showReviewLink = chapter && !quiz.is_final_exam;
 
   const answersByQ = new Map<string, QuizAnswer[]>();
   for (const a of answers ?? []) {
@@ -222,6 +236,16 @@ export default async function QuizResultsPage({
                   <p className="mt-3 rounded-md bg-slate-50 px-3 py-2 text-xs text-slate-700">
                     <span className="font-semibold">Why:</span>{' '}
                     {correctAnswer.explanation}
+                  </p>
+                ) : null}
+                {!isCorrect && showReviewLink && chapter ? (
+                  <p className="mt-2 text-xs">
+                    <Link
+                      href={`/learn/chapters/${chapter.id}`}
+                      className="text-blue-700 hover:underline"
+                    >
+                      Review Chapter {chapter.chapter_number}: {chapter.title} →
+                    </Link>
                   </p>
                 ) : null}
               </div>

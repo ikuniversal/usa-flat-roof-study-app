@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/server';
 import { requireUserWithProfile } from '@/lib/auth/role';
+import { BookmarkNoteEditor } from '@/components/bookmark-note-editor';
 import type { Bookmark, Section, Chapter } from '@/types/database';
 
 export default async function BookmarksPage() {
@@ -61,42 +62,48 @@ export default async function BookmarksPage() {
             return (
               <li
                 key={b.id}
-                className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm hover:shadow-md"
+                className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm"
               >
-                <Link
-                  href={
-                    b.section_id ? `/learn/sections/${b.section_id}` : '/learn'
-                  }
-                  className="block"
-                >
-                  <p className="text-base font-medium text-slate-900">
-                    {sec ? (
-                      <>
-                        {sec.section_number ? (
-                          <span className="text-slate-400">
-                            {sec.section_number}.{' '}
-                          </span>
-                        ) : null}
-                        {sec.title}
-                      </>
-                    ) : (
-                      <span className="text-slate-500 italic">
-                        (deleted section)
-                      </span>
-                    )}
-                  </p>
-                  {ch ? (
-                    <p className="mt-0.5 text-xs text-slate-500">
-                      Chapter {ch.chapter_number}: {ch.title}
+                {sec ? (
+                  <Link
+                    href={`/learn/sections/${sec.id}`}
+                    className="block hover:bg-slate-50"
+                  >
+                    <p className="text-base font-medium text-slate-900">
+                      {sec.section_number ? (
+                        <span className="text-slate-400">
+                          {sec.section_number}.{' '}
+                        </span>
+                      ) : null}
+                      {sec.title}
                     </p>
-                  ) : null}
-                  {b.note ? (
-                    <p className="mt-2 text-sm text-slate-700">{b.note}</p>
-                  ) : null}
-                  <p className="mt-1 text-xs text-slate-400">
+                    {ch ? (
+                      <p className="mt-0.5 text-xs text-slate-500">
+                        Chapter {ch.chapter_number}: {ch.title}
+                      </p>
+                    ) : null}
+                  </Link>
+                ) : (
+                  <p className="text-sm italic text-slate-500">
+                    (deleted section)
+                  </p>
+                )}
+
+                {b.note ? (
+                  <p className="mt-2 rounded-md bg-amber-50 px-3 py-2 text-sm text-slate-800">
+                    {b.note}
+                  </p>
+                ) : null}
+
+                <div className="mt-1 flex items-center justify-between gap-4">
+                  <p className="text-xs text-slate-400">
                     Saved {new Date(b.created_at).toLocaleDateString()}
                   </p>
-                </Link>
+                  <BookmarkNoteEditor
+                    bookmarkId={b.id}
+                    initialNote={b.note}
+                  />
+                </div>
               </li>
             );
           })}
