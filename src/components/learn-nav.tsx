@@ -4,6 +4,7 @@ import { requireUserWithProfile } from '@/lib/auth/role';
 
 const NAV_LINKS = [
   { href: '/learn', label: 'Reading' },
+  { href: '/learn/progress', label: 'My progress' },
   { href: '/learn/search', label: 'Search' },
   { href: '/learn/bookmarks', label: 'Bookmarks' },
   { href: '/learn/glossary', label: 'Glossary' },
