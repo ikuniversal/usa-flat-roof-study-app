@@ -8,6 +8,7 @@ import type {
   QuizQuestion,
   QuizAnswer,
   QuizResponse,
+  Profile,
 } from '@/types/database';
 
 function formatDuration(seconds: number | null): string {
@@ -78,6 +79,27 @@ export default async function QuizResultsPage({
   const passed = attempt.passed === true;
   const showReview = quiz.allow_section_review && attempt.completed_at != null;
 
+  // Show the celebratory cert banner only when this attempt was the
+  // one that flipped the user to certified (cert date matches the
+  // attempt's completed_at within a couple of seconds).
+  let justCertified = false;
+  if (passed && quiz.is_final_exam) {
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('certified, certification_date')
+      .eq('id', user.id)
+      .single<Pick<Profile, 'certified' | 'certification_date'>>();
+    if (
+      profile?.certified &&
+      profile.certification_date &&
+      attempt.completed_at
+    ) {
+      const certTs = new Date(profile.certification_date).getTime();
+      const submitTs = new Date(attempt.completed_at).getTime();
+      justCertified = Math.abs(certTs - submitTs) < 5000;
+    }
+  }
+
   return (
     <div className="space-y-6">
       <div>
@@ -97,6 +119,21 @@ export default async function QuizResultsPage({
             : '(not submitted)'}
         </p>
       </div>
+
+      {justCertified ? (
+        <div className="rounded-lg border border-emerald-300 bg-gradient-to-br from-emerald-50 to-amber-50 p-5 shadow-sm">
+          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">
+            🎉 Certified
+          </p>
+          <p className="mt-1 text-base font-semibold text-emerald-900">
+            You passed the final exam &mdash; you&rsquo;re now a certified USA
+            Flat Roof sales rep.
+          </p>
+          <p className="mt-1 text-xs text-emerald-800">
+            Your manager and admins can see this on the instructor dashboard.
+          </p>
+        </div>
+      ) : null}
 
       <div
         className={`rounded-lg border p-5 shadow-sm ${
