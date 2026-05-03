@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import { requireUserWithProfile } from '@/lib/auth/role';
-import type { Chapter, Section } from '@/types/database';
+import type { Chapter, Quiz, Section } from '@/types/database';
 
 export default async function ChapterPage({
   params,
@@ -35,6 +35,14 @@ export default async function ChapterPage({
     .eq('user_id', user.id)
     .eq('completed', true)
     .returns<{ section_id: string | null }[]>();
+
+  const { data: quiz } = chapter.has_quiz
+    ? await supabase
+        .from('quizzes')
+        .select('id, is_final_exam')
+        .eq('chapter_id', chapter.id)
+        .maybeSingle<Pick<Quiz, 'id' | 'is_final_exam'>>()
+    : { data: null };
 
   const readSet = new Set(
     (progressRows ?? []).map((r) => r.section_id).filter(Boolean) as string[],
@@ -118,9 +126,18 @@ export default async function ChapterPage({
         )}
       </section>
 
-      {chapter.has_quiz ? (
-        <div className="rounded-lg border border-blue-200 bg-blue-50 px-5 py-4 text-sm text-blue-900">
-          A chapter quiz is available. Quiz UI ships in Phase 6.
+      {chapter.has_quiz && quiz ? (
+        <Link
+          href={`/learn/quizzes/${quiz.id}`}
+          className="block rounded-lg border border-blue-200 bg-blue-50 px-5 py-4 text-sm text-blue-900 hover:bg-blue-100"
+        >
+          A chapter quiz is available &mdash;{' '}
+          <span className="font-semibold">take it now &rarr;</span>
+        </Link>
+      ) : chapter.has_quiz ? (
+        <div className="rounded-lg border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-900">
+          A chapter quiz is expected here, but its questions have not been
+          imported yet.
         </div>
       ) : null}
     </div>

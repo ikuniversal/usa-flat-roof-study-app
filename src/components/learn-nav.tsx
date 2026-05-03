@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { href: '/learn/glossary', label: 'Glossary' },
   { href: '/learn/comparisons', label: 'Comparisons' },
   { href: '/learn/checklists', label: 'Checklists' },
+  { href: '/learn/exam', label: 'Final exam' },
 ];
 
 export async function LearnNav() {
