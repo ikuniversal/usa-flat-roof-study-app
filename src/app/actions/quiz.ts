@@ -177,6 +177,38 @@ export async function submitAttempt(
     .eq('id', attemptId);
   if (error) throw new Error(`Could not submit attempt: ${error.message}`);
 
+  // Final-exam pass auto-flips the user's profile to certified.
+  // Once certified, the flag (and certification_date) stays sticky --
+  // a subsequent failing retake should not un-certify, so we only
+  // stamp on pass.
+  let certifiedNow = false;
+  if (passed) {
+    const { data: quizMeta } = await supabase
+      .from('quizzes')
+      .select('is_final_exam')
+      .eq('id', quiz.id)
+      .single<{ is_final_exam: boolean }>();
+    if (quizMeta?.is_final_exam) {
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('certified')
+        .eq('id', user.id)
+        .single<{ certified: boolean }>();
+      if (!profile?.certified) {
+        const { error: certErr } = await supabase
+          .from('profiles')
+          .update({
+            certified: true,
+            certification_date: new Date(completedAt).toISOString(),
+          })
+          .eq('id', user.id);
+        if (!certErr) certifiedNow = true;
+      }
+    }
+  }
+
   revalidatePath(`/learn/quizzes/${quiz.id}`);
+  revalidatePath('/learn');
+  if (certifiedNow) revalidatePath('/instructor');
   redirect(`/learn/quizzes/${quiz.id}/results/${attemptId}`);
 }
