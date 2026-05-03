@@ -5,6 +5,7 @@ import { requireUserWithProfile } from '@/lib/auth/role';
 const NAV_LINKS = [
   { href: '/admin', label: 'Dashboard' },
   { href: '/admin/users', label: 'Users' },
+  { href: '/admin/content', label: 'Content' },
 ];
 
 export async function AdminNav() {
