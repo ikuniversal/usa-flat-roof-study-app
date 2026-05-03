@@ -28,6 +28,24 @@ export default async function ContentSectionEditPage({
         .single<Pick<Chapter, 'id' | 'title' | 'chapter_number'>>()
     : { data: null };
 
+  // Sibling sections in the same chapter, ordered, used for the
+  // prev / next navigation inside the editor header. Lets the admin
+  // walk through a chapter without bouncing back to the chapter list.
+  const { data: siblings } = section.chapter_id
+    ? await supabase
+        .from('sections')
+        .select('id, title, section_number, display_order')
+        .eq('chapter_id', section.chapter_id)
+        .order('display_order', { ascending: true })
+        .returns<Pick<Section, 'id' | 'title' | 'section_number' | 'display_order'>[]>()
+    : { data: [] };
+  const ordered = siblings ?? [];
+  const idx = ordered.findIndex((s) => s.id === section.id);
+  const prev = idx > 0 ? ordered[idx - 1] : null;
+  const next = idx >= 0 && idx < ordered.length - 1 ? ordered[idx + 1] : null;
+  const positionLabel =
+    idx >= 0 ? `Section ${idx + 1} of ${ordered.length}` : '';
+
   const { data: revisions } = await supabase
     .from('content_revisions')
     .select('*')
@@ -73,6 +91,7 @@ export default async function ContentSectionEditPage({
           {section.title}
         </h1>
         <div className="mt-1 flex flex-wrap items-center gap-3 text-xs text-slate-500">
+          {positionLabel ? <span>{positionLabel}</span> : null}
           {section.is_instructor_only ? (
             <span className="inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-800">
               Instructor only
@@ -91,6 +110,36 @@ export default async function ContentSectionEditPage({
         sectionId={section.id}
         initialContent={section.content_markdown}
       />
+
+      <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-4 text-sm">
+        {prev ? (
+          <Link
+            href={`/admin/content/sections/${prev.id}`}
+            className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-slate-700 hover:bg-slate-50"
+          >
+            ←{' '}
+            {prev.section_number ? `${prev.section_number}. ` : ''}
+            {prev.title}
+          </Link>
+        ) : (
+          <span className="rounded-md border border-slate-200 px-3 py-1.5 text-slate-300">
+            ← Previous
+          </span>
+        )}
+        {next ? (
+          <Link
+            href={`/admin/content/sections/${next.id}`}
+            className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-slate-700 hover:bg-slate-50"
+          >
+            {next.section_number ? `${next.section_number}. ` : ''}
+            {next.title} →
+          </Link>
+        ) : (
+          <span className="rounded-md border border-slate-200 px-3 py-1.5 text-slate-300">
+            Next →
+          </span>
+        )}
+      </div>
 
       {revisions && revisions.length > 0 ? (
         <section>
