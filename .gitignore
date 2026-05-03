@@ -29,6 +29,9 @@ yarn-error.log*
 .env*.local
 .env.local
 
+# Claude Code local-only settings (contains MCP secrets)
+.claude/settings.local.json
+
 # vercel
 .vercel
 
