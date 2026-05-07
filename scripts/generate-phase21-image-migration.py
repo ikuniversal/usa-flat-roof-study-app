@@ -91,7 +91,9 @@ def parse_field(block: str, name: str) -> str:
 
 
 def pick_tag(strings: list[str]) -> str:
-    for tag in ['$ph21$', '$ph21img$', '$_phase21_$', '$ph21body$']:
+    """Match the Phase B convention: try $mfst$ first, then progressively
+    longer fallbacks if any candidate collides with body content."""
+    for tag in ['$mfst$', '$mfst2026$', '$msbody_v1$', '$_manuscript_2026_$']:
         if not any(tag in s for s in strings):
             return tag
     print('ERROR: every candidate dollar-quote tag collides with content.', file=sys.stderr)

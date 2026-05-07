@@ -8,7 +8,7 @@
 -- the audit-row count for the batch is not exactly 14).
 -- Idempotency: NOT idempotent. Re-running this file would no-op the
 -- UPDATEs (REPLACE finds nothing) but insert 14 more audit rows. Do not re-run.
--- Dollar-quote tag for body strings: $ph21$
+-- Dollar-quote tag for body strings: $mfst$
 --
 -- In-scope sections (P1/Ch/Sec -> bucket UUID):
 --   P1/Ch1/Sec6 -> 0B3BAAC5-5F31-4EF9-90FA-3AD0526CED27.png  (replaces [IMAGE #2])
@@ -66,7 +66,7 @@ WHERE p.part_number = 1
 -- P1 / Ch 1 / Sec 6: [IMAGE #2] -> 0B3BAAC5-5F31-4EF9-90FA-3AD0526CED27.png
 UPDATE sections SET
   content_markdown = REPLACE(content_markdown,
-    $ph21$[IMAGE #2]
+    $mfst$[IMAGE #2]
 Type: Cross-section
 Priority: Required
 Source preference: Custom diagram
@@ -75,9 +75,9 @@ Purpose: Help reps visualize layered system.
 Caption: Cross-section of a typical composition shingle roof system. Components shown are conceptual; actual installations vary.
 Alt text: Diagram showing layers of an asphalt shingle roof from rafter to ridge cap.
 Annotation needed: Yes — label all components listed above.
-Review status: Requires technical review before publication$ph21$,
-    $ph21$![Diagram showing layers of an asphalt shingle roof from rafter to ridge cap.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/0B3BAAC5-5F31-4EF9-90FA-3AD0526CED27.png)
-*Cross-section of a typical composition shingle roof system. Components shown are conceptual; actual installations vary.*$ph21$),
+Review status: Requires technical review before publication$mfst$,
+    $mfst$![Diagram showing layers of an asphalt shingle roof from rafter to ridge cap.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/0B3BAAC5-5F31-4EF9-90FA-3AD0526CED27.png)
+*Cross-section of a typical composition shingle roof system. Components shown are conceptual; actual installations vary.*$mfst$),
   updated_at = NOW()
 WHERE id = (
   SELECT s.id FROM sections s
@@ -89,7 +89,7 @@ WHERE id = (
 -- P1 / Ch 2 / Sec 4: [IMAGE #1] -> 4A487804-DA54-495C-AEB5-BA8C1306FC8C.png
 UPDATE sections SET
   content_markdown = REPLACE(content_markdown,
-    $ph21$[IMAGE #1]
+    $mfst$[IMAGE #1]
 Type: Photo
 Priority: Required
 Source preference: Company photo
@@ -99,9 +99,9 @@ Caption: A typical 60-mil mechanically attached TPO roof in good condition.
 Alt text: Drone view of a white TPO roof on a commercial building with visible seams, parapet flashing, and rooftop HVAC equipment.
 Annotation needed: No
 Field note: Capture in even daylight. Avoid identifiable tenant signage or addresses unless approved.
-Review status: Conceptual only$ph21$,
-    $ph21$![Drone view of a white TPO roof on a commercial building with visible seams, parapet flashing, and rooftop HVAC equipment.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/4A487804-DA54-495C-AEB5-BA8C1306FC8C.png)
-*A typical 60-mil mechanically attached TPO roof in good condition.*$ph21$),
+Review status: Conceptual only$mfst$,
+    $mfst$![Drone view of a white TPO roof on a commercial building with visible seams, parapet flashing, and rooftop HVAC equipment.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/4A487804-DA54-495C-AEB5-BA8C1306FC8C.png)
+*A typical 60-mil mechanically attached TPO roof in good condition.*$mfst$),
   updated_at = NOW()
 WHERE id = (
   SELECT s.id FROM sections s
@@ -113,7 +113,7 @@ WHERE id = (
 -- P1 / Ch 2 / Sec 6: [IMAGE #2] -> B1A01A5A-8444-4CD4-9074-13A0D5ED191E.png
 UPDATE sections SET
   content_markdown = REPLACE(content_markdown,
-    $ph21$[IMAGE #2]
+    $mfst$[IMAGE #2]
 Type: Cross-section
 Priority: Required
 Source preference: Custom diagram
@@ -122,9 +122,9 @@ Purpose: Help reps visualize the layered system.
 Caption: Cross-section of a typical mechanically attached TPO assembly. Components shown are conceptual; actual installations vary.
 Alt text: Diagram of a TPO roof assembly showing deck, insulation, cover board, membrane, fasteners, and parapet flashing.
 Annotation needed: Yes — label all components listed above.
-Review status: Requires technical review before publication$ph21$,
-    $ph21$![Diagram of a TPO roof assembly showing deck, insulation, cover board, membrane, fasteners, and parapet flashing.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/B1A01A5A-8444-4CD4-9074-13A0D5ED191E.png)
-*Cross-section of a typical mechanically attached TPO assembly. Components shown are conceptual; actual installations vary.*$ph21$),
+Review status: Requires technical review before publication$mfst$,
+    $mfst$![Diagram of a TPO roof assembly showing deck, insulation, cover board, membrane, fasteners, and parapet flashing.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/B1A01A5A-8444-4CD4-9074-13A0D5ED191E.png)
+*Cross-section of a typical mechanically attached TPO assembly. Components shown are conceptual; actual installations vary.*$mfst$),
   updated_at = NOW()
 WHERE id = (
   SELECT s.id FROM sections s
@@ -136,7 +136,7 @@ WHERE id = (
 -- P1 / Ch 3 / Sec 4: [IMAGE #1] -> F76C055C-0F7A-4BB3-971E-0608C2088116.png
 UPDATE sections SET
   content_markdown = REPLACE(content_markdown,
-    $ph21$[IMAGE #1]
+    $mfst$[IMAGE #1]
 Type: Photo
 Priority: Required
 Source preference: Company photo
@@ -146,9 +146,9 @@ Caption: A silicone-coated commercial roof in good condition. Note the continuou
 Alt text: White silicone-coated roof showing painted texture and continuous coverage over a pipe penetration.
 Annotation needed: No
 Field note: Capture in even daylight. Show one detail (drain, curb, or pipe boot) clearly.
-Review status: Conceptual only$ph21$,
-    $ph21$![White silicone-coated roof showing painted texture and continuous coverage over a pipe penetration.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/F76C055C-0F7A-4BB3-971E-0608C2088116.png)
-*A silicone-coated commercial roof in good condition. Note the continuous wrap over details and the brush/spray texture.*$ph21$),
+Review status: Conceptual only$mfst$,
+    $mfst$![White silicone-coated roof showing painted texture and continuous coverage over a pipe penetration.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/F76C055C-0F7A-4BB3-971E-0608C2088116.png)
+*A silicone-coated commercial roof in good condition. Note the continuous wrap over details and the brush/spray texture.*$mfst$),
   updated_at = NOW()
 WHERE id = (
   SELECT s.id FROM sections s
@@ -160,7 +160,7 @@ WHERE id = (
 -- P1 / Ch 3 / Sec 6: [IMAGE #2] -> 2202847B-AD25-4028-8A45-3F42A98078DA.png
 UPDATE sections SET
   content_markdown = REPLACE(content_markdown,
-    $ph21$[IMAGE #2]
+    $mfst$[IMAGE #2]
 Type: Diagram
 Priority: Required
 Source preference: Custom diagram
@@ -169,9 +169,9 @@ Purpose: Help reps visualize the coating system as a layered restoration, not ju
 Caption: Cross-section of a typical single-coat silicone restoration system. Components shown are conceptual; actual systems vary by manufacturer.
 Alt text: Diagram showing layers of a silicone roof coating system over an existing substrate.
 Annotation needed: Yes — label substrate, primer (if used), fabric, detail coat, and field coat.
-Review status: Requires technical review before publication$ph21$,
-    $ph21$![Diagram showing layers of a silicone roof coating system over an existing substrate.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/2202847B-AD25-4028-8A45-3F42A98078DA.png)
-*Cross-section of a typical single-coat silicone restoration system. Components shown are conceptual; actual systems vary by manufacturer.*$ph21$),
+Review status: Requires technical review before publication$mfst$,
+    $mfst$![Diagram showing layers of a silicone roof coating system over an existing substrate.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/2202847B-AD25-4028-8A45-3F42A98078DA.png)
+*Cross-section of a typical single-coat silicone restoration system. Components shown are conceptual; actual systems vary by manufacturer.*$mfst$),
   updated_at = NOW()
 WHERE id = (
   SELECT s.id FROM sections s
@@ -183,7 +183,7 @@ WHERE id = (
 -- P1 / Ch 4 / Sec 4: [IMAGE #1] -> B27B1465-11E3-48E8-B279-CC924E7D41A3.png
 UPDATE sections SET
   content_markdown = REPLACE(content_markdown,
-    $ph21$[IMAGE #1]
+    $mfst$[IMAGE #1]
 Type: Photo
 Priority: Recommended
 Source preference: Company photo
@@ -193,9 +193,9 @@ Caption: A composition shingle roof before and after Fresh Roof rejuvenation. No
 Alt text: Two photos of the same roof showing minimal visible difference before and after rejuvenation treatment.
 Annotation needed: No
 Field note: Document with consistent lighting and angle. Avoid overstating the visual change in marketing.
-Review status: Conceptual only$ph21$,
-    $ph21$![Two photos of the same roof showing minimal visible difference before and after rejuvenation treatment.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/B27B1465-11E3-48E8-B279-CC924E7D41A3.png)
-*A composition shingle roof before and after Fresh Roof rejuvenation. Note that visible difference is subtle — rejuvenation works at the asphalt level, not on the surface appearance.*$ph21$),
+Review status: Conceptual only$mfst$,
+    $mfst$![Two photos of the same roof showing minimal visible difference before and after rejuvenation treatment.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/B27B1465-11E3-48E8-B279-CC924E7D41A3.png)
+*A composition shingle roof before and after Fresh Roof rejuvenation. Note that visible difference is subtle — rejuvenation works at the asphalt level, not on the surface appearance.*$mfst$),
   updated_at = NOW()
 WHERE id = (
   SELECT s.id FROM sections s
@@ -207,7 +207,7 @@ WHERE id = (
 -- P1 / Ch 5 / Sec 4: [IMAGE #1] -> B09AABBD-86AA-407A-B0E1-E7071E91FED7.png
 UPDATE sections SET
   content_markdown = REPLACE(content_markdown,
-    $ph21$[IMAGE #1]
+    $mfst$[IMAGE #1]
 Type: Photo
 Priority: Required
 Source preference: Company photo
@@ -216,9 +216,9 @@ Purpose: Train reps on the (limited) visual differences.
 Caption: PVC (left) and TPO (right) at close range. Differences are subtle — documentation remains the most reliable identification method.
 Alt text: Two close-up photos of white single-ply roof membranes showing surface and seam texture.
 Annotation needed: Yes — call out surface and weld bead.
-Review status: Conceptual only$ph21$,
-    $ph21$![Two close-up photos of white single-ply roof membranes showing surface and seam texture.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/B09AABBD-86AA-407A-B0E1-E7071E91FED7.png)
-*PVC (left) and TPO (right) at close range. Differences are subtle — documentation remains the most reliable identification method.*$ph21$),
+Review status: Conceptual only$mfst$,
+    $mfst$![Two close-up photos of white single-ply roof membranes showing surface and seam texture.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/B09AABBD-86AA-407A-B0E1-E7071E91FED7.png)
+*PVC (left) and TPO (right) at close range. Differences are subtle — documentation remains the most reliable identification method.*$mfst$),
   updated_at = NOW()
 WHERE id = (
   SELECT s.id FROM sections s
@@ -230,7 +230,7 @@ WHERE id = (
 -- P1 / Ch 6 / Sec 4: [IMAGE #1] -> 429E4CB5-84AF-4237-9ED7-6E3617D1D671.png
 UPDATE sections SET
   content_markdown = REPLACE(content_markdown,
-    $ph21$[IMAGE #1]
+    $mfst$[IMAGE #1]
 Type: Photo
 Priority: Required
 Source preference: Company photo
@@ -240,9 +240,9 @@ Caption: A self-adhered modified bitumen roof in good condition. Note the granul
 Alt text: Flat commercial roof with granule-surfaced modified bitumen membrane and visible parapet flashing.
 Annotation needed: No
 Field note: Capture in even daylight. Show one detail (drain or curb) clearly.
-Review status: Conceptual only$ph21$,
-    $ph21$![Flat commercial roof with granule-surfaced modified bitumen membrane and visible parapet flashing.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/429E4CB5-84AF-4237-9ED7-6E3617D1D671.png)
-*A self-adhered modified bitumen roof in good condition. Note the granule surface and clean seam appearance.*$ph21$),
+Review status: Conceptual only$mfst$,
+    $mfst$![Flat commercial roof with granule-surfaced modified bitumen membrane and visible parapet flashing.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/429E4CB5-84AF-4237-9ED7-6E3617D1D671.png)
+*A self-adhered modified bitumen roof in good condition. Note the granule surface and clean seam appearance.*$mfst$),
   updated_at = NOW()
 WHERE id = (
   SELECT s.id FROM sections s
@@ -254,7 +254,7 @@ WHERE id = (
 -- P1 / Ch 6 / Sec 6: [IMAGE #2] -> BAC9C660-FF32-43F4-BF4D-97370E909F2A.png
 UPDATE sections SET
   content_markdown = REPLACE(content_markdown,
-    $ph21$[IMAGE #2]
+    $mfst$[IMAGE #2]
 Type: Cross-section
 Priority: Required
 Source preference: Custom diagram
@@ -263,9 +263,9 @@ Purpose: Help reps visualize the layered system.
 Caption: Cross-section of a typical two-ply self-adhered modified bitumen assembly. Components shown are conceptual; actual installations vary.
 Alt text: Diagram of a modified bitumen roof assembly showing deck, insulation, cover board, base sheet, cap sheet, and flashing.
 Annotation needed: Yes — label all components.
-Review status: Requires technical review before publication$ph21$,
-    $ph21$![Diagram of a modified bitumen roof assembly showing deck, insulation, cover board, base sheet, cap sheet, and flashing.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/BAC9C660-FF32-43F4-BF4D-97370E909F2A.png)
-*Cross-section of a typical two-ply self-adhered modified bitumen assembly. Components shown are conceptual; actual installations vary.*$ph21$),
+Review status: Requires technical review before publication$mfst$,
+    $mfst$![Diagram of a modified bitumen roof assembly showing deck, insulation, cover board, base sheet, cap sheet, and flashing.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/BAC9C660-FF32-43F4-BF4D-97370E909F2A.png)
+*Cross-section of a typical two-ply self-adhered modified bitumen assembly. Components shown are conceptual; actual installations vary.*$mfst$),
   updated_at = NOW()
 WHERE id = (
   SELECT s.id FROM sections s
@@ -277,7 +277,7 @@ WHERE id = (
 -- P1 / Ch 8 / Sec 4: [IMAGE #1] -> 3C56D259-49D5-4049-8072-1554C3A8EFB4.png
 UPDATE sections SET
   content_markdown = REPLACE(content_markdown,
-    $ph21$[IMAGE #1]
+    $mfst$[IMAGE #1]
 Type: Photo
 Priority: Required
 Source preference: Company photo
@@ -287,9 +287,9 @@ Caption: A typical concrete tile roof on a Northern California residence.
 Alt text: Two-story home with concrete tile roof showing clear tile courses, ridge tiles, and a chimney.
 Annotation needed: No
 Field note: Capture in even daylight. Avoid identifiable house numbers.
-Review status: Conceptual only$ph21$,
-    $ph21$![Two-story home with concrete tile roof showing clear tile courses, ridge tiles, and a chimney.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/3C56D259-49D5-4049-8072-1554C3A8EFB4.png)
-*A typical concrete tile roof on a Northern California residence.*$ph21$),
+Review status: Conceptual only$mfst$,
+    $mfst$![Two-story home with concrete tile roof showing clear tile courses, ridge tiles, and a chimney.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/3C56D259-49D5-4049-8072-1554C3A8EFB4.png)
+*A typical concrete tile roof on a Northern California residence.*$mfst$),
   updated_at = NOW()
 WHERE id = (
   SELECT s.id FROM sections s
@@ -301,7 +301,7 @@ WHERE id = (
 -- P1 / Ch 8 / Sec 6: [IMAGE #2] -> 18AF2508-280C-493D-86A6-CF159D237754.png
 UPDATE sections SET
   content_markdown = REPLACE(content_markdown,
-    $ph21$[IMAGE #2]
+    $mfst$[IMAGE #2]
 Type: Cross-section
 Priority: Required
 Source preference: Custom diagram
@@ -310,9 +310,9 @@ Purpose: Reinforce the central learning point — underlayment is the waterproof
 Caption: Cross-section of a typical concrete tile assembly. The underlayment is the waterproofing layer; the tiles shed bulk water but are not waterproof on their own.
 Alt text: Diagram of a concrete tile roof showing deck, underlayment, batten, and tile with a valley flashing detail.
 Annotation needed: Yes — clearly highlight the underlayment as the waterproofing layer.
-Review status: Requires technical review before publication$ph21$,
-    $ph21$![Diagram of a concrete tile roof showing deck, underlayment, batten, and tile with a valley flashing detail.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/18AF2508-280C-493D-86A6-CF159D237754.png)
-*Cross-section of a typical concrete tile assembly. The underlayment is the waterproofing layer; the tiles shed bulk water but are not waterproof on their own.*$ph21$),
+Review status: Requires technical review before publication$mfst$,
+    $mfst$![Diagram of a concrete tile roof showing deck, underlayment, batten, and tile with a valley flashing detail.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/18AF2508-280C-493D-86A6-CF159D237754.png)
+*Cross-section of a typical concrete tile assembly. The underlayment is the waterproofing layer; the tiles shed bulk water but are not waterproof on their own.*$mfst$),
   updated_at = NOW()
 WHERE id = (
   SELECT s.id FROM sections s
@@ -324,7 +324,7 @@ WHERE id = (
 -- P1 / Ch 9 / Sec 4: [IMAGE #1] -> 7A1FEF90-03A2-4E57-8252-33A3CFFEC8DF.png
 UPDATE sections SET
   content_markdown = REPLACE(content_markdown,
-    $ph21$[IMAGE #1]
+    $mfst$[IMAGE #1]
 Type: Photo
 Priority: Required
 Source preference: Company photo
@@ -334,9 +334,9 @@ Caption: A typical gravel-surfaced built-up roof on an older commercial building
 Alt text: Flat commercial roof with gravel surface, parapet walls, and rooftop HVAC equipment.
 Annotation needed: No
 Field note: Capture in even daylight. Try to include an edge or termination where layered construction is visible.
-Review status: Conceptual only$ph21$,
-    $ph21$![Flat commercial roof with gravel surface, parapet walls, and rooftop HVAC equipment.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/7A1FEF90-03A2-4E57-8252-33A3CFFEC8DF.png)
-*A typical gravel-surfaced built-up roof on an older commercial building.*$ph21$),
+Review status: Conceptual only$mfst$,
+    $mfst$![Flat commercial roof with gravel surface, parapet walls, and rooftop HVAC equipment.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/7A1FEF90-03A2-4E57-8252-33A3CFFEC8DF.png)
+*A typical gravel-surfaced built-up roof on an older commercial building.*$mfst$),
   updated_at = NOW()
 WHERE id = (
   SELECT s.id FROM sections s
@@ -348,7 +348,7 @@ WHERE id = (
 -- P1 / Ch 10 / Sec 4: [IMAGE #1] -> 8420B21B-A1E8-4B8D-B5E6-53B2EA921469.png
 UPDATE sections SET
   content_markdown = REPLACE(content_markdown,
-    $ph21$[IMAGE #1]
+    $mfst$[IMAGE #1]
 Type: Photo
 Priority: Required
 Source preference: Company photo
@@ -358,9 +358,9 @@ Caption: A typical SPF roof with silicone topcoat. Note the orange-peel texture 
 Alt text: Flat commercial roof with white-coated foam surface showing orange-peel texture and a tapered drain.
 Annotation needed: No
 Field note: Capture in even daylight. Show the orange-peel texture clearly and include a drain or edge detail.
-Review status: Conceptual only$ph21$,
-    $ph21$![Flat commercial roof with white-coated foam surface showing orange-peel texture and a tapered drain.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/8420B21B-A1E8-4B8D-B5E6-53B2EA921469.png)
-*A typical SPF roof with silicone topcoat. Note the orange-peel texture characteristic of foam application.*$ph21$),
+Review status: Conceptual only$mfst$,
+    $mfst$![Flat commercial roof with white-coated foam surface showing orange-peel texture and a tapered drain.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/8420B21B-A1E8-4B8D-B5E6-53B2EA921469.png)
+*A typical SPF roof with silicone topcoat. Note the orange-peel texture characteristic of foam application.*$mfst$),
   updated_at = NOW()
 WHERE id = (
   SELECT s.id FROM sections s
@@ -372,7 +372,7 @@ WHERE id = (
 -- P1 / Ch 10 / Sec 6: [IMAGE #2] -> 30C9E644-A611-46CC-8001-086ECF90AFBE.png
 UPDATE sections SET
   content_markdown = REPLACE(content_markdown,
-    $ph21$[IMAGE #2]
+    $mfst$[IMAGE #2]
 Type: Cross-section
 Priority: Required
 Source preference: Custom diagram
@@ -381,9 +381,9 @@ Purpose: Help reps visualize how SPF creates slope and provides insulation simul
 Caption: Cross-section of an SPF system over an existing BUR substrate. Foam thickness is varied to create slope toward drains. Components shown are conceptual.
 Alt text: Diagram showing layered SPF assembly with tapered foam thickness, topcoat, and drain detail.
 Annotation needed: Yes — label substrate, primer, foam (with thickness variation noted), and topcoat.
-Review status: Requires technical review before publication$ph21$,
-    $ph21$![Diagram showing layered SPF assembly with tapered foam thickness, topcoat, and drain detail.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/30C9E644-A611-46CC-8001-086ECF90AFBE.png)
-*Cross-section of an SPF system over an existing BUR substrate. Foam thickness is varied to create slope toward drains. Components shown are conceptual.*$ph21$),
+Review status: Requires technical review before publication$mfst$,
+    $mfst$![Diagram showing layered SPF assembly with tapered foam thickness, topcoat, and drain detail.](https://incnssapeuouhsglkfno.supabase.co/storage/v1/object/public/content-images/30C9E644-A611-46CC-8001-086ECF90AFBE.png)
+*Cross-section of an SPF system over an existing BUR substrate. Foam thickness is varied to create slope toward drains. Components shown are conceptual.*$mfst$),
   updated_at = NOW()
 WHERE id = (
   SELECT s.id FROM sections s
