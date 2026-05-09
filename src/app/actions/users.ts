@@ -10,6 +10,7 @@ import type { UserRole } from '@/types/database';
 export type InviteUserState = {
   error: string | null;
   email: string | null;
+  submitted: boolean;
 };
 
 export type UpdateProfileState = { error: string | null };
@@ -36,10 +37,10 @@ export async function inviteUser(
   const fullName = String(formData.get('full_name') ?? '').trim() || null;
 
   if (!email) {
-    return { error: 'Email is required.', email };
+    return { error: 'Email is required.', email, submitted: false };
   }
   if (!isValidRole(role)) {
-    return { error: 'Invalid role.', email };
+    return { error: 'Invalid role.', email, submitted: false };
   }
 
   const admin = createAdminClient();
@@ -56,6 +57,7 @@ export async function inviteUser(
         error?.message ??
         'Could not send invite. The email may already be registered.',
       email,
+      submitted: false,
     };
   }
 
@@ -69,11 +71,12 @@ export async function inviteUser(
     return {
       error: `Invite sent, but role assignment failed: ${updateErr.message}`,
       email,
+      submitted: false,
     };
   }
 
   revalidatePath('/admin/users');
-  return { error: null, email: null };
+  return { error: null, email: null, submitted: true };
 }
 
 export async function updateProfile(
