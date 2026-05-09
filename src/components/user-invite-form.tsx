@@ -23,13 +23,16 @@ function SubmitButton() {
 export function UserInviteForm() {
   const [state, formAction] = useFormState<InviteUserState, FormData>(
     inviteUser,
-    { error: null, email: null },
+    { error: null, email: null, submitted: false },
   );
   const router = useRouter();
 
-  // Success: action returns email=null, error=null. Redirect back to list.
+  // Redirect back to the list only after a successful invite. The
+  // discriminator flag distinguishes "not yet submitted" from
+  // "submitted and succeeded" — both used to look identical
+  // (error=null, email=null) and the redirect fired on mount.
   useEffect(() => {
-    if (state.email === null && state.error === null) {
+    if (state.submitted) {
       router.push('/admin/users');
     }
   }, [state, router]);
