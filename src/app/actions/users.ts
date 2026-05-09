@@ -79,6 +79,73 @@ export async function inviteUser(
   return { error: null, email: null, submitted: true };
 }
 
+// Creates an account directly with a temp password (no email).
+// Use case: face-to-face onboarding where the admin will share the
+// password with the rep verbally. Mirrors inviteUser's role-assignment
+// step; differs in that we go through admin.auth.admin.createUser
+// (with email_confirm: true so the user can sign in immediately) rather
+// than inviteUserByEmail.
+export async function createUserDirectly(
+  _prev: InviteUserState,
+  formData: FormData,
+): Promise<InviteUserState> {
+  await requireRole(['admin']);
+
+  const email = String(formData.get('email') ?? '').trim();
+  const role = String(formData.get('role') ?? '');
+  const password = String(formData.get('password') ?? '');
+  const fullName = String(formData.get('full_name') ?? '').trim() || null;
+
+  if (!email) {
+    return { error: 'Email is required.', email, submitted: false };
+  }
+  if (!isValidRole(role)) {
+    return { error: 'Invalid role.', email, submitted: false };
+  }
+  if (password.length < 6) {
+    return {
+      error: 'Password must be at least 6 characters.',
+      email,
+      submitted: false,
+    };
+  }
+
+  const admin = createAdminClient();
+  const { data, error } = await admin.auth.admin.createUser({
+    email,
+    password,
+    email_confirm: true,
+    user_metadata: { full_name: fullName },
+  });
+
+  if (error || !data?.user) {
+    return {
+      error:
+        error?.message ??
+        'Could not create account. The email may already be registered.',
+      email,
+      submitted: false,
+    };
+  }
+
+  // The handle_new_user trigger inserts the profile with role
+  // 'sales_rep' by default. Update it now that we have the new user id.
+  const { error: updateErr } = await admin
+    .from('profiles')
+    .update({ role, full_name: fullName })
+    .eq('id', data.user.id);
+  if (updateErr) {
+    return {
+      error: `Account created, but role assignment failed: ${updateErr.message}`,
+      email,
+      submitted: false,
+    };
+  }
+
+  revalidatePath('/admin/users');
+  return { error: null, email: null, submitted: true };
+}
+
 export async function updateProfile(
   profileId: string,
   formData: FormData,
