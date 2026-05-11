@@ -13,7 +13,7 @@ export default async function SectionReaderPage({
 }: {
   params: { sectionId: string };
 }) {
-  const { user } = await requireUserWithProfile();
+  const { user, profile } = await requireUserWithProfile();
   const supabase = createClient();
 
   const { data: section } = await supabase
@@ -33,6 +33,21 @@ export default async function SectionReaderPage({
         .eq('id', section.chapter_id)
         .single<Pick<Chapter, 'id' | 'title' | 'chapter_number'>>()
     : { data: null };
+
+  // Quiz-section redirect: when a sales_rep navigates to a manuscript
+  // "End-of-Chapter Quiz" section AND the chapter has a structured quiz,
+  // we show a CTA into the interactive quiz instead of the markdown body
+  // + answer key. Admins and instructors still see the markdown so they
+  // can review / edit the source.
+  const isQuizSection = section.title === 'End-of-Chapter Quiz';
+  const { data: quizForRedirect } =
+    isQuizSection && profile.role === 'sales_rep' && section.chapter_id
+      ? await supabase
+          .from('quizzes')
+          .select('id')
+          .eq('chapter_id', section.chapter_id)
+          .maybeSingle<{ id: string }>()
+      : { data: null };
 
   const { data: siblings } = section.chapter_id
     ? await supabase
@@ -107,9 +122,34 @@ export default async function SectionReaderPage({
         ) : null}
       </div>
 
-      <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-        <MarkdownRenderer source={section.content_markdown} />
-      </div>
+      {quizForRedirect ? (
+        <div className="rounded-lg border border-blue-200 bg-blue-50 p-6 shadow-sm">
+          <h2 className="text-base font-semibold text-blue-900">
+            Interactive quiz available
+          </h2>
+          <p className="mt-2 text-sm text-blue-900">
+            {chapter
+              ? `Chapter ${chapter.chapter_number} has an interactive quiz `
+              : 'This chapter has an interactive quiz '}
+            that auto-scores your answers and shows per-question
+            explanations after you submit. Your selected answers are
+            saved as you click them.
+          </p>
+          <Link
+            href={`/learn/quizzes/${quizForRedirect.id}`}
+            className="mt-4 inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+          >
+            {chapter
+              ? `Take the interactive Chapter ${chapter.chapter_number} quiz`
+              : 'Take the interactive quiz'}{' '}
+            &rarr;
+          </Link>
+        </div>
+      ) : (
+        <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+          <MarkdownRenderer source={section.content_markdown} />
+        </div>
+      )}
 
       <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-4">
         <div className="flex items-center gap-2">
